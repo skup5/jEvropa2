@@ -16,7 +16,7 @@ import org.jsoup.nodes.Element;
  *
  * @author Roman
  */
-public class ShowParser extends Parser{
+public class ShowParser {
 
     /**
      * <li class=""> 

@@ -1,6 +1,5 @@
 package jEvropa2;
 
-
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -64,13 +63,18 @@ public class Extractor {
         return doc.select("#main .js-equalize .feed-player .item").not(".item-active, .more");
     }
 
+    public static Element getActiveShowItem(Document doc) {
+        return doc.select("#main .js-equalize-children").first();
+    }
+
     public static Element getNextShowItems(Document doc) {
         return doc.select("#main .js-equalize .feed-player").select(".item, .more").first();
     }
-    
-    public static Element getPlayerScript(Document doc){
+
+    public static Element getPlayerScript(Document doc) {
         return doc.select(".jPlayerGui").first().parent().select("script").first();
     }
+
     private Extractor() {
     }
 }

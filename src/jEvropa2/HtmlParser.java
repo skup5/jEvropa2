@@ -1,7 +1,5 @@
 package jEvropa2;
 
-
-
 import jEvropa2.parser.ShowParser;
 import jEvropa2.parser.RecordParser;
 import jEvropa2.parser.ItemParser;
@@ -14,6 +12,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.logging.Level;
@@ -111,15 +110,15 @@ public class HtmlParser {
                 showsSet.add(newShow);
             } catch (MalformedURLException ex) {
                 ex.printStackTrace();
-            }   
+            }
         }
         return showsSet;
     }
-    
-    public Set<Item> parseShowItems(Elements elements){
+
+    public Set<Item> parseShowItems(Elements elements) {
         Set<Item> itemsSet = new LinkedHashSet<>();
         Item newItem;
-        for(Element element:elements){
+        for (Element element : elements) {
             try {
                 newItem = itemParser.parse(element);
                 itemsSet.add(newItem);
@@ -128,5 +127,30 @@ public class HtmlParser {
             }
         }
         return itemsSet;
+    }
+
+    /**
+     *
+     * @param element
+     * @return Item without web site url
+     */
+    public Item parseActiveShowItem(Element element) {
+        Item item = null;
+        try {
+            item = itemParser.parseActive(element);
+        } catch (MalformedURLException ex) {
+            ex.printStackTrace();
+        }
+        return item;
+    }
+
+    public URL parseMp3Url(Element script) {
+        URL url = null;
+        try {
+            url = itemParser.parseMp3Url(script.html());
+        } catch (MalformedURLException ex) {
+            ex.printStackTrace();
+        }
+        return url;
     }
 }

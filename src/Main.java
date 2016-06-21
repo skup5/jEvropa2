@@ -1,6 +1,7 @@
 
 import jEvropa2.Extractor;
 import jEvropa2.HtmlParser;
+import jEvropa2.HttpRequests;
 import jEvropa2.data.Item;
 import jaco.mp3.player.MP3Player;
 import java.io.File;
@@ -42,16 +43,16 @@ public class Main {
          for (Show show : new HtmlParser().parseShows(shows)) {
          System.out.println(show.info());
          }
-         */
+        */
         site = loadSite("Ranni show - Evropa 2.html", "utf-8");
         site.setBaseUri(urlE2);
-
-        Elements showItems = Extractor.getShowItemsList(site);
+        
+   /*     Elements showItems = Extractor.getShowItemsList(site);
         for (Item item : new HtmlParser().parseShowItems(showItems)) {
             System.out.println(item.info());
-        }
+        }*/
         //printElements(showItems);
-//        System.out.println(findMP3(Extractor.getPlayerScript(site).html()));
+        System.out.println(new HtmlParser().parseActiveShowItem(Extractor.getActiveShowItem(site)).info());
     }
 
     public static void playMP3(String source) throws MalformedURLException {
