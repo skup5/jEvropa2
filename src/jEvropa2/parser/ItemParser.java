@@ -8,6 +8,7 @@ import java.io.Writer;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -41,7 +42,7 @@ public class ItemParser {
      * @param element
      * @return
      */
-    public Item parse(Element element) throws MalformedURLException {
+    public Item parseAudio(Element element) throws MalformedURLException {
         // System.out.println(element.outerHtml()+"=============================================================");
         String time = element.select(".time").first().text();
         Element content = element.select(".content").first();
@@ -77,9 +78,14 @@ public class ItemParser {
      </div> 
      </div>
      */
-    public Item parseActive(Element element) throws MalformedURLException {
+    public Item parseActiveAudio(Element element) throws MalformedURLException {
         URL imgUrl, mp3Url;
-        Element player = element.select(".feed-player").select(".item, .item-active").first();
+        Elements elements = element.select(".feed-player").select(".item-active").select(".audio");
+        Element player;
+        if (elements.isEmpty()) {
+            return null;
+        }
+        player = elements.first();
         String time = player.select(".time").first().text();
         String title = player.select(".content h2").first().text();
         String cover = element.select(".jPlayer .jMotiveCover").first().outerHtml();
@@ -105,6 +111,10 @@ public class ItemParser {
         //url = url.replace("\\", "");
         url = unescapeJava(url);
         return new URL(url);
+    }
+
+    public Item parseVideo(Element element) {
+        throw new UnsupportedOperationException();
     }
 
     private String unescapeJava(String str) {

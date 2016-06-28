@@ -1,9 +1,7 @@
 package jEvropa2;
 
 import jEvropa2.parser.ShowParser;
-import jEvropa2.parser.RecordParser;
 import jEvropa2.parser.ItemParser;
-import jEvropa2.parser.CategoryParser;
 import jEvropa2.data.Item;
 import jEvropa2.data.Record;
 import jEvropa2.data.Show;
@@ -25,80 +23,12 @@ import java.util.logging.Logger;
  */
 public class HtmlParser {
 
-    RecordParser recParser;
-    CategoryParser catParser;
     ShowParser showParser;
     ItemParser itemParser;
 
     public HtmlParser() {
-        this.recParser = new RecordParser();
-        this.catParser = new CategoryParser();
         this.showParser = new ShowParser();
         this.itemParser = new ItemParser();
-    }
-
-    /**
-     * Creates set of records.
-     *
-     * @param elements
-     * @param category
-     * @return <code>Set&lt;Record&gt;</code> (empty if none not found)
-     */
-    public Set<Record> parseRecords(Elements elements, Category category) {
-        Record newRecord;
-        Set<Record> records = new LinkedHashSet<>();
-        for (Element element : elements) {
-            try {
-                newRecord = recParser.parse(element);
-                newRecord.setCategory(category);
-                records.add(newRecord);
-            } catch (IndexOutOfBoundsException | MalformedURLException | java.text.ParseException e) {
-                e.printStackTrace();
-            }
-        }
-        return records;
-    }
-
-    /**
-     * Creates new <code>Category</code>.
-     *
-     * @param record
-     * @param nextRecord
-     * @param urlHost
-     * @return new Category with id, name, url of cover image and url of next
-     * records
-     * @throws MalformedURLException
-     * @throws NullPointerException if some parameter is <code>null</code>
-     */
-    public Category parseCategory(Element record, Element nextRecord, String urlHost) throws MalformedURLException {
-        if (record == null) {
-            throw new NullPointerException("none 'Element record' to parse");
-        }
-        if (urlHost == null) {
-            throw new NullPointerException("none 'String urlHost' to use");
-        }
-        return catParser.parse(record, nextRecord, urlHost);
-    }
-
-    /**
-     * Creates set of categories. Every category contains name, url of website
-     * and total number of records.
-     *
-     * @param elements
-     * @return <code>Set&lt;Category&gt;</code> (empty if none not found)
-     */
-    public Set<Category> parseCategoryItems(Elements elements) {
-        Set<Category> categoryItems = new LinkedHashSet<>();
-        Category newCategory;
-        for (Element element : elements) {
-            try {
-                newCategory = catParser.parse(element);
-                categoryItems.add(newCategory);
-            } catch (IndexOutOfBoundsException | MalformedURLException e) {
-                e.printStackTrace();
-            }
-        }
-        return categoryItems;
     }
 
     public Set<Show> parseShows(Elements elements) {
@@ -115,12 +45,12 @@ public class HtmlParser {
         return showsSet;
     }
 
-    public Set<Item> parseShowItems(Elements elements) {
+    public Set<Item> parseAudioShowItems(Elements elements) {
         Set<Item> itemsSet = new LinkedHashSet<>();
         Item newItem;
         for (Element element : elements) {
             try {
-                newItem = itemParser.parse(element);
+                newItem = itemParser.parseAudio(element);
                 itemsSet.add(newItem);
             } catch (MalformedURLException ex) {
                 ex.printStackTrace();
@@ -134,10 +64,10 @@ public class HtmlParser {
      * @param element
      * @return Item without web site url
      */
-    public Item parseActiveShowItem(Element element) {
+    public Item parseActiveAudioShowItem(Element element) {
         Item item = null;
         try {
-            item = itemParser.parseActive(element);
+            item = itemParser.parseActiveAudio(element);
         } catch (MalformedURLException ex) {
             ex.printStackTrace();
         }
@@ -148,6 +78,16 @@ public class HtmlParser {
         URL url = null;
         try {
             url = itemParser.parseMp3Url(script.html());
+        } catch (MalformedURLException ex) {
+            ex.printStackTrace();
+        }
+        return url;
+    }
+    
+    public URL parseNextPageUrl(Element element){
+        URL url = null;
+        try {
+            url = showParser.parseNextPage(element);
         } catch (MalformedURLException ex) {
             ex.printStackTrace();
         }

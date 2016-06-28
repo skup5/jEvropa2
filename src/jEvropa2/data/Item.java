@@ -18,6 +18,7 @@ public class Item extends E2Data {
     public Item(String name, URL imgUrl, URL mp3Url, String time){
         this(name, EMPTY_URL, imgUrl, mp3Url, time);
     }
+   
     public Item(String name,  String time, URL webSiteUrl, URL imgUrl) {
         this(name, webSiteUrl, imgUrl, EMPTY_URL, time);
     }
@@ -30,8 +31,6 @@ public class Item extends E2Data {
         this.time = time;
     }
 
-    
-    
     public URL getWebSiteUrl() {
         return webSiteUrl;
     }

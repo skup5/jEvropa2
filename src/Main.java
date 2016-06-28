@@ -1,17 +1,11 @@
 
 import jEvropa2.Extractor;
 import jEvropa2.HtmlParser;
-import jEvropa2.HttpRequests;
-import jEvropa2.data.Item;
 import jaco.mp3.player.MP3Player;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -45,6 +39,7 @@ public class Main {
          }
         */
         site = loadSite("Ranni show - Evropa 2.html", "utf-8");
+        //site = loadSite("Music chart - Evropa 2.html", "utf-8");
         site.setBaseUri(urlE2);
         
    /*     Elements showItems = Extractor.getShowItemsList(site);
@@ -52,7 +47,8 @@ public class Main {
             System.out.println(item.info());
         }*/
         //printElements(showItems);
-        System.out.println(new HtmlParser().parseActiveShowItem(Extractor.getActiveShowItem(site)).info());
+        //System.out.println(new HtmlParser().parseActiveAudioShowItem(Extractor.getActiveItem(site)).info());
+        
     }
 
     public static void playMP3(String source) throws MalformedURLException {
@@ -90,25 +86,6 @@ public class Main {
         }
     }
 
-    public static Document httpPostNextRecords(String url, String cat, String pg) throws IOException {
-        String rate, tag;
-        rate = tag = "";
-        if (!url.endsWith("/")) {
-            url += "/";
-        }
-        url += "?";
-        if (pg == null) {
-            pg = "1";
-        }
-        url += "pg=" + pg;
-        if (cat == null) {
-            cat = "";
-        } else {
-            url += "&cat=" + cat;
-        }
-        return Jsoup.connect(url).data("rate", rate, "cat", cat, "tag", tag).post();
-    }
-
     public static void printElements(Elements elements) {
         for (Element e : elements) {
             //if(link.attr("href", "/mp3-archiv/*"))
@@ -120,16 +97,4 @@ public class Main {
         }
     }
 
-    public static void printLinksAndCategory(Document doc) {
-        Elements links = doc.select("li a");
-        Elements category = Extractor.getCategoryList(doc);
-        Elements archive = Extractor.getArchiveCategory(doc);
-        //printElements(doc.select("li[class=archive]"));
-        System.out.println("links: (" + links.size() + ")\n");
-        System.out.println("kategorie: (" + category.size() + ")");
-        printElements(category);
-        System.out.println("archive: (" + archive.size() + ")");
-        printElements(archive);
-
-    }
 }
