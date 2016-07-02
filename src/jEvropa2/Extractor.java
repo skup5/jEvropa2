@@ -16,11 +16,13 @@ public class Extractor {
     }
 
     public static Elements getAudioItems(Document doc) {
-        return doc.select("#main .js-equalize .feed-player").select(".item ~.audio").not(".item-active, .more");
+        //return doc.select("#main .js-equalize .feed-player").select(".item ~ .audio").not(".item-active, .more");
+        return doc.select("#main .js-equalize .feed-player .paginableContainer .item").select(".audio");
     }
 
     public static Elements getVideoItems(Document doc) {
-        return doc.select("#main .js-equalize .feed-player").select(".item ~ .video").not(".item-active, .more");
+       // return doc.select("#main .js-equalize .feed-player").select(".item ~ .video").not(".item-active, .more");
+        return doc.select("#main .js-equalize .feed-player .paginableContainer .item").select(".video");
     }
 
     public static Element getActiveItem(Document doc) {

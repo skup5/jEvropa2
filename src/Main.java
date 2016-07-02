@@ -1,6 +1,7 @@
 
 import jEvropa2.Extractor;
 import jEvropa2.HtmlParser;
+import jEvropa2.data.Item;
 import jaco.mp3.player.MP3Player;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -42,11 +43,12 @@ public class Main {
         //site = loadSite("Music chart - Evropa 2.html", "utf-8");
         site.setBaseUri(urlE2);
         
-   /*     Elements showItems = Extractor.getShowItemsList(site);
-        for (Item item : new HtmlParser().parseShowItems(showItems)) {
-            System.out.println(item.info());
-        }*/
-        //printElements(showItems);
+       Elements showItems = Extractor.getAudioItems(site);
+        printElements(showItems);
+        for (Item item : new HtmlParser().parseAudioShowItems(showItems)) {
+           // System.out.println(item.info());
+        }
+        
         //System.out.println(new HtmlParser().parseActiveAudioShowItem(Extractor.getActiveItem(site)).info());
         
     }
