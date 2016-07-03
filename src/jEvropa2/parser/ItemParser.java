@@ -80,7 +80,7 @@ public class ItemParser {
      */
     public Item parseActiveAudio(Element element) throws MalformedURLException {
         URL imgUrl, mp3Url;
-        Elements elements = element.select(".feed-player").select(".item-active").select(".audio");
+        Elements elements = element.select(".feed-player .item-active").select(".audio");
         Element player;
         if (elements.isEmpty()) {
             return null;
@@ -89,21 +89,38 @@ public class ItemParser {
         String time = player.select(".time").first().text();
         String title = player.select(".content h2").first().text();
         String cover = element.select(".jPlayer .jMotiveCover").first().outerHtml();
-        imgUrl = parseImgUrl(cover);
+        imgUrl = parseActiveImgUrl(cover);
         String script = element.select(".jPlayer script").first().html();
         mp3Url = parseMp3Url(script);
         return new Item(title, imgUrl, mp3Url, time);
     }
 
-    public URL parseImgUrl(String div) throws MalformedURLException {
+    public URL parseActiveImgUrl(String div) throws MalformedURLException {
         /*<div class="jMotiveCover" 
          style="background-image: url('https://m.static.lagardere.cz/evropa2/image/2016/01/Leos_Patrik-4-660x336.jpg');"></div>*/
-        int end = div.indexOf(".jpg") + 4;
+        int end = div.indexOf(".jpg");
+        if(end < 0) end = div.indexOf(".png");
+        end += 4;
         int start = div.lastIndexOf("http", end);
         String img = div.substring(start, end);
         return new URL(img);
     }
 
+    public Item parseActiveVideo(Element element) throws MalformedURLException{
+        URL imgUrl, mp4Url;
+        Elements elements = element.select(".feed-player .item-active").select(".video");
+        Element player;
+        if (elements.isEmpty()) {
+            return null;
+        }
+        player = elements.first();
+        String time = player.select(".time").first().text();
+        String title = player.select(".content h2").first().text();
+        String script = element.select(".jPlayer script").first().html();
+        imgUrl = parseActiveImgUrl(script);
+        mp4Url = parseMp4Url(script);
+        return new Item(title, imgUrl, mp4Url, time);
+    }
     public URL parseMp3Url(String script) throws MalformedURLException {
         int end = script.indexOf(".mp3") + 4;
         int start = script.lastIndexOf("http", end);
@@ -113,8 +130,35 @@ public class ItemParser {
         return new URL(url);
     }
 
-    public Item parseVideo(Element element) {
-        throw new UnsupportedOperationException();
+    public URL parseMp4Url(String script) throws MalformedURLException{
+        int end = script.indexOf(".mp4") + 4;
+        int start = script.lastIndexOf("http", end);
+        String url = script.substring(start, end);
+        //url = url.replace("\\", "");
+        url = unescapeJava(url);
+        return new URL(url);
+    }
+    /*
+    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 2 dny</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/wow-evropa-2-unplugged-s-kapelou-mirai-bude-ti-behat-mraz-po-zadech-1105966">WOW! Evropa 2 Unplugged s kapelou MIRAI. Bude ti běhat mráz po zádech</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/wow-evropa-2-unplugged-s-kapelou-mirai-bude-ti-behat-mraz-po-zadech-1105966" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2016/06/vlcsnap-error716-490x283.png" alt="">
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Evropa 2 Music Chart</span>
+                            </p>
+        </a>
+    </div>
+    </div>
+    */
+    public Item parseVideo(Element element) throws MalformedURLException {
+        return parseAudio(element);
     }
 
     private String unescapeJava(String str) {

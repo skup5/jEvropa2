@@ -2,7 +2,7 @@
 import jEvropa2.Extractor;
 import jEvropa2.HtmlParser;
 import jEvropa2.data.Item;
-import jaco.mp3.player.MP3Player;
+//import jaco.mp3.player.MP3Player;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -30,6 +30,8 @@ public class Main {
         String mp3Source = "https://m.static.lagardere.cz/evropa2/audio/2016/02/20160225-Meteorit.mp3";
         mp3Source = "20160225-Meteorit.mp3";
         Document site;
+        Elements elements;
+        HtmlParser parser = new HtmlParser();
 
         /*site = loadSite("Shows - Evropa 2.html", "utf-8");
          site.setBaseUri(urlE2);
@@ -38,19 +40,26 @@ public class Main {
          for (Show show : new HtmlParser().parseShows(shows)) {
          System.out.println(show.info());
          }
-        */
-        site = loadSite("Ranni show - Evropa 2.html", "utf-8");
+         */
+        //site = loadSite("Ranni show - Evropa 2.html", "utf-8");
         //site = loadSite("Music chart - Evropa 2.html", "utf-8");
+        site = loadSite("Fakt No Koment - Evropa 2.html", "utf-8");
         site.setBaseUri(urlE2);
-        
-       Elements showItems = Extractor.getAudioItems(site);
-        printElements(showItems);
-        for (Item item : new HtmlParser().parseAudioShowItems(showItems)) {
-           // System.out.println(item.info());
-        }
-        
+
+        /* 
+        Elements showItems = Extractor.getAudioItems(site);
+         printElements(showItems);
+         for (Item item : new HtmlParser().parseAudioShowItems(showItems)) {
+         System.out.println(item.info());
+         }
+         */
         //System.out.println(new HtmlParser().parseActiveAudioShowItem(Extractor.getActiveItem(site)).info());
         
+        /*elements = Extractor.getVideoItems(site);
+        for (Item item : new HtmlParser().parseVideoShowItems(elements)) {
+            System.out.println(item.info());
+        }*/
+        System.out.println(parser.parseActiveVideoShowItem(Extractor.getActiveItem(site)).info());
     }
 
     public static void playMP3(String source) throws MalformedURLException {
@@ -58,7 +67,7 @@ public class Main {
         if (f.exists()) {
             System.out.println("exists");
         }
-        new MP3Player(f).play();
+        //new MP3Player(f).play();
     }
 
     public static String findMP3(String script) {

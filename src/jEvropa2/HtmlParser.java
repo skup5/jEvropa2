@@ -59,6 +59,20 @@ public class HtmlParser {
         return itemsSet;
     }
 
+    public Set<Item> parseVideoShowItems(Elements elements) {
+        Set<Item> itemsSet = new LinkedHashSet<>();
+        Item newItem;
+        for (Element element : elements) {
+            try {
+                newItem = itemParser.parseVideo(element);
+                itemsSet.add(newItem);
+            } catch (MalformedURLException ex) {
+                ex.printStackTrace();
+            }
+        }
+        return itemsSet;
+    }
+
     /**
      *
      * @param element
@@ -74,6 +88,16 @@ public class HtmlParser {
         return item;
     }
 
+    public Item parseActiveVideoShowItem(Element element) {
+        Item item = null;
+        try {
+            item = itemParser.parseActiveVideo(element);
+        } catch (MalformedURLException ex) {
+            ex.printStackTrace();
+        }
+        return item;
+    }
+
     public URL parseMp3Url(Element script) {
         URL url = null;
         try {
@@ -83,8 +107,18 @@ public class HtmlParser {
         }
         return url;
     }
-    
-    public URL parseNextPageUrl(Element element){
+
+    public URL parseMp4Url(Element script) {
+        URL url = null;
+        try {
+            url = itemParser.parseMp4Url(script.html());
+        } catch (MalformedURLException ex) {
+            ex.printStackTrace();
+        }
+        return url;
+    }
+
+    public URL parseNextPageUrl(Element element) {
         URL url = null;
         try {
             url = showParser.parseNextPage(element);

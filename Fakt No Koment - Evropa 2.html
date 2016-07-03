@@ -1,0 +1,2843 @@
+
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7" lang="cs-CZ"> <![endif]-->
+<!--[if IE 7]><html class="no-js ie ie7 lt-ie9 lt-ie8" lang="cs-CZ"> <![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 lt-ie9" lang="cs-CZ"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="cs-CZ"> <!--<![endif]-->
+<head><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(e,t){return function(){o(e,[(new Date).getTime()].concat(a(arguments)),null,t)}}var o=e("handle"),i=e(2),a=e(3);"undefined"==typeof window.newrelic&&(newrelic=NREUM);var u=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit"],c=["addPageAction"],f="api-";i(u,function(e,t){newrelic[t]=r(f+t,"api")}),i(c,function(e,t){newrelic[t]=r(f+t)}),t.exports=newrelic,newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),o("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(0>o?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?u(e,a,i):i()}function n(n,r,o){e&&e(n,r,o);for(var i=t(o),a=l(n),u=a.length,c=0;u>c;c++)a[c].apply(i,r);var s=f[g[n]];return s&&s.push([m,n,r,i]),i}function p(e,t){w[e]=l(e).concat(t)}function l(e){return w[e]||[]}function d(e){return s[e]=s[e]||o(n)}function v(e,t){c(e,function(e,n){t=t||"feature",g[n]=t,t in f||(f[t]=[])})}var w={},g={},m={on:p,emit:n,get:d,listeners:l,context:t,buffer:v};return m}function i(){return new r}var a="nr@context",u=e("gos"),c=e(2),f={},s={},p=t.exports=o();p.backlog=f},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!w++){var e=v.info=NREUM.info,t=s.getElementsByTagName("script")[0];if(e&&e.licenseKey&&e.applicationID&&t){c(l,function(t,n){e[t]||(e[t]=n)});var n="https"===p.split(":")[0]||e.sslForHttp;v.proto=n?"https://":"http://",u("mark",["onload",a()],null,"api");var r=s.createElement("script");r.src=v.proto+e.agent,t.parentNode.insertBefore(r,t)}}}function o(){"complete"===s.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=window,s=f.document;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:f.XMLHttpRequest,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},e(1);var p=""+location,l={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-918.min.js"},d=window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent),v=t.exports={offset:a(),origin:p,features:{},xhrWrappable:d};s.addEventListener?(s.addEventListener("DOMContentLoaded",i,!1),f.addEventListener("load",r,!1)):(s.attachEvent("onreadystatechange",o),f.attachEvent("onload",r)),u("mark",["firstbyte",a()],null,"api");var w=0},{}]},{},["loader"]);</script>
+    <meta charset="UTF-8" />
+    <title>
+          Shows - Evropa 2
+    </title>
+
+    
+    <meta name="author" content="Evropa 2" />
+    <meta name="description" content="Poslouchej Evropu 2 online, checkuj playlisty a buď ve spojení s moderátory." />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300,400italic,600italic&amp;subset=latin,latin-ext" />
+    <link href="https://js.static.lagardere.cz/evropa2/plugins/wp-cognito-jplayer/assets/skin/blue.monday/css/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css" />
+            <link rel="stylesheet" href="https://css.static.lagardere.cz/evropa2/main.css" type="text/css" media="screen" />
+            <link rel="alternate" type="application/rss+xml" title="Evropa2 &raquo; RSS zdroj" href="https://www.evropa2.cz/feed" />
+
+    <link rel="alternate" type="application/rss+xml" title="Evropa 2 &raquo; RSS komentářů pro Shows" href="https://www.evropa2.cz/shows/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"\/\/www.evropa2.cz\/wordpress\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.3.1"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='contact-form-7-css'  href='//js.static.lagardere.cz/evropa2/plugins/wp-contact-form7/includes/css/styles.css?ver=4.2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='sphinxStyleSheets-css'  href='//js.static.lagardere.cz/evropa2/plugins/wordpress-sphinx-plugin/templates/sphinxsearch.css?ver=4.3.1' type='text/css' media='all' />
+<script type='text/javascript' src='//js.static.lagardere.cz/evropa2/jquery.min.js?ver=2.1.4'></script>
+<script type='text/javascript' src='//www.evropa2.cz/wordpress/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.evropa2.cz/wordpress/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.evropa2.cz/wordpress/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.3.1" />
+<link rel='shortlink' href='https://www.evropa2.cz/?p=56' />
+<link rel='canonical' href='https://www.evropa2.cz/shows' />
+
+
+    <script>
+        var evropa2Config = {
+            interstitial: false
+        };
+    </script>
+
+    <script src="https://js.static.lagardere.cz/evropa2/html5shiv.js" type="text/javascript"></script>
+    <script src="https://js.static.lagardere.cz/evropa2/respond.js" type="text/javascript"></script>
+    <script src="https://js.static.lagardere.cz/evropa2/gpt.js" type="text/javascript"></script>
+    <script src="https://js.static.lagardere.cz/evropa2/plugins/wp-cognito-jplayer/assets/jplayer/jquery.jplayer.min.js" type="text/javascript"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+                <meta property="og:site_name" content="Evropa 2" />
+            <meta property="og:title" content="Fakt No Koment – Evropa 2" />
+            <meta property="og:type" content="website" />
+            <meta property="og:image" content="https://m.static.lagardere.cz/evropa2/image/2016/06/vlcsnap-2016-06-20-09h40m01s382-660x375.png" />
+            <meta property="og:url" content="https://www.evropa2.cz/shows/fakt-no-koment-zorka-si-ublizila-v-parkouru-jak-1100043/fakt-no-koment" />
+            <meta property="og:locale" content="cs_CZ" />
+        <meta property="fb:app_id" content="369804043103797" />
+
+        <meta name="p:domain_verify" content="1d2ab3a96ae001ceab9ed8a11ec9e7c3" />
+
+    <link rel="pingback" href="https://www.evropa2.cz/wordpress/xmlrpc.php" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="https://img.static.lagardere.cz/evropa2/apple-touch-icon-57x57-precomposed.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://img.static.lagardere.cz/evropa2/apple-touch-icon-72x72-precomposed.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://img.static.lagardere.cz/evropa2/apple-touch-icon-114x114-precomposed.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://img.static.lagardere.cz/evropa2/apple-touch-icon-144x144-precomposed.png" />
+    <link rel="apple-touch-icon" href="https://img.static.lagardere.cz/evropa2/apple-touch-icon.png" />
+    <link rel="icon" href="https://img.static.lagardere.cz/evropa2/favicon.gif" />
+    <!--[if IE]><link rel="shortcut icon" href="https://img.static.lagardere.cz/evropa2/favicon.gif" /><![endif]-->
+
+    <script type='text/javascript'>
+        (function() {
+        var useSSL = 'https:' == document.location.protocol;
+        var src = (useSSL ? 'https:' : 'http:') +
+        '//www.googletagservices.com/tag/js/gpt.js';
+        document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+      })();
+    </script>
+
+    <script type='text/javascript'>
+        var generator = new gpt(googletag);
+        adslots = [];
+        mbslots = [];
+        googletag.cmd.push(function(){
+            adslots[0] = generator.default('leader');
+            adslots[1] = generator.default('skyscraper');
+            adslots[2] = generator.default('skyscraper_bottom');
+            adslots[3] = generator.default('rectangle');
+            adslots[4] = generator.default('bottom');
+            adslots[5] = generator.default('text');
+            adslots[6] = generator.default('interstitial');
+
+            mbslots[0] = generator.default('mobile_leader');
+            mbslots[1] = generator.default('mobile_square');
+            mbslots[1] = generator.default('mobile_square_bottom');
+            mbslots[2] = generator.default('mobile_bottom');
+
+            googletag.pubads().enableAsyncRendering();
+            googletag.enableServices();
+          });
+    </script>
+
+        <script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+    </script>
+
+        <script type="text/javascript">
+    (function(){
+        function async_load(script_url){
+            var protocol = ('https:' == document.location.protocol ? 'https://' : 'http://');
+            var s = document.createElement('script'); s.src = protocol + script_url;
+            var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        }
+        bm_website_code = '2AB909FB3D9447E4';
+        jQuery(document).ready(function(){async_load('asset.pagefair.com/measure.min.js')});
+        jQuery(document).ready(function(){async_load('asset.pagefair.net/ads.min.js')});
+    })();
+    </script>
+    
+        <style>
+        .notImplemented { opacity: 0.3;}
+    </style>
+            </head>
+
+
+    <!--[if lte IE 6]><body class="msie msie-6 non-msie-7 non-msie-8 non-msie-9 non-msie-10 subpage" data-template="base.twig"><![endif]-->
+    <!--[if IE 7]><body class="msie non-msie-6 msie-7 non-msie-8 non-msie-9 non-msie-10 subpage" data-template="base.twig"><![endif]-->
+    <!--[if IE 8]><body class="msie non-msie-6 non-msie-7 msie-8 non-msie-9 non-msie-10 subpage" data-template="base.twig"><![endif]-->
+    <!--[if IE 9]><body class="msie non-msie-6 non-msie-7 non-msie-8 msie-9 non-msie-10 subpage" data-template="base.twig"><![endif]-->
+    <!--[if !IE]>--><body class="non-msie non-msie-6 non-msie-7 non-msie-8 non-msie-9 subpage" data-template="base.twig"><!--<![endif]-->
+
+        <!-- Google Tag Manager -->
+        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T7L6M6"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-T7L6M6');</script>
+        <!-- End Google Tag Manager -->
+
+
+        <!-- FACEBOOK SDK -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v2.3";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- END FACEBOOK SDK -->
+
+        <header id="pageHeader">
+            <div class="container slideContent">
+                <div class="row">
+                                    <div class="col-xs-12">
+                        <nav class="navbar" role="navigation">
+                            <button title="Zobrazit menu" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle" type="button">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="/" title="Přejít na úvodní stránku." accesskey="2">
+                                    <img src="https://img.static.lagardere.cz/evropa2/logo-evropa2.png" width="130" height="46" alt="Evropa 2" />
+                                </a>
+                            </div><!-- .navbar-header -->
+
+                            <div class="navbar-menu clearfix">
+                                <ul class="nav navbar-nav" id="menu">
+                                                                        <li class="">
+                                        <a href="https://www.evropa2.cz/news">News</a>
+                                    </li>
+                                                                        <li class="active">
+                                        <a href="https://www.evropa2.cz/shows">Shows</a>
+                                    </li>
+                                                                        <li class="">
+                                        <a href="https://www.evropa2.cz/moderatori">Moderátoři</a>
+                                    </li>
+                                                                        <li class="">
+                                        <a href="/souteze">Soutěže</a>
+                                    </li>
+                                                                        <li class="">
+                                        <a href="https://www.evropa2.cz/extra">Extra</a>
+                                    </li>
+                                                                        <li class="">
+                                        <a href="https://www.evropa2.cz/radio">Rádio</a>
+                                    </li>
+                                                                    </ul>
+
+                                <ul class="socialLinks visible-lg">
+                                    <li><a href="#" class="js-search-toggle icon-search2"><span class="sr-only">Vyhledat</span></a></li>
+                                    <li><a href="https://www.facebook.com/evropa2.cz" class="icon-facebook"><span class="sr-only">Facebook</span></a></li>
+                                    <li><a href="https://instagram.com/e2cz" class="icon-instagram-new"><span class="sr-only">Instagram</span></a></li>
+                                    <li><a href="https://twitter.com/evropa2" class="icon-twitter"><span class="sr-only">Twitter</span></a></li>
+                                </ul>
+                            </div><!-- .navbar-menu -->
+                        </nav>
+                    </div><!-- .col -->
+                                </div><!-- .row -->
+            </div><!-- .container -->
+            <div class="js-search search-bar">
+                <form class="container" method="GET" action="/">
+                    <div class="clearfix">
+                        <p class="pull-left"><label class="icon-search2" for="frm-search"><span class="sr-only">Vyhledat</span></label></p>
+                        <p class="pull-left"><input type="text" required value="" class="js-search-inp" placeholder="Prohledej si Evropu 2..." id="frm-search" name="s" /></p>
+                        <p class="pull-right"><a href="#" class="js-search-toggle icon-close2"><span class="sr-only">Zavřít vyhledávání</span></a></p>
+                        <p class="pull-right"><input type="submit" name="send" class="btn btn-red" value="Hledat"></p>
+                        <p class="pull-right hint">Zkus třeba: top 20, LeOs mares, celibát</p>
+                    </div>
+                </form>
+            </div>
+        </header>
+
+        <div id="main">
+                        
+            <div class="container slideContent">
+                
+                
+        <div class="row topA topLeader">
+        <div class="col-sm-12">
+
+            <div class="adrBox">
+                <div id='div-gpt-ad-1446672945391-0' style="width: 1000px; margin: 0 auto; text-align: center;">
+                    <script type='text/javascript'>
+                    googletag.display('div-gpt-ad-1446672945391-0');
+                    </script>
+                </div>
+                <div id='div-gpt-ad-1446672945391-1' style="width: 320px; margin: 0 auto; text-align: center;">
+                    <script type='text/javascript'>
+                    googletag.display('div-gpt-ad-1446672945391-1');
+                    </script>
+                </div>
+                <span class="adrTitle">Reklama</span>
+            </div><!-- .adrBox -->
+
+        </div><!-- .col -->
+    </div><!-- .row -->
+
+
+    <div class="row contentPage js-equalize-children">
+        <div class="col-lg-8 col-md-7 js-equalize">
+            <h1 id="pageTitle">Fakt No Koment: Tomův recept, jak být před ženou za gentlemana</h1>
+                            <h2 class="pageSubtitle">Fakt No Koment</h2>
+            
+            <div id="submenu">
+                <ul class="list">
+                                            <li class="item active">
+                            <a href="/shows/fakt-no-koment/">Vše</a>
+                        </li>
+                    
+                                                                <li class="item ">
+                            <a href="/shows/fakt-no-koment/?filter=video">Video</a>
+                        </li>
+                                                                <li class="item ">
+                            <a href="https://www.evropa2.cz/shows/fakt-no-koment/info">Info &amp; Napiš</a>
+                        </li>
+                                    </ul>
+            </div>
+
+                            <ul class="tags">
+                                        <li class="item">
+                        <a href="https://www.evropa2.cz/news/evropa2">Evropa 2</a>
+                    </li>
+                                        <li class="item">
+                        <a href="https://www.evropa2.cz/news/zabava">Zábava</a>
+                    </li>
+                                        <li class="item">
+                        <a href="/shows/fakt-no-koment">Fakt No Koment</a>
+                    </li>
+                                        <li class="item">
+                        <a href="https://www.evropa2.cz/news/tomas-zastera">Tomáš Zástěra</a>
+                    </li>
+                                        <li class="item">
+                        <a href="https://www.evropa2.cz/news/zorka-hejdova">Zorka Hejdová</a>
+                    </li>
+                                        <li class="item">
+                        <a href="/news/gentlemenstvi">gentlemenství</a>
+                    </li>
+                                        <li class="item">
+                        <a href="/news/lekce">lekce</a>
+                    </li>
+                                    </ul>
+            
+            <div class="post white player">
+                                    <div class="video-post">
+                        
+
+
+
+                                                                                
+
+
+            
+
+
+
+<div id="jPlayer5777df0daa0fd" class="jPlayer video  hasMotive ">
+
+    <div id="jPlayer5777df0daa0fdGui" class="jPlayerGui jp-audio" role="application" aria-label="media player">
+        <div class="jp-type-single">
+            <div id="jPlayer5777df0daa0fdAdvertisementSkip" class="videoAdr hideMe closeAdvertisementContainer">
+                <a href="" class="skipAdNotice">Reklama - přeskočit <span class="skipCountdownNotice">za <span class="countdown"></span>s</span></a>
+            </div>
+            <div class="adBlockDetectedSign">
+                Ve vašem prohlížeči byl nalezen Adblock. Pro přehrávání mediálního obsahu jej musíte vypnout.
+            </div>
+                                                <div id="jPlayer5777df0daa0fd_jplayerContent" class="jp-jplayer" style="width: 660px; height: 336px;"></div>
+                                                    <div class="iSpotPlayerPosition"></div>
+                    <div class="iSpotBannerPosition"></div>
+                            
+            
+            <div id="yt_jPlayer5777df0daa0fd" class="ytPlayer"></div>
+
+            <div class="jp-gui">
+
+                                    <div class="jp-video-play" style="display: block;">
+                        <button tabindex="0" role="button" class="jp-video-play-icon">play</button>
+                    </div>
+                
+                <div class="jp-interface">
+
+                    <div class="jp-progress">
+                        <div class="jp-seek-bar">
+                            <div class="jp-play-bar"></div>
+                        </div>
+                    </div><!-- .jp-progress -->
+
+                    <div class="jp-time-holder">
+                        <div class="jp-current-time" role="timer" aria-label="time">0:00</div>
+                        <div class="jp-duration" role="timer" aria-label="duration">0:00</div>
+                    </div><!-- .jp-time-holder -->
+
+                    <div class="jp-controls">
+                        <button class="jp-play" role="button" tabindex="0">play</button>
+                        <button class="jp-pause" role="button" tabindex="0">pause</button>
+                    </div><!-- .jp-controls -->
+
+                    <div class="jp-toggles">
+                        <button class="jp-full-screen" role="button" tabindex="0">repeat</button>
+                                            </div><!-- .jp-toggles -->
+
+                    <div class="jp-volume-controls">
+                                                <button class="volumeDown" role="button" tabindex="0">mute</button>
+                        <button class="volumeUp" role="button" tabindex="0">max volume</button>
+                        <div class="jp-volume-bar">
+                            <div class="jp-volume-bar-value"></div>
+                        </div>
+                    </div><!-- .jp-volume-controls -->
+
+                </div><!-- .jp-interface -->
+
+            </div><!-- .jp-gui -->
+                        <div class="jp-no-solution">
+                K přehrání videa budete muset nainstalovat nejnovější verzi vašeho prohlížeče a/nebo nainstalovat nejnovější verzi
+                <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash pluginu</a>.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // this part make possible to have multiple youtube players on page(all initialized in this file!)
+        if (typeof window.ytPlayerRdy === 'undefined') {
+            window.ytPlayerRdy = false;
+
+            window.onYtPlayerRdyCallbacks = [];
+            window.onYouTubeIframeAPIReady = function (e) {
+                // make sure no function is called twice even when this function will be called multiple times
+                var tmpCallbacks = window.onYtPlayerRdyCallbacks;
+                window.onYtPlayerRdyCallbacks = [];
+
+                for (var i = 0; i < tmpCallbacks.length; i++) {
+                    tmpCallbacks[i]();
+                }
+            };
+        }
+
+        jQuery('#jPlayer5777df0daa0fdGui .volumeUp').click(function () {
+            jQuery('#jPlayer5777df0daa0fdGui').trigger('volumeUp');
+            return false;
+        });
+        jQuery('#jPlayer5777df0daa0fdGui .volumeDown').click(function () {
+            jQuery('#jPlayer5777df0daa0fdGui').trigger('volumeDown');
+            return false;
+        });
+
+        jQuery(document).ready(function() {
+            var playerId = 'jPlayer5777df0daa0fd';
+            var playerContainerSelector = '#' + playerId;
+            var playerInstanceSelector = '#' + playerId + '_jplayerContent';
+            var playerGuiSelector = '#jPlayer5777df0daa0fdGui';
+            var playerAdvertisementSignSelector = '#jPlayer5777df0daa0fdAdvertisementSkip';
+            var contentSize = [660, 336];
+            var volume = 80;
+            var advertisementMinLength = 0;
+            var advert = true;
+            var advertType = 'ispot';
+            var youtubeId = '';
+            var autoplay = false;
+            var loopPlay = false;
+            var imageMotiveUrl = 'https://m.static.lagardere.cz/evropa2/image/2016/06/vlcsnap-2016-06-20-09h40m01s382-660x336.png';
+
+            var advertisementToDisplay = (advert && advertType == 'file') ? true : false;
+            var ytInitAfterAdvertFunc = null;
+            var ytPlayer = null;
+            var ytPlayerRdy = false;
+
+            jQuery('#jPlayer5777df0daa0fdGui').on('fullscreenChange', function (event, isFullscreenOn, isYtVideo) {
+                if (isFullscreenOn) {
+                    jQuery('#jPlayer5777df0daa0fd').addClass('fullscreenOn');
+                    if (!volume) {
+                        jQuery(playerGuiSelector).trigger('volumeSet', 0.5); // set volume to half
+                    }
+
+                    //console.log('fullscreen is on', jQuery('#jPlayer5777df0daa0fdGui'));
+
+                    if (isYtVideo) {
+                        //jQuery('#jPlayer5777df0daa0fdGui').closest('.video-post').css('z-index', '1000');
+                        //jQuery('#jPlayer5777df0daa0fdGui').addClass('jp-ytVideo-full');
+                    }
+                } else {
+                    //console.log('fullscreen is off');
+                    jQuery('#jPlayer5777df0daa0fd').removeClass('fullscreenOn');
+
+                    if (isYtVideo) {
+                        //jQuery('#jPlayer5777df0daa0fdGui').closest('.video-post').css('z-index', '');
+                    }
+                }
+            });
+
+            function calculateVolume(oldVolume, change) {
+                tmpVolume = oldVolume + change;
+                if (tmpVolume > 1) {
+                    tmpVolume = 1;
+                } else if (tmpVolume < 0) {
+                    tmpVolume = 0;
+                }
+                tmpVolume = Math.round(tmpVolume * 10) / 10;
+
+                return tmpVolume;
+            }
+
+            if (!youtubeId || (advert && advertType == 'file')) {
+                (function () {                     var playerInstance = jQuery(playerInstanceSelector);
+                    var guiInstance = jQuery(playerGuiSelector);
+                    var playingInProgress = false;
+                    var countdownInterval = null;
+                    var canInteruptAdvertisement = false;
+                    var advertisementInPlayer = false;
+                    var seekBar = guiInstance.find('.jp-seek-bar');
+
+
+                    // volume change
+                    jQuery('body').on('volumeUp', playerGuiSelector + '.modeJPlayer', function () {
+                        var tmpVolume = playerInstance.data('jPlayer').options.volume;
+                        var newVolume = calculateVolume(tmpVolume, 0.1);
+                        playerInstance.jPlayer('volume', newVolume);
+
+                        jQuery(playerContainerSelector).data('volume', newVolume); // set volume data to player container
+                    });
+                    jQuery('body').on('volumeDown', playerGuiSelector + '.modeJPlayer', function () {
+                        var tmpVolume = playerInstance.data('jPlayer').options.volume;
+                        var newVolume = calculateVolume(tmpVolume, -0.1);
+                        playerInstance.jPlayer('volume', newVolume);
+
+                        jQuery(playerContainerSelector).data('volume', newVolume); // set volume data to player container
+                    });
+
+                    // prevent infinite trigger loop
+                    var ignoreJplayerVolumeChange = false;
+                    jQuery('body').on('volumeSet', playerGuiSelector + '.modeJPlayer', function (event, newVolume) {
+                        ignoreJplayerVolumeChange = true;
+                        playerInstance.jPlayer('volume', newVolume);
+                        ignoreJplayerVolumeChange = false;
+
+                        jQuery(playerContainerSelector).data('volume', newVolume); // set volume data to player container
+                    });
+
+                    jQuery('body').on(jQuery.jPlayer.event.volumechange, playerGuiSelector + '.modeJPlayer', function (event) {
+                        if (!ignoreJplayerVolumeChange) {
+                            jQuery(this).trigger('volumeSet', [playerInstance.data('jPlayer').options.volume])
+                        }
+                    });
+
+
+
+                    jQuery('body').on('click', playerGuiSelector + '.modeJPlayer .jMotiveCover, ' + playerGuiSelector + '.modeJPlayer video', function () {
+                        if (playingInProgress) {
+                            playerInstance.jPlayer('pause');
+                        } else {
+                            playerInstance.jPlayer('play');
+                        }
+                    });
+
+
+
+
+                    function advertisementEndFunc() {
+                        advertisementToDisplay = false;
+                        canInteruptAdvertisement = false;
+
+                        jQuery(playerAdvertisementSignSelector).hide();
+
+                        playerInstance.jPlayer("stop");
+                        guiInstance.find('.jp-stop').show();
+                        seekBar
+                            .removeClass('jp-seek-barDisabled')
+                            .addClass('jp-seek-bar')
+                            .width(0);
+
+                        seekBar.click(function (e) {
+                            jQuery.proxy(seekBar.data('oldClick').handler, seekBar)(e);
+                        });
+
+
+                        if (ytInitAfterAdvertFunc) {
+                            playerInstance.jPlayer("destroy");
+
+                            ytInitAfterAdvertFunc();
+                            jQuery(playerInstanceSelector).hide();
+                                                    } else {
+                            setMediaFunc();
+                            playerInstance.jPlayer("play");
+                        }
+                    }
+
+                    function setMediaFunc() {
+                        var tmpMediaContent = {"title":"E2_FNK_Gentleman_WEB_2","m4v":"https:\/\/m.static.lagardere.cz\/evropa2\/video\/2016\/06\/E2_FNK_Gentleman_WEB_2.mp4"};
+                        if (imageMotiveUrl) {
+                            tmpMediaContent['poster'] = imageMotiveUrl;
+                        }
+                        playerInstance.jPlayer('setMedia', tmpMediaContent);
+                        advertisementInPlayer = false;
+                    }
+
+                    function setAdvertFunc() {
+                        jQuery(playerAdvertisementSignSelector + ' .skipAdNotice').click(function () {
+                            if (canInteruptAdvertisement) {
+                                advertisementEndFunc();
+                            }
+
+                            return false;
+                        });
+
+                        var tmpMediaContent = null;
+                        if (imageMotiveUrl) {
+                            tmpMediaContent['poster'] = imageMotiveUrl;
+                        }
+                        playerInstance.jPlayer('setMedia', tmpMediaContent);
+                        advertisementInPlayer = true;
+
+                        guiInstance.find('.jp-stop').hide();
+                        seekBar.addClass('jp-seek-barDisabled').removeClass('jp-seek-bar');
+                        seekBar.data('oldClick', jQuery._data(seekBar[0], "events")['click'][0]);
+                        seekBar.unbind('click');
+
+                        var countdownSpan = jQuery(playerAdvertisementSignSelector + ' .countdown');
+                        countdownSpan.text(advertisementMinLength);
+                        countdownInterval = setInterval(function () {
+                            if (playingInProgress) {
+                                var countdown = parseInt(countdownSpan.text());
+                                if (countdown == 1) {
+                                    clearInterval(countdownInterval);
+                                    jQuery(playerAdvertisementSignSelector + ' .skipCountdownNotice').hide();
+                                    canInteruptAdvertisement = true;
+                                } else {
+                                    countdownSpan.text(countdown - 1);
+                                }
+                            }
+                        }, 1000);
+                    };
+
+                    playerInstance.jPlayer({
+                        ready: function (event) {
+                            if (advert && advertType == 'file') {
+                                setAdvertFunc();
+                            } else {                                 setMediaFunc();
+                            }
+
+                            if (autoplay) {
+                                //playerInstance.jPlayer("play");
+                                guiInstance.find('.jp-play').click();
+                            }
+
+                            jQuery(playerGuiSelector + ' .jp-video-play').show();
+                        },
+                        play: function () {
+                            if (advert && advertType == 'file') {
+                                if (advertisementInPlayer) {
+                                    jQuery(playerAdvertisementSignSelector).show();
+                                }
+                            }
+                            playingInProgress = true;
+
+                            jQuery(playerGuiSelector + ' .jp-video-play').hide();
+                        },
+                        pause: function () {
+                            playingInProgress = false;
+
+                            jQuery(playerGuiSelector + ' .jp-video-play').show();
+                        },
+                        ended: function () {
+                            playingInProgress = false;
+                            if (advertisementToDisplay) {
+                                advertisementEndFunc();
+                            } else {
+                                if (loopPlay) {
+                                    playerInstance.jPlayer("play", 0);
+                                } else {
+                                    jQuery(playerContainerSelector).trigger('playEnd');
+                                }
+                            }
+
+                            jQuery(playerGuiSelector + ' .jp-video-play').show();
+                        },
+                        swfPath: "https://www.evropa2.cz/content/themes/default/js/jplayer/jplayer",                         supplied: "m4v",
+                        wmode: "window",
+                        size: {
+                            width: contentSize[0],
+                            height: contentSize[1]
+                        },
+                        cssSelectorAncestor: playerGuiSelector + '',
+                        useStateClassSkin: true,
+                        autoBlur: true, // if true, focus to video is turn off
+                        smoothPlayBar: true,
+                        keyEnabled: true,
+                        remainingDuration: true,
+                        toggleDuration: true,
+                        solution: "html, flash",
+                        volume: volume / 100,
+                        noVolume: {
+                            ipad: /ignore ipad/,
+                            iphone: /ignore iphone/,
+                            ipod: /ignore ipod/,
+                            android_pad: /ignore android(?!.*?mobile)/,
+                            android_phone: /ignore android.*?mobile/,
+                            blackberry: /ignore blackberry/,
+                            windows_ce: /ignore windows ce/,
+                            iemobile: /ignore iemobile/,
+                            webos: /ignore webos/,
+                            playbook: /ignore playbook/
+                        }
+                    }).on(jQuery.jPlayer.event.resize, function (event) {
+                        jQuery(playerGuiSelector + '').trigger('fullscreenChange', [event.jPlayer.options.fullScreen, false]);
+                    });
+
+                    jQuery(playerGuiSelector + '')
+                        .addClass('modeJPlayer')
+                        .removeClass('modeYoutube');
+                }).call(this);
+            }
+
+                        if (youtubeId) {
+                (function () {                                         var tag = document.createElement('script');
+                    tag.src = "https://www.youtube.com/iframe_api";
+                    var firstScriptTag = document.getElementsByTagName('script')[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                    
+
+                    var playerInitFunc = function () {
+                        ytPlayer = new YT.Player('yt_' + playerId,{
+                            height: contentSize[1],
+                            width: contentSize[0],
+                            videoId: youtubeId,
+                            playerVars: {
+                                'autohide':            1,
+                                'autoplay':            autoplay || (advert && advertType == 'file'),
+                                'controls':         0,
+                                'fs':                1,
+                                'disablekb':        0,
+                                'modestbranding':    1,
+                                // 'cc_load_policy': 1, // forces closed captions on
+                                'iv_load_policy':    3, // annotations, 1=on, 3=off
+                                // 'playlist': videoID, videoID, videoID, etc,
+                                'volume': volume,
+                                'rel':                0,
+                                'showinfo':            0,
+                                'theme':            'dark',    // dark, light
+                                'color':            'red'    // red, white
+                            },
+                            events: {
+                                'onReady': onPlayerReady,
+                                'onPlaybackQualityChange': onPlayerPlaybackQualityChange,
+                                'onPlaybackRateChange' : onPlaybackRateChange,
+                                'onStateChange': onPlayerStateChange,
+                                'onError': onPlayerError
+                            }
+                        });
+                        jQuery(playerContainerSelector).data('ytPlayer', ytPlayer);
+
+                        jQuery(playerGuiSelector + '')
+                            .removeClass('modeJPlayer')
+                            .addClass('modeYoutube');
+
+
+                        // volume change
+                        jQuery('body').on('volumeUp', playerGuiSelector + '.modeYoutube', function () {
+                            var tmpVolume = ytPlayer.getVolume() / 100.0;
+                            var newVolume = parseInt(calculateVolume(tmpVolume, 0.1) * 100);
+                            ytPlayer.setVolume(newVolume);
+
+                            jQuery(playerGuiSelector + ' .jp-volume-bar .jp-volume-bar-value').width(newVolume + '%');
+
+                            jQuery(playerContainerSelector).data('volume', newVolume); // set volume data to player container
+                        });
+                        jQuery('body').on('volumeDown', playerGuiSelector + '.modeYoutube', function () {
+                            var tmpVolume = ytPlayer.getVolume() / 100.0;
+                            var newVolume = parseInt(calculateVolume(tmpVolume, -0.1) * 100);
+                            ytPlayer.setVolume(newVolume);
+
+                            jQuery(playerGuiSelector + ' .jp-volume-bar .jp-volume-bar-value').width(newVolume + '%');
+
+                            jQuery(playerContainerSelector).data('volume', newVolume); // set volume data to player container
+                        });
+
+                        // prevent infinite trigger loop
+                        var ignoreJplayerVolumeChange = false;
+
+                        jQuery('body').on('volumeSet', playerGuiSelector + '.modeYoutube', function (event, newVolume) {
+                            ytPlayer.setVolume(newVolume);
+                            jQuery(playerGuiSelector + ' .jp-volume-bar .jp-volume-bar-value').width(newVolume + '%');
+
+                            jQuery(playerContainerSelector).data('volume', newVolume); // set volume data to player container
+                        });
+/*
+                        jQuery('body').on('click', playerGuiSelector + '.modeYoutube', function (event) {
+                            jp-volume-bar-value
+                            if (!ignoreJplayerVolumeChange) {
+                                jQuery(this).trigger('volumeSet', [playerInstance.data('jPlayer').options.volume])
+                            }
+                        });
+*/
+
+
+                        jQuery('body').on('click', playerGuiSelector + '.modeYoutube .jMotiveCover, ' + playerGuiSelector + '.modeYoutube .jp-play', function () {
+                            ytPlayer.playVideo();
+                            setTimeout(function () {
+                                jQuery(playerGuiSelector + ' .jMotiveCover').fadeOut();
+                            }, 500);
+                        });
+
+                        jQuery(playerGuiSelector + ' .jp-video-play').hide();
+                    }
+
+                    if (advert && advertType == 'file') {
+                        ytInitAfterAdvertFunc = playerInitFunc;
+                    } else {
+                        window.onYtPlayerRdyCallbacks.push(playerInitFunc);
+                    }
+                    if (window.ytPlayerRdy) {
+                        window.onYouTubeIframeAPIReady(); // process queue
+                    }
+
+                    function onPlayerReady(data){
+                        initializeJplayerControls();
+                        ytPlayer.setVolume(volume);
+                        jQuery(playerGuiSelector + ' .jp-volume-bar .jp-volume-bar-value').width( volume + '%' );
+                        ytPlayerRdy = true;
+
+                        // fullscreen handling
+                        fullscreenOn = false;
+                        jQuery(playerGuiSelector + ' .jp-full-screen').on('click', function () {
+                            fullscreenOn = !fullscreenOn;
+                            jQuery(playerGuiSelector + '').trigger('fullscreenChange', [fullscreenOn, true]);
+                        });
+
+                        var duration = ytPlayer.getDuration();
+                        jQuery(playerGuiSelector + ' .jp-duration').text(parseInt(duration / 60) + ':' + parseInt(duration % 60));
+
+
+                        jQuery(playerGuiSelector + ' .jp-progress').click(function (e) {
+                            var posX = jQuery(this).offset().left;
+                            var relativeX = e.pageX - posX;
+                            var percentage = parseFloat(relativeX / jQuery(this).width());
+
+                            ytPlayer.seekTo(parseInt(duration * percentage));
+                        });
+                    }
+
+                    function onPlayerPlaybackQualityChange(quality){
+                    }
+
+                    function onPlaybackRateChange(rate){
+                    }
+
+                    function onPlayerStateChange(state){
+                        switch(state.data){
+                            case -1: //unstarted
+                                /* do something */
+                                break;
+                            case 0: // ended
+                                jQuery(playerGuiSelector + ' .jp-pause').hide();
+                                jQuery(playerGuiSelector + ' .jp-play').show();
+                                if (loopPlay) {
+                                    ytPlayer.seekTo(0);
+                                    ytPlayer.playVideo();
+                                } else {
+                                    /*
+                                    var passedByRefObject = {
+                                    };
+                                    jQuery(playerContainerSelector).trigger('youtubePlayEnd', [passedByRefObject, ytPlayer]);
+                                    */
+                                    jQuery(playerContainerSelector).trigger('playEnd');
+                                }
+                                break;
+                            case 1: // playing
+                                var passedByRefObject = {
+                                    allowPlay: true
+                                };
+
+                                jQuery('#yt_' + playerId).trigger('youtubePlayStart', [passedByRefObject, ytPlayer]);
+
+                                if (passedByRefObject.allowPlay) {
+                                    jQuery(playerGuiSelector + ' .jp-pause').show();
+                                    jQuery(playerGuiSelector + ' .jp-play').hide();
+                                    startYoutubeTime();
+                                } else {
+                                    ytPlayer.pauseVideo();
+                                }
+                                break;
+                            case 2: // paused
+                                jQuery(playerGuiSelector + ' .jp-pause').hide();
+                                jQuery(playerGuiSelector + ' .jp-play').show();
+                                break;
+                            case 3: // buffering
+                                /* do something */
+                                break;
+                            case 5: // video cued
+                                /* do something */
+                                break;
+                            default:
+                                // do nothing
+                            }
+                    }
+
+                    function onPlayerError(error){
+                        console.log(error);
+                    }
+
+                    var youTubeFrequency = 100;
+                    var youTubeInterval = 0;
+                    function startYoutubeTime(){
+                        if(youTubeInterval > 0) {
+                            clearInterval(youTubeInterval);  // stop
+                        }
+                        youTubeInterval = setInterval( updateYoutubeTime, youTubeFrequency );  // run
+                    }
+                    function updateYoutubeTime(){
+                        if(ytPlayer.getCurrentTime() >= 60){
+                            jQuery(playerGuiSelector + ' .jp-current-time').text(Math.floor(ytPlayer.getCurrentTime() / 60) + ':' + FormatNumberLength(Math.round(ytPlayer.getCurrentTime() % 60), 2));
+                        } else {
+                            jQuery(playerGuiSelector + ' .jp-current-time').text('0:' + FormatNumberLength(Math.round(ytPlayer.getCurrentTime()), 2 ) );
+
+                            jQuery(playerGuiSelector + ' .jp-progress .jp-play-bar').width( Math.round((ytPlayer.getCurrentTime()/ytPlayer.getDuration())*100)+'%' );
+                        }
+
+                        var maxWidth = jQuery(playerGuiSelector + " .jp-progress").width();
+                        var tmpBar = jQuery(playerGuiSelector + " .jp-progress .jp-seek-bar .jp-play-bar");
+                        var newWidth = ytPlayer.getCurrentTime() / parseFloat(ytPlayer.getDuration()) * maxWidth;
+                        tmpBar.width(parseInt(newWidth))
+                    }
+                    function FormatNumberLength (num,length){
+                        var r = "" + num;
+                        while(r.length < length) {
+                            r = "0" + r;
+                        }
+                        return r;
+                    }
+
+                    function initializeJplayerControls(){
+                        jQuery(playerGuiSelector + ' .jp-pause').hide();
+                        jQuery(playerGuiSelector + ' .jp-unmute').hide();
+                        jQuery(playerGuiSelector + ' .jp-restore-screen').hide();
+                        jQuery(playerGuiSelector + ' .jp-play').on('click',function(){
+                            jQuery(this).hide();
+                            jQuery(playerGuiSelector + ' .jp-pause').show();
+                            ytPlayer.playVideo();
+                        });
+                        jQuery(playerGuiSelector + ' .jp-pause').on('click',function(){
+                            jQuery(this).hide();
+                            jQuery(playerGuiSelector + ' .jp-play').show();
+                            ytPlayer.pauseVideo();
+                        });
+
+
+                        jQuery(playerGuiSelector + ' .jp-full-screen').on('click',function(){
+                            if ( !jQuery(playerGuiSelector + '').hasClass('jp-ytVideo-full') )
+                            {
+                                // open fullscreen
+                                var elem = document.getElementById(playerId);
+                                if (elem.requestFullscreen) {
+                                    elem.requestFullscreen();
+                                } else if (elem.msRequestFullscreen) {
+                                    elem.msRequestFullscreen();
+                                } else if (elem.mozRequestFullScreen) {
+                                    elem.mozRequestFullScreen();
+                                } else if (elem.webkitRequestFullscreen) {
+                                    elem.webkitRequestFullscreen();
+                                } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+                                    var wscript = new ActiveXObject("WScript.Shell");
+                                    if (wscript !== null) {
+                                        wscript.SendKeys("{F11}");
+                                    }
+                                }
+
+                                jQuery(playerGuiSelector + '').addClass('jp-video-full jp-ytVideo-full');
+                                jQuery(playerGuiSelector + ' .jp-jplayer, ' + playerGuiSelector + ' .ytPlayer').css({'width':'100%','height':'100%'});
+                                jQuery(playerGuiSelector + '').closest('.js-sticky').css('position', 'static');
+                            }
+                            else
+                            {
+                                // close fullScreen
+                                if (document.exitFullscreen) {
+                                    document.exitFullscreen();
+                                } else if (document.msExitFullscreen) {
+                                    document.msExitFullscreen();
+                                } else if (document.mozCancelFullScreen) {
+                                    document.mozCancelFullScreen();
+                                } else if (document.webkitExitFullscreen) {
+                                    document.webkitExitFullscreen();
+                                } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+                                    var wscript = new ActiveXObject("WScript.Shell");
+                                    if (wscript !== null) {
+                                        wscript.SendKeys("{F11}");
+                                    }
+                                }
+
+                                jQuery(playerGuiSelector + '').removeClass('jp-video-full jp-ytVideo-full');
+                                jQuery(playerGuiSelector + ' .jp-jplayer, ' + playerGuiSelector + ' .ytPlayer').removeAttr('style');
+                                jQuery(playerGuiSelector + '').closest('.js-sticky').css('position', 'sticky');
+                            }
+                        });
+
+
+                        // fullscreen controls
+                        document.addEventListener("fullscreenchange", function () {
+
+                            var isInFullScreen = (document.fullScreenElement && document.fullScreenElement !== null) ||  (document.mozFullScreen || document.webkitIsFullScreen);
+
+                            if (!isInFullScreen)
+                            {
+                                jQuery(playerGuiSelector + '').removeClass('jp-video-full jp-ytVideo-full');
+                                jQuery(playerGuiSelector + ' .jp-jplayer, ' + playerGuiSelector + ' .ytPlayer').removeAttr('style');
+                                jQuery(playerGuiSelector + '').closest('.js-sticky').css('position', 'sticky');
+                            }
+
+                        }, false);
+
+                        document.addEventListener("mozfullscreenchange", function () {
+
+                            var isInFullScreen = (document.fullScreenElement && document.fullScreenElement !== null) ||  (document.mozFullScreen || document.webkitIsFullScreen);
+
+                            if (!isInFullScreen)
+                            {
+                                jQuery(playerGuiSelector + '').removeClass('jp-video-full jp-ytVideo-full');
+                                jQuery(playerGuiSelector + ' .jp-jplayer, ' + playerGuiSelector + ' .ytPlayer').removeAttr('style');
+                                jQuery(playerGuiSelector + '').closest('.js-sticky').css('position', 'sticky');
+                            }
+
+                        }, false);
+
+                        document.addEventListener("webkitfullscreenchange", function () {
+
+                            var isInFullScreen = (document.fullScreenElement && document.fullScreenElement !== null) ||  (document.mozFullScreen || document.webkitIsFullScreen);
+
+                            if (!isInFullScreen)
+                            {
+                                jQuery(playerGuiSelector + '').removeClass('jp-video-full jp-ytVideo-full');
+                                jQuery(playerGuiSelector + ' .jp-jplayer, ' + playerGuiSelector + ' .ytPlayer').removeAttr('style');
+                                jQuery(playerGuiSelector + '').closest('.js-sticky').css('position', 'sticky');
+                            }
+
+                        }, false);
+
+                        document.addEventListener("msfullscreenchange", function () {
+
+                            var isInFullScreen = (document.fullScreenElement && document.fullScreenElement !== null) ||  (document.mozFullScreen || document.webkitIsFullScreen);
+
+                            if (!isInFullScreen)
+                            {
+                                jQuery(playerGuiSelector + '').removeClass('jp-video-full jp-ytVideo-full');
+                                jQuery(playerGuiSelector + ' .jp-jplayer, ' + playerGuiSelector + ' .ytPlayer').removeAttr('style');
+                                jQuery(playerGuiSelector + '').closest('.js-sticky').css('position', 'sticky');
+                            }
+
+                        }, false);
+
+
+                        /*
+                        jQuery(playerGuiSelector + ' .jp-restore-screen').on('click',function(){
+                            jQuery(this).hide();
+                            jQuery(playerGuiSelector + ' .jp-full-screen').show();
+                            jQuery(playerGuiSelector + '').removeClass('jp-video-full jp-ytVideo-full');
+                            jQuery(playerGuiSelector + ' .jp-jplayer, ' + playerGuiSelector + ' .ytPlayer').removeAttr('style');
+
+                            jQuery(playerGuiSelector + ' .jp-gui').show();
+                            clearTimeout(fullScreenHoverTime);
+                        });
+                        */
+                        jQuery(playerGuiSelector + ' .jp-mute').on('click',function(){
+                            jQuery(this).hide();
+                            jQuery(playerGuiSelector + ' .jp-unmute').show();
+                            jQuery(playerGuiSelector + ' .jp-volume-bar .jp-volume-bar-value').hide();
+                            ytPlayer.mute();
+                        });
+                        jQuery(playerGuiSelector + ' .jp-unmute').on('click',function(){
+                            jQuery(this).hide();
+                            jQuery(playerGuiSelector + ' .jp-mute').show();
+                            jQuery(playerGuiSelector + ' .jp-volume-bar .jp-volume-bar-value').show();
+                            ytPlayer.unMute();
+                        });
+                        jQuery(playerGuiSelector + ' .jp-volume-bar').click(function(e){
+                            var posX = jQuery(this).offset().left, posWidth = jQuery(this).width();
+                            posX = (e.pageX-posX)/posWidth;
+                            var newVolume = posX*100;
+
+                            jQuery(playerGuiSelector).trigger('volumeSet', newVolume); // set volume to half
+                            jQuery(playerGuiSelector + ' .jp-volume-bar .jp-volume-bar-value').width(newVolume + '%').show();
+
+                            jQuery(playerGuiSelector + ' .jp-unmute').hide();
+                            jQuery(playerGuiSelector + ' .jp-mute').show();
+                        });
+                        jQuery(playerGuiSelector + ' .jp-seek-bar').click(function(e){
+                            var posX = jQuery(this).offset().left, posWidth = jQuery(this).width();
+                            posX = (e.pageX - posX) / posWidth;
+                            jQuery(playerGuiSelector + ' .jp-progress .jp-play-bar').width((posX * 100) + '%');
+                            posX = Math.round((posX) * ytPlayer.getDuration());
+                            ytPlayer.seekTo(posX, true);
+                        });
+                        jQuery(playerGuiSelector + ".jp-video-full .jp-gui").on('click',function(e){
+                            if (e.target != this) {
+                                return;
+                            }
+
+                            if (jQuery(playerGuiSelector + ' .jp-play').is(':visible')) {
+                                jQuery(playerGuiSelector + ' .jp-play').click();
+                            } else {
+                               jQuery(playerGuiSelector + ' .jp-pause').click();
+                            }
+                        });
+
+                        var fullScreenHoverTime;
+                        jQuery(playerGuiSelector + ".jp-video-full").addClass('test');
+                        jQuery(playerGuiSelector + ".jp-video-full .jp-type-single").on('mouseover',function(){
+                            jQuery('.jp-gui', this).show();
+                            clearTimeout(fullScreenHoverTime);
+                            fullScreenTimeout();
+                        });
+                        function fullScreenTimeout(){
+                            fullScreenHoverTime = setTimeout(function(){
+                                jQuery(playerGuiSelector + ' .jp-gui').hide();
+                            },5000);
+                        }
+
+                        if ( $.jPlayer.platform.ipad === true || $.jPlayer.platform.iphone === true || $.jPlayer.platform.ipod === true ) {
+                            jQuery(playerGuiSelector + ' .jp-play').remove();
+                            jQuery(playerGuiSelector + ' .jp-pause').remove();
+                        }
+                    }
+                }).call(this);
+            }
+
+        });
+    </script>
+</div>
+
+    <style>
+    .iSpotBannerPosition {
+        overflow: hidden;
+    }
+
+    #iSpotPlayer,
+    #iSpotBanner,
+    #iSpotPlayer div {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #iSpotPlayer,
+    #iSpotBanner {
+        text-align: center;
+    }
+</style>
+
+<script type="text/javascript">
+    if (!document.getElementById('iSpotJavascript')) {
+        // load ispotScript
+        (function(e,t,n){n=e.createElement("script");n.id='iSpotJavascript';n.async=1;n.src=t;e.getElementsByTagName("head")[0].appendChild(n);})(document,"https://s.lagardere.cz/js/ispot/3.0/ispot.min.js");
+    }
+
+    //iSpot defines volume control:
+    //iSpot.getVolume();
+    //iSpot.setVolume(X);
+
+    var iSpotSkipTimeout = 10;
+    var adUnit = {
+        adUnit: 'evropa2',
+        skipTimeout: iSpotSkipTimeout,
+        autoStart: 0,
+        debug: 0,
+        defaultVolume: 80
+    }
+
+    var jplayerIspotDebugging = false; // true|false|'pause' (pause is true + pauses banners)
+
+    // use this when debugging
+    if (jplayerIspotDebugging) {
+        iSpotSkipTimeout = 1;
+        adUnit['adUnit'] = 'test';
+    }
+
+    var ispotConfigInstance = {
+        maxOneAdvertPerPage: true, // this will probably always be true as current ispot implementation doesn't campaing re-init
+        advertPlayed: false,
+        advertPlayingPlayer: null,
+        skipInterval: null,
+        adblockHandeled: false,
+        sizesRecalculated: false,
+        rerunYtVideo: null,
+        initDone: false,
+        selectorToHideWhilePlaying: '.ytPlayer, .jp-jplayer, .jp-video-play, .jMotiveCover',
+        imageCanEnlargePlayerContainer: false,
+
+        playMode: 'preroll'
+    };
+    var ispotJplayerFunctions = {};
+
+
+    var resizeCommercialToFit = function (maxCommercialWidth, maxCommercialHeight) {
+        var closeAdvertContainer = ispotConfigInstance.advertPlayingPlayer.find('.closeAdvertisementContainer');
+        var countdownSpan = closeAdvertContainer.find('.countdown');
+        var skipNoticeButton = closeAdvertContainer.find('.skipAdNotice');
+
+
+        var calculateNewSize = function (width, height, containerWidth, containerHeight, resizeToLargest) {
+            var newWidth = null;
+            var newHeight = null;
+            var ratio = width / height;
+
+            if (!resizeToLargest) {
+                if (width < containerWidth) {
+                    containerWidth = width;
+                }
+                if (height < containerHeight) {
+                    containerHeight = height;
+                }
+            }
+
+
+            if (ratio >= 1) {
+                newWidth = containerWidth;
+                newHeight = parseInt(Math.round(newWidth / ratio));
+                if (newHeight > containerHeight) {
+                    newWidth = parseInt(Math.round(newWidth * containerHeight / newHeight));
+                    newHeight = containerHeight;
+                }
+            } else {
+                newHeight = containerHeight;
+                newWidth = parseInt(Math.round(newHeight * ratio));
+
+                if (newWidth > containerWidth) {
+                    newHeight = parseInt(Math.round(newHeight * containerWidth / newWidth));
+                    newWidth = containerWidth;
+                }
+            }
+
+            return [newWidth, newHeight];
+        };
+
+        // every second substract from counter
+        var tmpIntervalTime = 250;
+        var tmpAccumulator = 0;
+        ispotConfigInstance.skipInterval = setInterval(function () {
+            // this video size set has to be here in interval - because external js script also changes it's size(and we want to override them)
+            //if (advertPlayingPlayer.is('.jPlayer.small')) {
+            if (1 || ispotConfigInstance.advertPlayingPlayer.is('.jPlayer')) {
+                if (!ispotConfigInstance.sizesRecalculated) {
+                    var tmpPlayerContainer = ispotConfigInstance.advertPlayingPlayer.is('.fullscreenOn') ? ispotConfigInstance.advertPlayingPlayer.find('.jp-gui') : ispotConfigInstance.advertPlayingPlayer;
+                    var currentContainerWidth = maxCommercialWidth > tmpPlayerContainer.width() ? tmpPlayerContainer.width() : maxCommercialWidth;
+                    var currentContainerHeight = maxCommercialHeight > tmpPlayerContainer.height() ? tmpPlayerContainer.height() : maxCommercialHeight;
+
+
+
+
+                    var videoElements = ispotConfigInstance.advertPlayingPlayer.find('#iSpotPlayer a div, #iSpotPlayer a div video');
+                    if (videoElements.length) {
+                        var tmpPlayerContainer = ispotConfigInstance.advertPlayingPlayer.is('.fullscreenOn') ? ispotConfigInstance.advertPlayingPlayer.find('.jp-gui') : ispotConfigInstance.advertPlayingPlayer;
+
+                        // SPOOKY CODE!!!
+                        // from unknown reason there is no need to substract .jp-interface's height from video height(currently in tmpHeight)
+                        // still video doesn't overlap bottom interface (good but why???)
+                        videoElements
+                            .width(currentContainerWidth)
+                            .height(currentContainerHeight);
+                        ispotConfigInstance.sizesRecalculated = true;
+                    }
+
+                    var bannerImage = ispotConfigInstance.advertPlayingPlayer.find('#iSpotBanner div a img');
+                    if (bannerImage.length && bannerImage.width() && bannerImage.height()) { // was audio + banner loaded?
+                        var newSize = null;
+                        var bannerContainer = ispotConfigInstance.advertPlayingPlayer.find('#iSpotBanner');
+                        var bannerElements = ispotConfigInstance.advertPlayingPlayer.find('#iSpotBanner div a img, #iSpotBanner');
+                        if (ispotConfigInstance.imageCanEnlargePlayerContainer) {
+                            // set image width to player container's width and
+                            var ratio = bannerImage.width() / bannerImage.height();
+                            newSize = [currentContainerWidth, currentContainerWidth * ratio];
+                        } else {
+                            newSize = calculateNewSize(bannerImage.width(), bannerImage.height(), currentContainerWidth, currentContainerHeight, false);
+
+                            var skipAdvertRelBot = 52; // TODO make some sophisticated calculation (skipAdverts margins + paddings + height)
+                            if (newSize[1] + skipAdvertRelBot <= currentContainerHeight) {
+                                bannerContainer.css('margin-top', skipAdvertRelBot);
+                            } else {
+                                bannerContainer.css('margin-top', 0);
+                            }
+                        }
+
+                        // if one of sizes is 0 or less something is wrong
+                        if (newSize[0] > 0 && newSize[1] > 0) {
+                            bannerElements.width(newSize[0]);
+                            bannerElements.height(newSize[1]);
+                            ispotConfigInstance.sizesRecalculated = true;
+                        }
+                    }
+                }
+            }
+
+            // countdown once each second
+            tmpAccumulator += tmpIntervalTime;
+            if (tmpAccumulator >= 1000) {
+                tmpAccumulator = tmpAccumulator - 1000;
+                var remainingSeconds = parseInt(countdownSpan.text());
+                if (remainingSeconds > 1) {
+                    countdownSpan.text(remainingSeconds - 1);
+                } else {
+                    // hide counter and enable advert skipping
+                    closeAdvertContainer.find('.skipCountdownNotice').hide();
+                    skipNoticeButton.off('click.iSpot');
+                    skipNoticeButton.on('click.iSpot', function () {
+                        closeAdvertContainer.hide();
+                        iSpot.skip();
+                        clearTimeout(ispotConfigInstance.skipInterval);
+                        return false;
+                    });
+                }
+            }
+
+            if (jplayerIspotDebugging == 'pause') {
+                // this would pause video (usefull when debugging style etc.)
+
+                var tmpVideo = jQuery('#iSpotPlayer video').get(0);
+                var tmpAudio = jQuery('#iSpotPlayer audio').get(0);
+                if (tmpVideo) {
+                    tmpVideo.pause();
+                }
+                if (tmpAudio) {
+                    tmpAudio.pause();
+                }
+                //jQuery('#iSpotPlayer audio').get(0).volume = 0;
+            }
+        }, tmpIntervalTime);
+
+    };
+
+    // setup callbacks
+    var iSpotcb = {
+        iSpotStarted: function() {
+            ispotConfigInstance.advertPlayingPlayer.attr('advertplayed', '1');
+            //tools.log('iSpotcb.iSpotStarted()');
+
+            ispotConfigInstance.advertPlayingPlayer.addClass('iSpotRunning');
+
+            var closeAdvertContainer = ispotConfigInstance.advertPlayingPlayer.find('.closeAdvertisementContainer');
+            var countdownSpan = closeAdvertContainer.find('.countdown');
+            var skipNoticeButton = closeAdvertContainer.find('.skipAdNotice');
+
+            // show close advert container; hides yt iframe; initialize time remaining before skip possible
+            closeAdvertContainer.show();
+            countdownSpan.text(iSpotSkipTimeout);
+
+            // prevent skip button click action
+            skipNoticeButton.on('click.iSpot', function () {
+                return false;
+            });
+
+            resizeCommercialToFit(660, 336);
+        },
+        iSpotFinished: function() {
+            ispotConfigInstance.advertPlayingPlayer.attr('advertfinished', "1");
+            ispotConfigInstance.advertPlayingPlayer.removeClass('iSpotRunning');
+
+            // cleanup
+            jQuery('#iSpotPlayer, #iSpotBanner').hide();
+            ispotConfigInstance.advertPlayingPlayer.find('.closeAdvertisementContainer').hide();
+            ispotConfigInstance.advertPlayingPlayer.find(ispotConfigInstance.selectorToHideWhilePlaying).show();
+            if (ispotConfigInstance.playMode == 'preroll') {
+                // play video after preroll was finished
+                ispotConfigInstance.advertPlayingPlayer.find('.jp-play').click();
+            } else if (ispotConfigInstance.playMode == 'postroll') {
+                ispotConfigInstance.playMode = null;
+            }
+            var closeAdvertContainer = ispotConfigInstance.advertPlayingPlayer.find('.closeAdvertisementContainer');
+            closeAdvertContainer.hide();
+            jQuery('#iSpotPlayer, #iSpotBanner').empty().attr('style', ''); // erase content and inline styles
+
+            if (ispotConfigInstance.rerunYtVideo) {
+                ispotConfigInstance.rerunYtVideo.playVideo();
+                ispotConfigInstance.rerunYtVideo = false;
+                jQuery('.jp-video-play').hide(); // once again hide jp play
+            }
+
+
+            //tools.log('iSpotcb.iSpotFinished()');
+        },
+        iSpotExists: function(e) {
+            //console.log(iSpot.runtime.campaign.params.hasVideo)
+            //tools.log('iSpotcb.iSpotExists()');
+        },
+        showSkip: function() {
+            // not used by this script - countdown plus skip button display is handled elsewhere
+            //tools.log('iSpotcb.showSkip()');
+        },
+        adBlockDetected: function() {
+            if (!ispotConfigInstance.adblockHandeled) {
+                ispotConfigInstance.adblockHandeled = true;
+                jQuery('.jPlayer .adBlockDetectedSign').show();
+                // pause any possible media
+                jQuery('.jp-pause').click();
+                iSpot.skip(); // prevent audio or any other form of advert that could be played partially from playing
+
+                // unbind events from gui(including advert start)
+                //jQuery('.jp-video-play').css('visibility', 'hidden');
+                jQuery('.jp-video-play').hide();
+                jQuery('.jp-play, .jp-video-play').off('click');
+                // disable native behaviour of youtube by disabling click events on youtube iframe
+                jQuery('.ytPlayer').css('pointer-events', 'none');
+            }
+            //tools.log('iSpotcb.adBlockDetected()');
+        },
+        initDone: function () {
+            ispotConfigInstance.initDone = true;
+        }
+    };
+
+    ispotJplayerFunctions.startInPlayerInstance = function () {
+        ispotConfigInstance.advertPlayed = true;
+        var iSpotPlayerPosition = ispotConfigInstance.advertPlayingPlayer.find('.iSpotPlayerPosition');
+        var iSpotBannerPosition = ispotConfigInstance.advertPlayingPlayer.find('.iSpotBannerPosition');
+
+        var tmp = jQuery('#iSpotPlayer');
+        var iSpotPlayer = tmp.length ? tmp : jQuery('<div id="iSpotPlayer"></div>');
+        var tmp = jQuery('#iSpotBanner');
+        var iSpotBanner = tmp.length ? tmp : jQuery('<div id="iSpotBanner"></div>');
+        iSpotPlayer.show();
+        iSpotBanner.show();
+
+        iSpotPlayerPosition.append(iSpotPlayer);
+        iSpotBannerPosition.append(iSpotBanner);
+
+        ispotConfigInstance.advertPlayingPlayer.find(ispotConfigInstance.selectorToHideWhilePlaying + ', .jp-video-play .jp-video-play-icon').hide();
+
+        // make sure iSpot will run (synchronizes asynchronous library loading)
+        if (iSpot) {
+            iSpot.runCampaign();
+        } else {
+            var tmpInterval = setInterval(function () {
+                iSpot.runCampaign();
+                clearTimeout(tmpInterval);
+            }, 200);
+        }
+    };
+
+    // WARNING! next lines rely on beign in the first event handler triggered! @see e.stopImmediatePropagation()
+    // that 'should' be ensured by this handler beign outside of regular jQuery(function {}) encloseru
+    ispotJplayerFunctions.preStart = function (e, preStartCallback) {
+        if (ispotConfigInstance.adblockHandeled || !ispotConfigInstance.initDone) {
+            // when ispot init not done, wait for init and then recall this start
+            if (!ispotConfigInstance.initDone) {
+                var tmpContext = this;
+                var recallInterval = setInterval(function () {
+                    if (ispotConfigInstance.initDone) {
+                        ispotJplayerFunctions.preStart.call(tmpContext, e, preStartCallback);
+                        clearInterval(recallInterval);
+                    }
+                }, 200);
+            }
+
+            e.stopImmediatePropagation();
+            return;
+        }
+
+        var jPlayerContainer = jQuery(this).parents('.jPlayer');
+        if (jPlayerContainer.attr('advertplayed') == "1") {
+            if (jPlayerContainer.attr('advertfinished') != "1") {
+                e.stopImmediatePropagation();
+            }
+            return;
+        }
+        if (ispotConfigInstance.maxOneAdvertPerPage && ispotConfigInstance.advertPlayed) {
+            return;
+        }
+
+        e.stopImmediatePropagation();
+        ispotConfigInstance.advertPlayingPlayer = jPlayerContainer;
+
+        if (preStartCallback) {
+            preStartCallback();
+        }
+
+        // run advert asynchronously (so that passedByRefObject.allowPlay may be returned before that)
+        setTimeout(function () {
+            ispotJplayerFunctions.startInPlayerInstance();
+        }, 50);
+    };
+
+
+    jQuery('#jPlayer5777df0daa0fdGui .jp-play, #jPlayer5777df0daa0fdGui .jp-video-play, #jPlayer5777df0daa0fdGui .jp-video-play-icon, #jPlayer5777df0daa0fdGui .jp-seek-bar').click(function(e) {
+        var jPlayerContainer = jQuery(this).parents('.jPlayer');
+        if (!jPlayerContainer.data('ytPlayer')) { // jplayer?
+            ispotJplayerFunctions.preStart.call(this, e);
+        } else if (jPlayerContainer.attr('advertplayed') == "1" && jPlayerContainer.attr('advertfinished') != "1") { // youtube player while not finished advertisement
+            e.stopImmediatePropagation();
+            jPlayerContainer.find('.ytPlayer').trigger('youtubePlayStart', [jPlayerContainer.data('ytPlayer'), "youtubePlayStart"]);
+        }
+
+        if (ispotConfigInstance['playMode'] == 'postroll') {
+            // postroll mode should be set only during actual playing
+            e.stopImmediatePropagation();
+        }
+    });
+
+    jQuery(document).on('youtubePlayStart', '.ytPlayer', function (e, passedByRefObject, ytPlayer) {
+        ispotJplayerFunctions.preStart.call(this, e, function () {
+            passedByRefObject.allowPlay = false;
+            ispotConfigInstance.rerunYtVideo = ytPlayer;
+        });
+    });
+
+    jQuery(document).on('playEnd', '', function (e) {
+        setTimeout(function () {
+            if (ispotConfigInstance['playMode'] == 'preroll') {
+                ispotConfigInstance['playMode'] = 'postroll';
+                ispotJplayerFunctions.startInPlayerInstance();
+            } else {
+                ispotConfigInstance['playMode'] = null;
+            }
+        }, 50);
+    });
+
+    jQuery('#jPlayer5777df0daa0fdGui').on('fullscreenChange', function (event, isFullscreenOn, isYtVideo) {
+        // recalculate size again
+        ispotConfigInstance.sizesRecalculated = false;
+        var windowObject = jQuery(window);
+
+        clearTimeout(ispotConfigInstance.skipInterval); // clear interval as it might still be active in some situations
+        if (isFullscreenOn) {
+            resizeCommercialToFit(windowObject.width(), windowObject.height());
+        } else {
+            resizeCommercialToFit(660, 336);
+        }
+    });
+
+    jQuery('body').on('volumeUp volumeDown volumeSet', '#jPlayer5777df0daa0fdGui', function () {
+        var jPlayerContainer = jQuery(this).parents('.jPlayer');
+        setTimeout(function () {
+            iSpot.setVolume(jPlayerContainer.data('volume'));
+        }, 100);
+    });
+
+</script>
+                    </div><!-- .video-post -->
+
+                    <div class="shareBox">
+                        <div class="inner">
+                            <span class="shareBox-title">
+                                Autor:
+                                                                                                        <a href="/news?authorname=jku" class="authorPostsLink">Jakub Kuneš</a>
+                                                            </span>
+                            <span class="shareBox-title">
+                                <span class="icon-share"><!-- --></span>
+                                <span class="text">Sdílej</span>
+                            </span>
+                                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.evropa2.cz%2Fshows%2Ffakt-no-koment-tomuv-recept-jak-byt-pred-zenou-za-gentlemana-1104559" class="btn btnShare facebook">5&nbsp;/&nbsp;<span class="icon-facebook"><!-- --></span></a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Fakt No Koment: Tomův recept, jak být před ženou za gentlemana&url=https%3A%2F%2Fwww.evropa2.cz%2Fshows%2Ffakt-no-koment-tomuv-recept-jak-byt-pred-zenou-za-gentlemana-1104559" class="btn btnShare twitter">9&nbsp;/&nbsp;<span class="icon-twitter"><!-- --></span></a>
+    <a target="_blank" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.evropa2.cz%2Fshows%2Ffakt-no-koment-tomuv-recept-jak-byt-pred-zenou-za-gentlemana-1104559" class="btn btnShare google">9&nbsp;/&nbsp;<span class="icon-google"><!-- --></span></a>
+                        </div>
+                    </div>
+
+                    <div class="textBox textBox-feed">
+                        <div class="feed feed-player">
+                            <div class="item item-active post-picture-effect video clearfix">
+                                <div class="source">
+                                    <span class="icon icon-play-triangle"><!-- --></span>
+                                    <span class="time">před 2 týd.</span>
+                                </div>
+                                <div class="content js-showable">
+                                    <div class="content-in">
+                                        <h2>Fakt No Koment: Tomův recept, jak být před ženou za gentlemana</h2>
+                                        <p class="prologue"></p>
+                                        <p>Moderátor Tomáš Zástěra a jeho lekce v gentlemanství – díl první. To prostě nepochopíš!</p>
+
+
+                                        <div class="clear"></div>
+                                    </div>
+                                    
+                                    
+                                    <div class="adrBox">
+	<div id='div-gpt-ad-1446672945391-6' style="width: 468px; margin: 0 auto; text-align: center;">
+        <script type='text/javascript'>
+        googletag.display('div-gpt-ad-1446672945391-6');
+        </script>
+    </div>
+        <span class="adrTitle">Reklama</span>
+</div><!-- .adrBox -->
+
+
+                                                                            <div class="commentsBox">
+                                            <div class="fb-comments" data-href="https://www.evropa2.cz/shows/fakt-no-koment-tomuv-recept-jak-byt-pred-zenou-za-gentlemana-1104559" data-width="100%" data-version="v2.3"></div>
+                                        </div>
+                                                                    </div>
+                            </div><!-- .item -->
+                            <div class="paginableContainer infiniteMedia">
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-si-ublizila-v-parkouru-jak-1100043">Fakt No Koment: Zorka si ublížila v parkouru. Jak?</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-si-ublizila-v-parkouru-jak-1100043" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2016/05/E2_FNK_2704_snapshot-490x276.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 2 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-nestiha-chodit-do-fitka-tak-ji-ho-tom-s-jindrou-pripravili-ve-studiu-1098303">Fakt No Koment: Zorka nestíhá chodit do fitka, tak jí ho Tom s Jindrou připravili ve studiu</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-nestiha-chodit-do-fitka-tak-ji-ho-tom-s-jindrou-pripravili-ve-studiu-1098303" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2016/04/2016.04.08-FNK_08042016_snapshot-490x276.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 4 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-ma-neuveritelny-talent-stane-se-objevem-roku-2015-1095040">Fakt No Koment: Zorka má neuvěřitelný talent, stane se Objevem roku 2015? :)</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-ma-neuveritelny-talent-stane-se-objevem-roku-2015-1095040" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2016/02/E2_FNK_25022016_snapshot-490x276.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 4 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-jak-to-vypadalo-tesne-predtim-nez-se-titanic-potopil-1094037">Fakt No Koment: Jak to vypadalo těsně předtím, než se Titanic potopil?</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-jak-to-vypadalo-tesne-predtim-nez-se-titanic-potopil-1094037" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2016/02/E2_FNK_12022016_snapshot-490x276.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 5 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-a-jeji-seznameni-s-twenty-one-pilots-1092852">Fakt No Koment: Zorka a její seznámení s Twenty One Pilots</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-a-jeji-seznameni-s-twenty-one-pilots-1092852" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2016/01/E2_FNK2901_snapshot-490x276.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 5 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-ma-problem-pomuze-ji-tom-s-jindrou-1092616">Fakt No Koment: Zorka má problém. Pomůže jí Tom s Jindrou?</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-ma-problem-pomuze-ji-tom-s-jindrou-1092616" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2016/01/fnk-490x271.png" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 6 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-all-inclusive-u-zubare-99612">Fakt No Koment: All inclusive u zubaře</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-all-inclusive-u-zubare-99612" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2015/12/banner_fakt_no-koment-490x238.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 6 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-se-stala-slavnou-hokejistkou-66834">Fakt No Koment: Zorka se stala slavnou hokejistkou</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-se-stala-slavnou-hokejistkou-66834" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2015/12/banner_no-koment-490x238.png" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 7 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-trhani-zubu-35951">Fakt no koment! – Trhání zubů</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-trhani-zubu-35951" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2015/12/webtv_35951_ytBwUxgNnTloU.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 7 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-stepuje-35977">Fakt no koment! – Zorka stepuje</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-stepuje-35977" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2015/11/webtv_35977_ytjaHjGiRex00.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 7 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-tomas-zacina-zit-zdrave-36009">Fakt no koment! – Tomáš začíná žít zdravě</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-tomas-zacina-zit-zdrave-36009" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2015/11/webtv_36009_ytZksyTw71qWo.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 7 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-co-se-stane-kdyz-si-zapomenete-ubor-na-telocvik-36037">Fakt no koment! – Co se stane, když si zapomenete úbor na tělocvik?</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-co-se-stane-kdyz-si-zapomenete-ubor-na-telocvik-36037" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2015/11/webtv_36037_ytXM9G0D1rwqw.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 7 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-neco-ke-kafi-36084">Fakt no koment! – Něco ke kafi</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-neco-ke-kafi-36084" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2015/11/webtv_36084_ytTnJYMpmAfTU.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 8 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-jak-pozvat-holku-na-maturitak-36182">Fakt no koment! – Jak pozvat holku na maturiťák</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-jak-pozvat-holku-na-maturitak-36182" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2015/10/webtv_36182_ytQcMt7lsFy4Q.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 8 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-nevi-jak-si-namazat-nohy-36274">Fakt no koment! – Zorka neví jak si namazat nohy</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-zorka-nevi-jak-si-namazat-nohy-36274" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2015/10/webtv_36274_ytyI1e5nyNNVs.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 9 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-jak-to-ma-tezke-patolog-36330">Fakt no koment! – Jak to má těžké patolog?</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-jak-to-ma-tezke-patolog-36330" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2015/10/webtv_36330_yt338xKih898g.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 9 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-poledni-nabidka-sefkuchare-36358">Fakt no koment! – Polední nabídka šéfkuchaře</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-poledni-nabidka-sefkuchare-36358" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2015/09/webtv_36358_ytjy6ZqUBodlo.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 9 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-jindra-vybira-auta-36398">Fakt no koment! – Jindra vybírá auta</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-jindra-vybira-auta-36398" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2015/09/webtv_36398_ytRVNO_k_uadA.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                                    <div class="item post-picture-effect video clearfix">
+    <div class="source">
+        <span class="icon icon-play-triangle"><!-- --></span>
+        <span class="time">před 9 měs.</span>
+    </div>
+    <div class="content">
+        <h2>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment-jak-to-chodi-v-restauraci-36457">Fakt no koment! – Jak to chodí v restauraci?</a>
+        </h2>
+        <a href="https://www.evropa2.cz/shows/fakt-no-koment-jak-to-chodi-v-restauraci-36457" class="picture">
+            <img src="https://m.static.lagardere.cz/evropa2/image/2015/09/webtv_36457_ytW09871UL-mc.jpg" alt=""/>
+            <p class="infoBox cols">
+                <span class="col col-xs-8 text-left">Fakt No Koment</span>
+                            </p>
+        </a>
+    </div>
+</div><!-- .item -->
+                                                            </div>
+                                                            <div class="item more clearfix loadNextPageAjax infiniteMedia">
+            <div class="content text-center clearfix">
+            <p class="pagenumber"><span class="label remainingPagesCount">1</span> Stran</p>
+            <a href="https://www.evropa2.cz/shows/fakt-no-koment?pageIndex=2" title="" class="btn btnB">Další</a>
+            <script>
+        jQuery(function () {
+            var dataCallback = function () {
+                return {
+                    action: 'mediaPagination',
+mediaContentFilter: '',
+showFilter: 'fakt-no-koment'
+
+                }
+            };
+
+            window.connectInfiniteLoad('.loadNextPageAjax.infiniteMedia', '.paginableContainer.infiniteMedia', dataCallback, function(){});
+        });
+    </script>
+            </div>
+        </div>
+                                                    </div><!-- .feed -->
+                    </div><!-- .textBox -->
+                
+                <div class="textBox adr">
+                    <div class="adrBox">
+	<div id='div-gpt-ad-1446672945391-2' style="width: 580px; margin: 0 auto; text-align: center;">
+        <script type='text/javascript'>
+        googletag.display('div-gpt-ad-1446672945391-2');
+        </script>
+    </div>
+    <div id='div-gpt-ad-1446672945391-3' style="width: 320px; margin: 0 auto;">
+        <script type='text/javascript'>
+        googletag.display('div-gpt-ad-1446672945391-3');
+        </script>
+    </div>
+    <span class="adrTitle">Reklama</span>
+</div><!-- .adrBox -->
+
+                </div><!-- .textBox -->
+
+                            </div><!-- .post -->
+        </div><!-- .col -->
+
+        <div class="sidebar col-lg-4 col-md-5 clearfix js-equalize">
+            <div class="right-selector show-selector">
+                <h3 class="title">Vyber si show</h3>
+                <ul class="js-shows-list">
+                                        <li class="">
+                        <a href="/shows/ranni-show" title="Ranní show">
+                            Ranní show
+                                                            <span class="hidden js-show-parts-count" data-show="ranni-show">nové:&nbsp;&nbsp;12432</span>
+                                                    </a>
+                    </li>
+                                        <li class="">
+                        <a href="/shows/odpoledni-show" title="Odpolední show">
+                            Odpolední show
+                                                            <span class="hidden js-show-parts-count" data-show="odpoledni-show">nové:&nbsp;&nbsp;469</span>
+                                                    </a>
+                    </li>
+                                        <li class="">
+                        <a href="/shows/evropa-2-music-chart" title="Evropa 2 Music Chart">
+                            Evropa 2 Music Chart
+                                                            <span class="hidden js-show-parts-count" data-show="evropa-2-music-chart">nové:&nbsp;&nbsp;139</span>
+                                                    </a>
+                    </li>
+                                        <li class="active">
+                        <a href="/shows/fakt-no-koment" title="Fakt No Koment">
+                            Fakt No Koment
+                                                            <span class="hidden js-show-parts-count" data-show="fakt-no-koment">nové:&nbsp;&nbsp;38</span>
+                                                    </a>
+                    </li>
+                                        <li class="">
+                        <a href="/shows/maxximum-muziky" title="MaXXimum muziky">
+                            MaXXimum muziky
+                                                            <span class="hidden js-show-parts-count" data-show="maxximum-muziky">nové:&nbsp;&nbsp;107</span>
+                                                    </a>
+                    </li>
+                                        <li class="">
+                        <a href="/shows/backstage" title="Backstage">
+                            Backstage
+                                                            <span class="hidden js-show-parts-count" data-show="backstage">nové:&nbsp;&nbsp;646</span>
+                                                    </a>
+                    </li>
+                                        <li class="">
+                        <a href="/shows/afterparty" title="Afterparty">
+                            Afterparty
+                                                            <span class="hidden js-show-parts-count" data-show="afterparty">nové:&nbsp;&nbsp;1994</span>
+                                                    </a>
+                    </li>
+                                        <li class="">
+                        <a href="/shows/dance-exxtravaganza" title="Dance eXXtravaganza">
+                            Dance eXXtravaganza
+                                                            <span class="hidden js-show-parts-count" data-show="dance-exxtravaganza">nové:&nbsp;&nbsp;159</span>
+                                                    </a>
+                    </li>
+                                        <li class="">
+                        <a href="/shows/vyber-si-na-maxximum" title="Vyber si na maXXimum">
+                            Vyber si na maXXimum
+                                                            <span class="hidden js-show-parts-count" data-show="vyber-si-na-maxximum">nové:&nbsp;&nbsp;3</span>
+                                                    </a>
+                    </li>
+                                    </ul>
+            </div><!-- .show-selector -->
+
+            <div class="adrBox">
+	<div id='div-gpt-ad-1446672945391-4' style="width: 300px; margin: 0 auto;">
+        <script type='text/javascript'>
+        googletag.display('div-gpt-ad-1446672945391-4');
+        </script>
+    </div>
+    <div id='div-gpt-ad-1446672945391-7' style="width: 300px; margin: 0 auto;">
+        <script type='text/javascript'>
+        googletag.display('div-gpt-ad-1446672945391-7');
+        </script>
+    </div>
+    <span class="adrTitle">Reklama</span>
+</div><!-- .adrBox -->
+
+
+            
+            <div class="stickyPaddingTop js-sticky">
+                <div class="adrBox">
+	<div id='div-gpt-ad-1448031000543-0' style="width: 300px; margin: 0; text-align: left;">
+        <script type='text/javascript'>
+        googletag.display('div-gpt-ad-1448031000543-0');
+        </script>
+    </div>
+    <div id='div-gpt-ad-1448031176336-0' style="width: 300px; margin: 0; text-align: left;">
+        <script type='text/javascript'>
+        googletag.display('div-gpt-ad-1448031176336-0');
+        </script>
+    </div>
+    <span class="adrTitle">Reklama</span>
+</div><!-- .adrBox -->
+
+            </div><!-- .stickyPaddingTop -->
+        </div><!-- .col -->
+    </div><!-- .row -->
+
+                <div class="clear"></div>
+            </div><!-- .container -->
+
+            <div id="timeline" class="hidden-sm hidden-xs">
+                                <div id="onAir">
+                    <p class="link">
+                        <a href="#" class="openBtn"><span class="sr-only" title="Otevřít timeline">Otevřít timeline</span></a>
+                    </p>
+                    <h3 class="sectionTitle toggleTitle sr-only">On air</h3>
+                    <ul class="list">
+                        <li class="item clearfix">
+                            <div class="textBox toggleEl">
+                                <h5 class="title js-scrollText"><span>Pillowtalk</span></h5>
+                                <h6 class="text js-scrollText"><span>ZAYN</span></h6>
+                            </div>
+                            <p class="picture cover">
+                                <img src="https://c.lagardere.cz/62826/100" alt="Mind of Mine" />
+                            </p>
+                        </li>
+                        <li class="item clearfix">
+                            <div class="textBox toggleEl">
+                                <h5 class="title js-scrollText"><span>Jakub Štěpán</span></h5>
+                                <h6 class="text js-scrollText"><span>MaXXimum muziky - víkend</span></h6>
+                            </div>
+                            <p class="picture">
+                                <img src="https://i.lagardere.cz/evropa2/img/u/porady/show-motives-webpl/maxximum-muziky-vikend.png" alt="MaXXimum muziky - víkend" />
+                            </p>
+                        </li>
+                    </ul>
+                                        <div class="controls opened">
+                        <a href="/playlist" class="item">
+                            <span class="playlist icon multiIcon">
+                                <span class="icon-playlist-border"><!-- --></span>
+                                <span class="icon-playlist-note"><!-- --></span>
+                            </span>
+                            <span class="text">Playlist</span>
+                        </a>
+                        <a href="http://onair.evropa2.cz/" class="item" target="_blank">
+                            <span class="play-big icon multiIcon">
+                                <span class="icon-play-border"><!-- --></span>
+                                <span class="icon-play-triangle"><!-- --></span>
+                            </span>
+                            <span class="text">Poslouchej</span>
+                        </a>
+                    </div>
+                    <div class="controls closed">
+                        <a href="http://onair.evropa2.cz/" class="item" target="_blank">
+                            <span class="play-small icon multiIcon">
+                                <span class="icon-play-border"><!-- --></span>
+                                <span class="icon-play-triangle"><!-- --></span>
+                            </span>
+                            <span class="text">MaXXimum muziky - víkend</span>
+                        </a>
+                    </div>
+                </div><!-- #onAir -->
+                
+                <div id="wall">
+                    <h3 class="sectionTitle small toggleText" data-text="Zeď Evropy 2">Zeď E2</h3>
+                    <div id="scrollBox">
+                        <ul class="list paginableContainer infinityEvropaWall">
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/Tripl6kurvafix">paranoia</a></h5>
+            <h6 class="text">Jezis v aute hraje evropa2 ja vystupuju a jdu do Usti pesky</h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/Tripl6kurvafix">
+                <img src="https://pbs.twimg.com/profile_images/742079056477356032/Yv6LGwam_normal.jpg" alt="paranoia" />
+            </a>
+        </p>
+        <span class="time">před 6 hod</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/SincerelyCass11">Cassandra Bankson</a></h5>
+            <h6 class="text">RT <a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2">@Evropa2</a>: Jak zakrýt nedokonalosti radí <a href="https://twitter.com/hashtag/blogger" target="_blank" rel="nofollow" title="#blogger">#blogger</a> <a href="https://twitter.com/SincerelyCass11" target="_blank" rel="nofollow" title="Cassandra Bankson">@SincerelyCass11</a> s problematickou pletí <a href="https://twitter.com/hashtag/makeup" target="_blank" rel="nofollow" title="#makeup">#makeup</a> <a href="https://twitter.com/hashtag/tips" target="_blank" rel="nofollow" title="#tips">#tips</a> <a href="http://bit.ly/299Pu46" target="_blank" rel="nofollow">bit.ly/299Pu46</a> https://t…</h6>
+                        <div class="image">
+                <img src="https://pbs.twimg.com/media/CmRS_FmWEAQrmwR.jpg" alt="" />
+            </div>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/SincerelyCass11">
+                <img src="https://pbs.twimg.com/profile_images/551525979227578368/GubDnH3b_normal.jpeg" alt="Cassandra Bankson" />
+            </a>
+        </p>
+        <span class="time">před 11 hod</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/DasaKoc">Dagmar Kočová</a></h5>
+            <h6 class="text">Dnes večer v 19:05 si někdo nechal na <a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2">@Evropa2</a> vyber si na maximum zahrát tento song…Udělal mi tím velkou radost :-) <a href="http://youtu.be/weWO-8oShjc" target="_blank" rel="nofollow">youtu.be/weWO-8oShjc</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/DasaKoc">
+                <img src="https://pbs.twimg.com/profile_images/413620658359115776/hqKSlb6p_normal.jpeg" alt="Dagmar Kočová" />
+            </a>
+        </p>
+        <span class="time">před 17 hod</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/DozerBlack">Dozer BLack</a></h5>
+            <h6 class="text"><a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2">@Evropa2</a> Ženy to mají v maskování, nic ve zlém, jednodušší</h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/DozerBlack">
+                <img src="https://pbs.twimg.com/profile_images/722185361691119616/mVKrV1y-_normal.jpg" alt="Dozer BLack" />
+            </a>
+        </p>
+        <span class="time">před 24 hod</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/Evropa2">Evropa 2</a></h5>
+            <h6 class="text"><a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2">@Evropa2</a> <a href="https://twitter.com/hashtag/Unplugged" target="_blank" rel="nofollow" title="#Unplugged">#Unplugged</a> s kapelou MIRAI feat. Jindra Ekl. Bude ti běhat mráz po zádech! <a href="https://twitter.com/hashtag/e2cz" target="_blank" rel="nofollow" title="#e2cz">#e2cz</a> <a href="http://bit.ly/29a1AOD" target="_blank" rel="nofollow">bit.ly/29a1AOD</a></h6>
+                        <div class="image">
+                <img src="https://pbs.twimg.com/media/CmSNYjsWIAAbUoY.jpg" alt="" />
+            </div>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/Evropa2">
+                <img src="https://pbs.twimg.com/profile_images/638625945310613504/knyNyL2w_normal.jpg" alt="Evropa 2" />
+            </a>
+        </p>
+        <span class="time">01.07.2016 16:00</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ = please vote for my party island :)) you can 5x times:) ... <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a>       <a href="https://twitter.com/LinekersIbiza" target="_blank" rel="nofollow" title="Linekers Ibiza">@LinekersIbiza</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://pbs.twimg.com/profile_images/748463747044343808/mCtmAJV3_normal.jpg" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">01.07.2016 11:16</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/rebellious888">Michaela Kubova</a></h5>
+            <h6 class="text">Vote for this amazing place 😎summer is comming 🌞🌊🌴🍸🍹dej nam, prosím, pět hlasů😊
+<a href="http://ibiza.evropa2.cz/plakat/9863" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9863</a> <a href="https://twitter.com/hashtag/e2ibiza" target="_blank" rel="nofollow" title="#e2ibiza">#e2ibiza</a></h6>
+                        <div class="image">
+                <img src="https://pbs.twimg.com/media/CmRL38lUsAAg5RS.jpg" alt="" />
+            </div>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/rebellious888">
+                <img src="https://pbs.twimg.com/profile_images/747391932473688064/OnK3D5Tj_normal.jpg" alt="Michaela Kubova" />
+            </a>
+        </p>
+        <span class="time">01.07.2016 11:14</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ = please vote for my party island :)) ... <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a>      <a href="https://twitter.com/IBIZAPEOPLE_" target="_blank" rel="nofollow" title="IBIZAPEOPLE">@IBIZAPEOPLE_</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://pbs.twimg.com/profile_images/748463747044343808/mCtmAJV3_normal.jpg" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">01.07.2016 09:34</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ = please vote for my party island :)) ... <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a>      <a href="https://twitter.com/IbizaBoatParty_" target="_blank" rel="nofollow" title="Ibiza Boat Party">@IbizaBoatParty_</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://pbs.twimg.com/profile_images/748463747044343808/mCtmAJV3_normal.jpg" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">01.07.2016 09:34</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/Tomas_Klic">Tomas Klic</a></h5>
+            <h6 class="text">Please vote for us and my brother in Ibiza voting here ➡ <a href="http://ibiza.evropa2.cz/hlasuj/9802" target="_blank" rel="nofollow">ibiza.evropa2.cz/hlasuj/9802</a>
+You can vote 5 times... <a href="http://fb.me/7IFTh7oCK" target="_blank" rel="nofollow">fb.me/7IFTh7oCK</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/Tomas_Klic">
+                <img src="https://pbs.twimg.com/profile_images/378800000017952595/23175be5cee13beeea5665fa0fb00ded_normal.jpeg" alt="Tomas Klic" />
+            </a>
+        </p>
+        <span class="time">01.07.2016 06:22</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/Tomas_Klic">Tomas Klic</a></h5>
+            <h6 class="text">Please vote for us and my brother in Ibiza voting here ➡ <a href="http://ibiza.evropa2.cz/hlasuj/9802" target="_blank" rel="nofollow">ibiza.evropa2.cz/hlasuj/9802</a>
+You can vote 5 times... <a href="http://fb.me/2luSwrVe5" target="_blank" rel="nofollow">fb.me/2luSwrVe5</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/Tomas_Klic">
+                <img src="https://pbs.twimg.com/profile_images/378800000017952595/23175be5cee13beeea5665fa0fb00ded_normal.jpeg" alt="Tomas Klic" />
+            </a>
+        </p>
+        <span class="time">01.07.2016 06:21</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ = please vote for my party island :)) ... <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a>     <a href="https://twitter.com/ushuaiaibiza" target="_blank" rel="nofollow" title="Ushuaïa Beach Hotel">@ushuaiaibiza</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://pbs.twimg.com/profile_images/748463747044343808/mCtmAJV3_normal.jpg" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 22:54</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/Tomas_Klic">Tomas Klic</a></h5>
+            <h6 class="text">Please vote for us and my brother here ➡ <a href="http://ibiza.evropa2.cz/hlasuj/9802" target="_blank" rel="nofollow">ibiza.evropa2.cz/hlasuj/9802</a>
+If he win he will go to Ibiza! You... <a href="http://fb.me/J5hqK1at" target="_blank" rel="nofollow">fb.me/J5hqK1at</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/Tomas_Klic">
+                <img src="https://pbs.twimg.com/profile_images/378800000017952595/23175be5cee13beeea5665fa0fb00ded_normal.jpeg" alt="Tomas Klic" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 21:15</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/Michek001Tomas">Tomáš valenta</a></h5>
+            <h6 class="text"><a href="http://ibiza.evropa2.cz/plakat/9969" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9969</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/Michek001Tomas">
+                <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_6_normal.png" alt="Tomáš valenta" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 20:39</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ = please vote for my party island :)) ... <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a>    <a href="https://twitter.com/PatrickNazemi" target="_blank" rel="nofollow" title="Patrick Nazemi">@PatrickNazemi</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://pbs.twimg.com/profile_images/748463747044343808/mCtmAJV3_normal.jpg" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 20:05</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ = please vote for my party island :)) ... <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a>    <a href="https://twitter.com/IbizaInvasion" target="_blank" rel="nofollow" title="Ibiza Invasion">@IbizaInvasion</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://pbs.twimg.com/profile_images/748463747044343808/mCtmAJV3_normal.jpg" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 20:00</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ = please vote for my party island :)) ... <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a>    <a href="https://twitter.com/alexgarofalodj" target="_blank" rel="nofollow" title="Dj Alex Garofalo">@alexgarofalodj</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://pbs.twimg.com/profile_images/748463747044343808/mCtmAJV3_normal.jpg" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 19:56</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ = please vote for my party island :)) ... <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a>    <a href="https://twitter.com/IBIZAPEOPLE_" target="_blank" rel="nofollow" title="IBIZAPEOPLE">@IBIZAPEOPLE_</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://pbs.twimg.com/profile_images/748463747044343808/mCtmAJV3_normal.jpg" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 19:55</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ = please vote for my party island :)) ... <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a>    <a href="https://twitter.com/BlueMarlinIbiza" target="_blank" rel="nofollow" title="Blue Marlin Ibiza">@BlueMarlinIbiza</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://pbs.twimg.com/profile_images/748463747044343808/mCtmAJV3_normal.jpg" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 19:51</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ = please vote for my party island :)) ... <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a>    <a href="https://twitter.com/Savannahibiza" target="_blank" rel="nofollow" title="Savannah Ibiza">@Savannahibiza</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://pbs.twimg.com/profile_images/748463747044343808/mCtmAJV3_normal.jpg" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 19:50</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ = please vote for my party island :)) ... <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a>    <a href="https://twitter.com/Ibizahire" target="_blank" rel="nofollow" title="IbizaHire">@Ibizahire</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://pbs.twimg.com/profile_images/748463747044343808/mCtmAJV3_normal.jpg" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 19:50</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/DusanVanco">Dušan Vančo</a></h5>
+            <h6 class="text"><a href="https://twitter.com/jitkafurst" target="_blank" rel="nofollow" title="Jitka Fürst">@jitkafurst</a> <a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2">@Evropa2</a> Díky za všetko! drž sa ✊🏻</h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/DusanVanco">
+                <img src="https://pbs.twimg.com/profile_images/747154447210582016/NddodQXW_normal.jpg" alt="Dušan Vančo" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 18:14</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/GolfitIt">Golf it</a></h5>
+            <h6 class="text">RT <a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2">@Evropa2</a>: VIDEO: Tohle fakt není trik! Neuvěřitelný <a href="https://twitter.com/hashtag/golf" target="_blank" rel="nofollow" title="#golf">#golf</a> úder borce Ernieho Else <a href="https://twitter.com/TheBig_Easy" target="_blank" rel="nofollow" title="Ernie Els">@TheBig_Easy</a>! <a href="http://bit.ly/296UsCr" target="_blank" rel="nofollow">bit.ly/296UsCr</a> https://t.co/kDd…</h6>
+                        <div class="image">
+                <img src="https://pbs.twimg.com/media/CmNfVLHWIAE-43n.jpg" alt="" />
+            </div>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/GolfitIt">
+                <img src="https://pbs.twimg.com/profile_images/465845159607824386/C2TZw1k6_normal.jpeg" alt="Golf it" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 18:01</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/jitkafurst">Jitka Fürst</a></h5>
+            <h6 class="text">Dneska ofiko poslední den na <a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2">@Evropa2</a> a teď už <a href="https://twitter.com/hashtag/letolasky" target="_blank" rel="nofollow" title="#letolasky">#letolasky</a> <a href="https://twitter.com/hashtag/thanks" target="_blank" rel="nofollow" title="#thanks">#thanks</a> <a href="https://twitter.com/hashtag/happy" target="_blank" rel="nofollow" title="#happy">#happy</a> <a href="https://instagram.com/p/BHSHedij1Aa/" target="_blank" rel="nofollow">instagram.com/p/BHSHedij1Aa/</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/jitkafurst">
+                <img src="https://pbs.twimg.com/profile_images/649370410442747904/2TxKQN9N_normal.jpg" alt="Jitka Fürst" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 17:25</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/nightgrowsnear">monika</a></h5>
+            <h6 class="text"><a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2">@Evropa2</a> will you be giving away tickets for the twenty one pilots show in Prague on November 4th?</h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/nightgrowsnear">
+                <img src="https://pbs.twimg.com/profile_images/748327507837935617/zZbXP0k0_normal.jpg" alt="monika" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 15:32</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/SedlakovaJana">Jana Sedlakova</a></h5>
+            <h6 class="text">Please vote for my cousin here ➡ <a href="http://ibiza.evropa2.cz/hlasuj/9802" target="_blank" rel="nofollow">ibiza.evropa2.cz/hlasuj/9802</a>
+You can vote 5 times in a row every day -... <a href="http://fb.me/4SbAkHrQC" target="_blank" rel="nofollow">fb.me/4SbAkHrQC</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/SedlakovaJana">
+                <img src="https://pbs.twimg.com/profile_images/423700482251825152/vSBtFu-w_normal.jpeg" alt="Jana Sedlakova" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 14:51</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/MetronomeFest">Metronome Festival</a></h5>
+            <h6 class="text">RT <a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2"><a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2">@Evropa2</a></a>: Kapela <a href="https://twitter.com/crystalfighters" target="_blank" rel="nofollow" title="Crystal Fighters">@crystalfighters</a> miluje Česko! Extra rozhovor pro <a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2"><a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2">@Evropa2</a></a> na <a href="https://twitter.com/MetronomeFest" target="_blank" rel="nofollow" title="Metronome Festival">@MetronomeFest</a> <a href="https://twitter.com/hashtag/e2cz" target="_blank" rel="nofollow" title="#e2cz">#e2cz</a> <a href="http://bit.ly/296T0A7" target="_blank" rel="nofollow">bit.ly/296T0A7</a> https://t.co…</h6>
+                        <div class="image">
+                <img src="https://pbs.twimg.com/media/CmMM3qrWMAEH3Uo.jpg" alt="" />
+            </div>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/MetronomeFest">
+                <img src="https://pbs.twimg.com/profile_images/707464515370295297/cDUrgdg8_normal.jpg" alt="Metronome Festival" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 14:25</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/jitkakytkajitka">Jitka</a></h5>
+            <h6 class="text">RT <a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2">@Evropa2</a>: VIRAL ROKU: Česká ostuda v britském <a href="https://twitter.com/TheXFactor" target="_blank" rel="nofollow" title="The X Factor">@TheXFactor</a> se strhla v neskutečnou srandu! Musíš vidět! <a href="http://bit.ly/296nj6i" target="_blank" rel="nofollow">bit.ly/296nj6i</a> https://t…</h6>
+                        <div class="image">
+                <img src="https://pbs.twimg.com/media/CmMoXw_WgAEHAYt.jpg" alt="" />
+            </div>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/jitkakytkajitka">
+                <img src="https://pbs.twimg.com/profile_images/740491625919614976/5cmFrfh3_normal.jpg" alt="Jitka" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 14:08</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ = please vote for my party island :)) ... <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a>  <a href="https://twitter.com/IbizaInvasion" target="_blank" rel="nofollow" title="Ibiza Invasion">@IbizaInvasion</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://pbs.twimg.com/profile_images/748463747044343808/mCtmAJV3_normal.jpg" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 13:52</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/tocozbylo">Normální člověk</a></h5>
+            <h6 class="text"><a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2">@Evropa2</a> Proč má už druhý den výpadek na FM 106,7? 😟</h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/tocozbylo">
+                <img src="https://pbs.twimg.com/profile_images/602237543975919616/7R2xf9pM_normal.jpg" alt="Normální člověk" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 13:27</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ = please vote for my party island :)) ... <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a> <a href="https://twitter.com/nassau_ibiza" target="_blank" rel="nofollow" title="Nassau Beach Club">@nassau_ibiza</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://pbs.twimg.com/profile_images/748463747044343808/mCtmAJV3_normal.jpg" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 12:35</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ = please vote for my party island :)) ... <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a>   <a href="https://twitter.com/IbizaClubNews" target="_blank" rel="nofollow" title="Ibiza Club News">@IbizaClubNews</a> <a href="https://twitter.com/essentialibiza" target="_blank" rel="nofollow" title="Essential Ibiza">@essentialibiza</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_6_normal.png" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 12:28</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ = please vote for my party island :)) ... <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a> <a href="https://twitter.com/Mamboibiza" target="_blank" rel="nofollow" title="Cafe Mambo Ibiza">@Mamboibiza</a> <a href="https://twitter.com/ibizarocks" target="_blank" rel="nofollow" title="Ibiza Rocks">@ibizarocks</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_6_normal.png" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 12:25</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">HLASUJ= <a href="https://twitter.com/Amnesia_Ibiza" target="_blank" rel="nofollow" title="Amnesia Ibiza">@Amnesia_Ibiza</a> <a href="https://twitter.com/privilege_ibiza" target="_blank" rel="nofollow" title="Privilege Ibiza">@privilege_ibiza</a> please vote for my party island :))...  <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_6_normal.png" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 12:22</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">prosím hlasujte pro náš párty ostrov :)) ,<a href="https://twitter.com/SpaceIbiza" target="_blank" rel="nofollow" title="Space Ibiza">@SpaceIbiza</a> <a href="https://twitter.com/CreamIbiza" target="_blank" rel="nofollow" title="Cream Ibiza">@CreamIbiza</a> HLASUJ = please vote for my party island :))...  <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_6_normal.png" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 12:21</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">Ibiza a <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a> prosím hlasujte pro náš párty ostrov :)) <a href="https://twitter.com/hashtag/e2ibiza" target="_blank" rel="nofollow" title="#e2ibiza">#e2ibiza</a>,, please vote for my party island :))...</h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_6_normal.png" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 12:17</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/Evropa2">Evropa 2</a></h5>
+            <h6 class="text">Kapela <a href="https://twitter.com/crystalfighters" target="_blank" rel="nofollow" title="Crystal Fighters">@crystalfighters</a> miluje Česko! Extra rozhovor pro <a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2">@Evropa2</a> na <a href="https://twitter.com/MetronomeFest" target="_blank" rel="nofollow" title="Metronome Festival">@MetronomeFest</a> <a href="https://twitter.com/hashtag/e2cz" target="_blank" rel="nofollow" title="#e2cz">#e2cz</a> <a href="http://bit.ly/296T0A7" target="_blank" rel="nofollow">bit.ly/296T0A7</a></h6>
+                        <div class="image">
+                <img src="https://pbs.twimg.com/media/CmMM3qrWMAEH3Uo.jpg" alt="" />
+            </div>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/Evropa2">
+                <img src="https://pbs.twimg.com/profile_images/638625945310613504/knyNyL2w_normal.jpg" alt="Evropa 2" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 12:00</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/danielhons11">daniel hons</a></h5>
+            <h6 class="text">prosím hlasujte pro náš párty ostrov :)) <a href="https://twitter.com/hashtag/e2ibiza" target="_blank" rel="nofollow" title="#e2ibiza">#e2ibiza</a>,, please vote for my party island :))...  <a href="http://ibiza.evropa2.cz/plakat/9866" target="_blank" rel="nofollow">ibiza.evropa2.cz/plakat/9866</a></h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/danielhons11">
+                <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_6_normal.png" alt="daniel hons" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 11:18</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/MarieNovakova6">Marie Novaková</a></h5>
+            <h6 class="text">RT <a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2">@Evropa2</a>: Rodinný výlet do zoo se nevydařil podle představ. Reakce internetu je fakt povedená <a href="http://bit.ly/294tt6K" target="_blank" rel="nofollow">bit.ly/294tt6K</a> <a href="https://twitter.com/hashtag/fun" target="_blank" rel="nofollow" title="#fun">#fun</a> https://t.co/…</h6>
+                        <div class="image">
+                <img src="https://pbs.twimg.com/media/CmIjYYWWEAAU887.jpg" alt="" />
+            </div>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/MarieNovakova6">
+                <img src="https://pbs.twimg.com/profile_images/701729248353107968/HmEfDrlL_normal.jpg" alt="Marie Novaková" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 09:09</span>
+    </div>
+</li>
+                                                            <li class="item">
+    <div class="clearfix">
+        <div class="textBox toggleEl">
+            <h5 class="title"><a href="https://twitter.com/PolakovaNatalie">Natálie Poláková</a></h5>
+            <h6 class="text">Dnešní ranní show na <a href="https://twitter.com/Evropa2" target="_blank" rel="nofollow" title="Evropa 2">@Evropa2</a> je tak dojemná, že se asi rozbrečím i já.</h6>
+                                </div>
+        <p class="picture">
+            <a href="https://twitter.com/PolakovaNatalie">
+                <img src="https://pbs.twimg.com/profile_images/721811570381230081/P60dWWFY_normal.jpg" alt="Natálie Poláková" />
+            </a>
+        </p>
+        <span class="time">30.06.2016 09:09</span>
+    </div>
+</li>
+                                                    </ul>
+                    </div><!-- #scrollableBox -->
+                </div><!-- #wall -->
+            </div><!-- #timeline -->
+        </div><!-- #main -->
+
+                <div id="bottomLinks">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-sm-12">
+                        <div class="col">
+                            <h4 class="title"><a href="/news">News</a></h4>
+                            <ul class="list">
+                                                                                                            <li class="item"><a href="https://www.evropa2.cz/news/muzika">Muzika</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/news/evropa2">Evropa 2</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/news/film">Film</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/news/zabava">Zábava</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/news/zivot">Život</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/news/styl">Styl</a></li>
+                                                                                                </ul>
+                        </div><!-- .col -->
+
+                        <div class="col">
+                            <h4 class="title"><a href="/shows">Shows</a></h4>
+                            <ul class="list">
+                                                                                                            <li class="item"><a href="https://www.evropa2.cz/shows/ranni-show">Ranní show</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/shows/odpoledni-show">Odpolední show</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/shows/evropa-2-music-chart">Evropa 2 Music Chart</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/shows/maxximum-muziky">MaXXimum muziky</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/shows/vyber-si-na-maxximum">Vyber si na maXXimum</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/shows/dance-exxtravaganza">Dance eXXtravaganza</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/shows/afterparty">Afterparty</a></li>
+                                                                                                </ul>
+                        </div><!-- .col -->
+
+                        <div class="col">
+                            <h4 class="title"><a href="/video">Video</a></h4>
+                            <ul class="list">
+                                                                                                            <li class="item"><a href="https://www.evropa2.cz/shows/backstage">Backstage</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/shows/fakt-no-koment">Fakt No Koment</a></li>
+                                                                                                </ul>
+                        </div><!-- .col -->
+
+                        <div class="col">
+                            <h4 class="title"><a href="/radio">Rádio</a></h4>
+                            <ul class="list">
+                                                                                                            <li class="item"><a href="https://www.evropa2.cz/playlist">Playlist</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/program">Program</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/moderatori">Moderátoři</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/kontakt">Kontakt</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/vysilace">Vysílače</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/faq">FAQ</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/obchodni-podminky">Reklama</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/podminky-webu">Podmínky webu</a></li>
+                                                                            <li class="item"><a href="https://www.evropa2.cz/evropa-2-v-mobilu">Evropa 2 v mobilu</a></li>
+                                                                                                </ul>
+                        </div><!-- .col -->
+
+                        
+                        <p class="e2mobile visible-lg">
+                            <a href="/evropa-2-v-mobilu"><span class="sr-only">Evropa 2 v mobilu</span></a>
+                        </p>
+                    </div><!-- .col -->
+
+
+                    <div class="col-lg-3 col-sm-12">
+                        <h4 class="title">Prohledej si Evropu 2</h4>
+                        <form id="search" action="/" method="GET">
+                            <fieldset>
+                                <legend class="sr-only">Vyhledávání</legend>
+                                <div class="form-group">
+                                    <label class="sr-only" for="searchText">Prohledej si Evropu 2</label>
+                                    <input name="s" id="searchText" class="form-control" type="search" title="Zadejte, prosím, hledaný výraz." value="" accesskey="4" name="" required="required" />
+                                </div>
+
+                                <span class="infoText">Zkus třeba: top 20, LeOs mares, celibát</span>
+
+                                <button type="submit" class="sr-only">Vyhledat</button>
+                            </fieldset>
+                        </form>
+                    </div><!-- .col -->
+
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div>
+
+        <div id="overlay-temp">
+            
+    <div id='div-gpt-ad-1383664905229-0' style="width: 600px; margin: 0; text-align: center;">
+        <script type='text/javascript'>
+        googletag.display('div-gpt-ad-1383664905229-0');
+        </script>
+    </div>
+            <button id="close-ads">x Zavřít</button>
+        </div>
+
+        <div id="mobileApp" class="clearfix">
+    <div class="textBox">
+        <h5 class="title">Poslouchej Evropu 2 v mobilu</h5>
+        <p class="text">Mobilní appka je ke stažení zdarma.</p>
+    </div>
+    <div class="link">
+        <a href="/evropa-2-v-mobilu" class="btn btnA">Stahuj</a>
+    </div>
+    <div class="picture">
+        <img src="https://img.static.lagardere.cz/evropa2/logo-mobile-app.png" alt="" />
+    </div>
+</div><!-- #mobileApp -->
+
+        <footer id="pageFooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="inner">
+                            <ul class="socialLinks">
+                                <li><a href="https://twitter.com/evropa2" class="icon-twitter"><span class="sr-only">Twitter</span></a></li>
+                                <li><a href="https://www.facebook.com/evropa2.cz" class="icon-facebook"><span class="sr-only">Facebook</span></a></li>
+                                <li><a href="https://instagram.com/e2cz" class="icon-instagram"><span class="sr-only">Instagram</span></a></li>
+                            </ul>
+
+                            <div id="topLink">
+                                <a href="#" class="icon-top anchor js-scrollTop" title="Nahoru">
+                                    <span class="sr-only">Nahoru</span>
+                                </a>
+                            </div><!-- #topLink -->
+
+                            <p id="copy">Copyright &copy; 2016 Evropa 2, Lagardère Active ČR. Veškerá práva vyhrazena.</p>
+                        </div><!-- .inner -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script type='text/javascript' src='//js.static.lagardere.cz/evropa2/plugins/wp-contact-form7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"https:\/\/js.static.lagardere.cz\/evropa2\/plugins\/wp-contact-form7\/images\/ajax-loader.gif","sending":"Sending ...","cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//js.static.lagardere.cz/evropa2/plugins/wp-contact-form7/includes/js/scripts.js?ver=4.2.1'></script>
+
+
+        <script>
+            window.wpAjaxUrl = "/ajax";
+        </script>
+        <script src="https://js.static.lagardere.cz/evropa2/slick.min.js" type="text/javascript"></script>
+        <script src="https://js.static.lagardere.cz/evropa2/jquery.cookie.js" type="text/javascript"></script>
+        <script src="https://js.static.lagardere.cz/evropa2/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+        <script src="https://js.static.lagardere.cz/evropa2/jquery.viewport.js" type="text/javascript"></script>
+        <script src="https://js.static.lagardere.cz/evropa2/jquery.ba-throttle-debounce.js" type="text/javascript"></script>
+        <script src="https://js.static.lagardere.cz/evropa2/fixto.min.js" type="text/javascript"></script>
+        <script src="https://js.static.lagardere.cz/evropa2/jquery.fancybox.min.js" type="text/javascript"></script>
+        <script src="https://js.static.lagardere.cz/evropa2/moment.min.js" type="text/javascript"></script>
+        <script src="https://js.static.lagardere.cz/evropa2/functions.js" type="text/javascript"></script>
+        
+        
+        
+
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"301ec161d7","applicationID":"9360403","transactionName":"YQFRNhRXV0dRUEMIClhLcgESX1ZaH0BfDhJF","queueTime":0,"applicationTime":1808,"atts":"TUZSQFxNREk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Database Caching 67/203 queries in 0.777 seconds using apc
+Object Caching 3005/3303 objects using apc
+Application Monitoring using New Relic
+
+ Served from: www.evropa2.cz @ 2016-07-02 17:34:38 by W3 Total Cache -->
+
+<!-- W3 Total Cache: Page cache debug info:
+Engine:             apc
+Cache key:          440bfa6f3088ca332ad953845810feba_ssl
+Caching:            enabled
+Status:             not cached
+Creation Time:      1.810s
+Header info:
+Set-Cookie:          lastvisit=2016-07-02+17%3A34%3A38; expires=Mon, 01-Aug-2016 15:34:38 GMT; Max-Age=2592000; path=/
+Link:                <https://www.evropa2.cz/?p=56>; rel=shortlink
+Last-Modified:       Sat, 02 Jul 2016 15:34:38 GMT
+X-Pingback:           https://www.evropa2.cz/wordpress/xmlrpc.php
+Content-Type:         text/html; charset=UTF-8
+-->
