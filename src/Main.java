@@ -1,19 +1,20 @@
 
 import jEvropa2.Extractor;
 import jEvropa2.HtmlParser;
+import jEvropa2.HttpRequests;
 import jEvropa2.data.Item;
 //import jaco.mp3.player.MP3Player;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- *
  * @author Skup5
  */
 public class Main {
@@ -33,6 +34,8 @@ public class Main {
         Elements elements;
         HtmlParser parser = new HtmlParser();
 
+        site = HttpRequests.httpGetSite(urlE2 + urlShows + "ranni-show");
+
         /*site = loadSite("Shows - Evropa 2.html", "utf-8");
          site.setBaseUri(urlE2);
         
@@ -43,8 +46,8 @@ public class Main {
          */
         //site = loadSite("Ranni show - Evropa 2.html", "utf-8");
         //site = loadSite("Music chart - Evropa 2.html", "utf-8");
-        site = loadSite("Fakt No Koment - Evropa 2.html", "utf-8");
-        site.setBaseUri(urlE2);
+//        site = loadSite("Fakt No Koment - Evropa 2.html", "utf-8");
+//        site.setBaseUri(urlE2);
 
         /* 
         Elements showItems = Extractor.getAudioItems(site);
@@ -53,13 +56,13 @@ public class Main {
          System.out.println(item.info());
          }
          */
-        //System.out.println(new HtmlParser().parseActiveAudioShowItem(Extractor.getActiveItem(site)).info());
+        System.out.println(new HtmlParser().parseActiveAudioShowItem(Extractor.getActiveItem(site)).info());
         
         /*elements = Extractor.getVideoItems(site);
         for (Item item : new HtmlParser().parseVideoShowItems(elements)) {
             System.out.println(item.info());
         }*/
-        System.out.println(parser.parseActiveVideoShowItem(Extractor.getActiveItem(site)).info());
+//        System.out.println(parser.parseActiveVideoShowItem(Extractor.getActiveItem(site)).info());
     }
 
     public static void playMP3(String source) throws MalformedURLException {

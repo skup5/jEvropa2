@@ -21,12 +21,12 @@ public class Extractor {
     }
 
     public static Elements getVideoItems(Document doc) {
-       // return doc.select("#main .js-equalize .feed-player").select(".item ~ .video").not(".item-active, .more");
+        // return doc.select("#main .js-equalize .feed-player").select(".item ~ .video").not(".item-active, .more");
         return doc.select("#main .js-equalize .feed-player .paginableContainer .item").select(".video");
     }
 
     public static Element getActiveItem(Document doc) {
-        return doc.select("#main .js-equalize-children").first();
+        return doc.select("#main .js-equalize-children .player").first();
     }
 
     public static Element getNextShowItems(Document doc) {

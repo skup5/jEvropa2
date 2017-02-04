@@ -1,12 +1,14 @@
 package jEvropa2.parser;
 
 import jEvropa2.data.Item;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
@@ -15,8 +17,8 @@ import org.jsoup.select.Elements;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 /**
- *
  * @author Roman
  */
 public class ItemParser {
@@ -79,7 +81,8 @@ public class ItemParser {
      </div>
      */
     public Item parseActiveAudio(Element element) throws MalformedURLException {
-        URL imgUrl, mp3Url;
+//        System.out.println(element);
+        URL imgUrl, mp3Url = null;
         Elements elements = element.select(".feed-player .item-active").select(".audio");
         Element player;
         if (elements.isEmpty()) {
@@ -90,8 +93,18 @@ public class ItemParser {
         String title = player.select(".content h2").first().text();
         String cover = element.select(".jPlayer .jMotiveCover").first().outerHtml();
         imgUrl = parseActiveImgUrl(cover);
-        String script = element.select(".jPlayer script").first().html();
-        mp3Url = parseMp3Url(script);
+        Elements scripts = element.select("[id^='jPlayer'] script");
+        String script = "";
+        for (Element scriptElement : scripts) {
+            if (scriptElement.html().contains("jPlayer")) {
+                script = scriptElement.html();
+                break;
+            }
+        }
+
+        if (!script.isEmpty())
+            mp3Url = parseMp3Url(script);
+
         return new Item(title, imgUrl, mp3Url, time);
     }
 
@@ -99,14 +112,14 @@ public class ItemParser {
         /*<div class="jMotiveCover" 
          style="background-image: url('https://m.static.lagardere.cz/evropa2/image/2016/01/Leos_Patrik-4-660x336.jpg');"></div>*/
         int end = div.indexOf(".jpg");
-        if(end < 0) end = div.indexOf(".png");
+        if (end < 0) end = div.indexOf(".png");
         end += 4;
         int start = div.lastIndexOf("http", end);
         String img = div.substring(start, end);
         return new URL(img);
     }
 
-    public Item parseActiveVideo(Element element) throws MalformedURLException{
+    public Item parseActiveVideo(Element element) throws MalformedURLException {
         URL imgUrl, mp4Url;
         Elements elements = element.select(".feed-player .item-active").select(".video");
         Element player;
@@ -121,6 +134,7 @@ public class ItemParser {
         mp4Url = parseMp4Url(script);
         return new Item(title, imgUrl, mp4Url, time);
     }
+
     public URL parseMp3Url(String script) throws MalformedURLException {
         int end = script.indexOf(".mp3") + 4;
         int start = script.lastIndexOf("http", end);
@@ -130,7 +144,7 @@ public class ItemParser {
         return new URL(url);
     }
 
-    public URL parseMp4Url(String script) throws MalformedURLException{
+    public URL parseMp4Url(String script) throws MalformedURLException {
         int end = script.indexOf(".mp4") + 4;
         int start = script.lastIndexOf("http", end);
         String url = script.substring(start, end);
@@ -138,6 +152,7 @@ public class ItemParser {
         url = unescapeJava(url);
         return new URL(url);
     }
+
     /*
     <div class="item post-picture-effect video clearfix">
     <div class="source">
