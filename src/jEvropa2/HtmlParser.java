@@ -3,9 +3,7 @@ package jEvropa2;
 import jEvropa2.parser.ShowParser;
 import jEvropa2.parser.ItemParser;
 import jEvropa2.data.Item;
-import jEvropa2.data.Record;
 import jEvropa2.data.Show;
-import jEvropa2.data.Category;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
@@ -13,11 +11,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
- * Creates sets of categories and records from html code.
+ * Creates sets of {@link Show} and {@link Item} from html code.
  *
  * @author Roman Zelenik
  */

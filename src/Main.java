@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.Set;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -40,7 +41,7 @@ public class Main {
          site.setBaseUri(urlE2);
         
          Elements shows = Extractor.getShowsList(site);
-         for (Show show : new HtmlParser().parseShows(shows)) {
+         for (Show show : parser.parseShows(shows)) {
          System.out.println(show.info());
          }
          */
@@ -49,17 +50,23 @@ public class Main {
 //        site = loadSite("Fakt No Koment - Evropa 2.html", "utf-8");
 //        site.setBaseUri(urlE2);
 
-        /* 
+
         Elements showItems = Extractor.getAudioItems(site);
-         printElements(showItems);
-         for (Item item : new HtmlParser().parseAudioShowItems(showItems)) {
-         System.out.println(item.info());
-         }
-         */
-        System.out.println(new HtmlParser().parseActiveAudioShowItem(Extractor.getActiveItem(site)).info());
-        
+        //printElements(showItems);
+        Set<Item> items = parser.parseAudioShowItems(showItems);
+        for (Item item : items) {
+            System.out.println(item.info());
+            url = item.getWebSiteUrl().toExternalForm();
+        }
+
+        System.out.println(parser.parseActiveAudioShowItem(Extractor.getActiveItem(site)).info());
+
+        System.out.println("--------------------");
+        site = HttpRequests.httpGetSite(url);
+        System.out.println(parser.parseMp3Url(Extractor.getPlayerScript(site)));
+
         /*elements = Extractor.getVideoItems(site);
-        for (Item item : new HtmlParser().parseVideoShowItems(elements)) {
+        for (Item item : parser.parseVideoShowItems(elements)) {
             System.out.println(item.info());
         }*/
 //        System.out.println(parser.parseActiveVideoShowItem(Extractor.getActiveItem(site)).info());

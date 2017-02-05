@@ -1,5 +1,6 @@
 package jEvropa2.parser;
 
+import jEvropa2.Extractor;
 import jEvropa2.data.Item;
 
 import java.io.IOException;
@@ -93,18 +94,12 @@ public class ItemParser {
         String title = player.select(".content h2").first().text();
         String cover = element.select(".jPlayer .jMotiveCover").first().outerHtml();
         imgUrl = parseActiveImgUrl(cover);
-        Elements scripts = element.select("[id^='jPlayer'] script");
-        String script = "";
-        for (Element scriptElement : scripts) {
-            if (scriptElement.html().contains("jPlayer")) {
-                script = scriptElement.html();
-                break;
-            }
+        Element scriptElement = Extractor.getPlayerScript(element.ownerDocument());
+        if(scriptElement != null) {
+            String script = scriptElement.html();
+            if (!script.isEmpty())
+                mp3Url = parseMp3Url(script);
         }
-
-        if (!script.isEmpty())
-            mp3Url = parseMp3Url(script);
-
         return new Item(title, imgUrl, mp3Url, time);
     }
 

@@ -60,18 +60,14 @@ public class Item extends E2Data {
     }
 
     public String info() {
-        String info = getTime() + " > " + getName() + " (";
-        if (hasWebSiteUrl()) {
-            info += webSiteUrl.toExternalForm();
-        }
-        if (hasImgUrl()) {
-            info += ", " + imgUrl.toExternalForm();
-        }
-        if (hasMediaUrl()) {
-            info += ", " + mediaUrl.toExternalForm();
-        }
-        info += ")";
-        return info;
+        final StringBuilder sb = new StringBuilder("Item{");
+        sb.append("name=").append(name);
+        sb.append(", time='").append(time).append('\'');
+        sb.append(", webSiteUrl=").append(webSiteUrl);
+        sb.append(", imgUrl=").append(imgUrl);
+        sb.append(", mediaUrl=").append(mediaUrl);
+        sb.append('}');
+        return sb.toString();
     }
 
     public void setImgUrl(URL imgUrl) {

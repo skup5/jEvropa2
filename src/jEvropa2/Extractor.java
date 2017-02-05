@@ -33,8 +33,20 @@ public class Extractor {
         return doc.select("#main .js-equalize .feed-player").select(".item ~ .more").first();
     }
 
+    /**
+     * Returns script element with javascript player source.
+     *
+     * @param doc
+     * @return element or null
+     */
     public static Element getPlayerScript(Document doc) {
-        return doc.select(".jPlayerGui").first().parent().select("script").first();
+        Elements scripts = doc.select("#main [id^='jPlayer'] script");
+        for (Element scriptElement : scripts) {
+            if (scriptElement.html().contains("jPlayer")) {
+                return scriptElement;
+            }
+        }
+        return null;
     }
 
     private Extractor() {
