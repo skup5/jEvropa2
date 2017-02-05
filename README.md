@@ -1,1 +1,1 @@
-#jEvropa2 library
+#cz.skup5.jEvropa2 library

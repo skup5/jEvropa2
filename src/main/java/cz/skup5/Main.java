@@ -1,8 +1,9 @@
+package cz.skup5;
 
-import jEvropa2.Extractor;
-import jEvropa2.HtmlParser;
-import jEvropa2.HttpRequests;
-import jEvropa2.data.Item;
+import cz.skup5.jEvropa2.Extractor;
+import cz.skup5.jEvropa2.HtmlParser;
+import cz.skup5.jEvropa2.HttpRequests;
+import cz.skup5.jEvropa2.data.Item;
 //import jaco.mp3.player.MP3Player;
 import java.io.File;
 import java.io.FileNotFoundException;

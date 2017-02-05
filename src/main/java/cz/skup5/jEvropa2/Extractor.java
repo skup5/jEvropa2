@@ -1,4 +1,4 @@
-package jEvropa2;
+package cz.skup5.jEvropa2;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

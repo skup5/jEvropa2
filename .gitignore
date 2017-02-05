@@ -1,7 +1,4 @@
-/nbproject/
-build.xml
-/build/
-/dist/
 /.idea/
-*.iml
 /out/
+*.iml
+*.mp3

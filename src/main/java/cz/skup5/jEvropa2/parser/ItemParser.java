@@ -1,12 +1,10 @@
-package jEvropa2.parser;
+package cz.skup5.jEvropa2.parser;
 
-import jEvropa2.Extractor;
-import jEvropa2.data.Item;
+import cz.skup5.jEvropa2.Extractor;
+import cz.skup5.jEvropa2.data.Item;
 
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.io.Writer;
 import java.net.MalformedURLException;
 import java.net.URL;
 

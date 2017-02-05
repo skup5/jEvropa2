@@ -1,4 +1,4 @@
-package jEvropa2.data;
+package cz.skup5.jEvropa2.data;
 
 import java.net.URL;
 

@@ -1,9 +1,9 @@
-package jEvropa2;
+package cz.skup5.jEvropa2;
 
-import jEvropa2.parser.ShowParser;
-import jEvropa2.parser.ItemParser;
-import jEvropa2.data.Item;
-import jEvropa2.data.Show;
+import cz.skup5.jEvropa2.parser.ShowParser;
+import cz.skup5.jEvropa2.parser.ItemParser;
+import cz.skup5.jEvropa2.data.Item;
+import cz.skup5.jEvropa2.data.Show;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 

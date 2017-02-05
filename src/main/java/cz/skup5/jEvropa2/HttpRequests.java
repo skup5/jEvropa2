@@ -1,10 +1,9 @@
-package jEvropa2;
+package cz.skup5.jEvropa2;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;
-import org.jsoup.Connection;
 
 /**
  * Static class for sending http request to the server.
