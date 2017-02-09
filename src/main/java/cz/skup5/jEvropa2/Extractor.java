@@ -30,7 +30,7 @@ public class Extractor {
     }
 
     public static Element getNextShowItems(Document doc) {
-        return doc.select("#main .js-equalize .feed-player").select(".item ~ .more").first();
+        return doc.select("#main .js-equalize .feed-player").select(".item.more").first();
     }
 
     /**

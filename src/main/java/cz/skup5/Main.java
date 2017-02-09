@@ -52,25 +52,28 @@ public class Main {
 //        site.setBaseUri(urlE2);
 
 
-        Elements showItems = Extractor.getAudioItems(site);
+//        Elements showItems = Extractor.getAudioItems(site);
         //printElements(showItems);
-        Set<Item> items = parser.parseAudioShowItems(showItems);
+        /*Set<Item> items = parser.parseAudioShowItems(showItems);
         for (Item item : items) {
             System.out.println(item.info());
             url = item.getWebSiteUrl().toExternalForm();
         }
+*/
+//        System.out.println(parser.parseActiveAudioShowItem(Extractor.getActiveItem(site)).info());
 
-        System.out.println(parser.parseActiveAudioShowItem(Extractor.getActiveItem(site)).info());
-
-        System.out.println("--------------------");
-        site = HttpRequests.httpGetSite(url);
-        System.out.println(parser.parseMp3Url(Extractor.getPlayerScript(site)));
+//        System.out.println("--------------------");
+//        site = HttpRequests.httpGetSite(url);
+//        System.out.println(parser.parseMp3Url(Extractor.getPlayerScript(site)));
 
         /*elements = Extractor.getVideoItems(site);
         for (Item item : parser.parseVideoShowItems(elements)) {
             System.out.println(item.info());
         }*/
 //        System.out.println(parser.parseActiveVideoShowItem(Extractor.getActiveItem(site)).info());
+
+        Element nextShowItems = Extractor.getNextShowItems(site);
+        System.out.println(parser.parseNextPageUrl(nextShowItems));
     }
 
     public static void playMP3(String source) throws MalformedURLException {

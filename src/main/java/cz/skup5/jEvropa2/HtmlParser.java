@@ -28,7 +28,7 @@ public class HtmlParser {
     }
 
     public Set<Show> parseShows(Elements elements) {
-        Set<Show> showsSet = new LinkedHashSet<>();
+        Set<Show> showsSet = new LinkedHashSet();
         Show newShow;
         for (Element element : elements) {
             try {
@@ -42,7 +42,7 @@ public class HtmlParser {
     }
 
     public Set<Item> parseAudioShowItems(Elements elements) {
-        Set<Item> itemsSet = new LinkedHashSet<>();
+        Set<Item> itemsSet = new LinkedHashSet();
         Item newItem;
         for (Element element : elements) {
             try {
@@ -56,7 +56,7 @@ public class HtmlParser {
     }
 
     public Set<Item> parseVideoShowItems(Elements elements) {
-        Set<Item> itemsSet = new LinkedHashSet<>();
+        Set<Item> itemsSet = new LinkedHashSet();
         Item newItem;
         for (Element element : elements) {
             try {
