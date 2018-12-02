@@ -1,22 +1,24 @@
-package cz.skup5.jEvropa2;
+package cz.skup5.jEvropa2
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
 
-import java.io.IOException;
+import java.io.IOException
 
 /**
  * Static class for sending http request to the server.
  *
  * @author Roman Zelenik
  */
-public class HttpRequests {
+object HttpRequests {
 
-    public static Document httpGetSite(String url) throws IOException {
-        return Jsoup.connect(url).get();
+    @Throws(IOException::class)
+    fun httpGetSite(url: String): Document {
+        return Jsoup.connect(url).get()
     }
 
-    public static Document httpGetSite(String url, String... keysVals) throws IOException {
+    @Throws(IOException::class)
+    fun httpGetSite(url: String, vararg keysVals: String): Document {
         /* String rate, tag;
          rate = tag = "";
          if (!url.endsWith("/")) {
@@ -33,9 +35,6 @@ public class HttpRequests {
          url += "&cat=" + cat;
          }*/
         //return Jsoup.connect(url).data("rate", rate, "cat", cat, "tag", tag).post();
-        return Jsoup.connect(url).data(keysVals).get();
-    }
-
-    private HttpRequests() {
+        return Jsoup.connect(url).data(*keysVals).get()
     }
 }

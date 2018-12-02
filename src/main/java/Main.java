@@ -1,20 +1,16 @@
-package cz.skup5;
-
 import cz.skup5.jEvropa2.Extractor;
 import cz.skup5.jEvropa2.HtmlParser;
 import cz.skup5.jEvropa2.HttpRequests;
-import cz.skup5.jEvropa2.data.Item;
-//import jaco.mp3.player.MP3Player;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.util.Set;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+//import jaco.mp3.player.MP3Player;
 
 /**
  * @author Skup5
@@ -36,7 +32,7 @@ public class Main {
         Elements elements;
         HtmlParser parser = new HtmlParser();
 
-        site = HttpRequests.httpGetSite(urlE2 + urlShows + "ranni-show");
+        site = HttpRequests.INSTANCE.httpGetSite(urlE2 + urlShows + "ranni-show");
 
         /*site = loadSite("Shows - Evropa 2.html", "utf-8");
          site.setBaseUri(urlE2);
@@ -72,11 +68,11 @@ public class Main {
         }*/
 //        System.out.println(parser.parseActiveVideoShowItem(Extractor.getActiveItem(site)).info());
 
-        Element nextShowItems = Extractor.getNextShowItems(site);
+        Element nextShowItems = Extractor.INSTANCE.getNextShowItems(site);
         System.out.println(parser.parseNextPageUrl(nextShowItems));
     }
 
-    public static void playMP3(String source) throws MalformedURLException {
+    public static void playMP3(String source) {
         File f = new File(source);
         if (f.exists()) {
             System.out.println("exists");
