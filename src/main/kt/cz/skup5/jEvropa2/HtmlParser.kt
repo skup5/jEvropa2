@@ -7,7 +7,7 @@ import cz.skup5.jEvropa2.parser.ShowParser
 import org.jsoup.nodes.Element
 import org.jsoup.select.Elements
 import java.net.MalformedURLException
-import java.net.URL
+import java.net.URI
 import java.util.*
 
 /**
@@ -22,15 +22,12 @@ class HtmlParser {
 
     fun parseShows(elements: Elements): Set<Show> {
         val showsSet = LinkedHashSet<Show>()
-        var newShow: Show
         for (element in elements) {
             try {
-                newShow = showParser.parse(element)
-                showsSet.add(newShow)
+                showsSet += showParser.parse(element)
             } catch (ex: MalformedURLException) {
                 ex.printStackTrace()
             }
-
         }
         return showsSet
     }
@@ -92,36 +89,15 @@ class HtmlParser {
         return item
     }
 
-    fun parseMp3Url(script: Element): URL? {
-        var url: URL? = null
-        try {
-            url = itemParser.parseMp3Url(script.html())
-        } catch (ex: MalformedURLException) {
-            ex.printStackTrace()
-        }
-
-        return url
+    fun parseMp3Url(script: Element): URI {
+        return itemParser.parseMp3Url(script.html())
     }
 
-    fun parseMp4Url(script: Element): URL? {
-        var url: URL? = null
-        try {
-            url = itemParser.parseMp4Url(script.html())
-        } catch (ex: MalformedURLException) {
-            ex.printStackTrace()
-        }
-
-        return url
+    fun parseMp4Url(script: Element): URI {
+        return itemParser.parseMp4Url(script.html())
     }
 
-    fun parseNextPageUrl(element: Element): URL? {
-        var url: URL? = null
-        try {
-            url = showParser.parseNextPage(element)
-        } catch (ex: MalformedURLException) {
-            ex.printStackTrace()
-        }
-
-        return url
+    fun parseNextPageUrl(element: Element): URI {
+        return showParser.parseNextPage(element)
     }
 }

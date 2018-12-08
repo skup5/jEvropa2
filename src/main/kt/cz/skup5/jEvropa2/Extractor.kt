@@ -11,8 +11,14 @@ import org.jsoup.select.Elements
  */
 object Extractor {
 
+    @JvmStatic
+    fun getShowsLabel(doc: Document): String {
+        return doc.select("footer a[href^='/porady'].title-link").text()
+    }
+
+    @JvmStatic
     fun getShowsList(doc: Document): Elements {
-        return doc.select("#main").select(".show-selector ul.js-shows-list").select("li")
+        return doc.select("footer a[href^='/porady'].link")
     }
 
     fun getAudioItems(doc: Document): Elements {

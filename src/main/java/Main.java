@@ -1,6 +1,6 @@
 import cz.skup5.jEvropa2.Extractor;
 import cz.skup5.jEvropa2.HtmlParser;
-import cz.skup5.jEvropa2.HttpRequests;
+import cz.skup5.jEvropa2.data.Show;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -10,43 +10,32 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-//import jaco.mp3.player.MP3Player;
-
 /**
  * @author Skup5
  */
 public class Main {
+
+    public static final String OFFLINE_HTML_SITE = "evropa2-shows.html";
+    private static final String BASE_URI = "https://evropa2.cz";
 
     /**
      * @param args the command line arguments
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
-        String url = "";
-        String urlE2 = "https://evropa2.cz";
-        String urlShows = "/shows/";
-        String urlNextMp3 = "/srv/www/content/pub/cs/tym-a-porady/mp3-archiv-list/?cat=100&pg=2";
-        String mp3Source = "https://m.static.lagardere.cz/evropa2/audio/2016/02/20160225-Meteorit.mp3";
-        mp3Source = "20160225-Meteorit.mp3";
+        final HtmlParser parser = new HtmlParser();
         Document site;
         Elements elements;
-        HtmlParser parser = new HtmlParser();
 
-        site = HttpRequests.INSTANCE.httpGetSite(urlE2 + urlShows + "ranni-show");
+        site = loadSite(OFFLINE_HTML_SITE, "utf-8");
+        site.setBaseUri(BASE_URI);
 
-        /*site = loadSite("Shows - Evropa 2.html", "utf-8");
-         site.setBaseUri(urlE2);
-        
-         Elements shows = Extractor.getShowsList(site);
-         for (Show show : parser.parseShows(shows)) {
-         System.out.println(show.info());
-         }
-         */
-        //site = loadSite("Ranni show - Evropa 2.html", "utf-8");
-        //site = loadSite("Music chart - Evropa 2.html", "utf-8");
-//        site = loadSite("Fakt No Koment - Evropa 2.html", "utf-8");
-//        site.setBaseUri(urlE2);
-
+        System.out.println(Extractor.getShowsLabel(site) + ":");
+        Elements shows = Extractor.getShowsList(site);
+//        printElements(shows);
+        for (Show show : parser.parseShows(shows)) {
+            System.out.println(show.info());
+        }
 
 //        Elements showItems = Extractor.getAudioItems(site);
         //printElements(showItems);
@@ -68,8 +57,8 @@ public class Main {
         }*/
 //        System.out.println(parser.parseActiveVideoShowItem(Extractor.getActiveItem(site)).info());
 
-        Element nextShowItems = Extractor.INSTANCE.getNextShowItems(site);
-        System.out.println(parser.parseNextPageUrl(nextShowItems));
+//        Element nextShowItems = Extractor.INSTANCE.getNextShowItems(site);
+//        System.out.println(parser.parseNextPageUrl(nextShowItems));
     }
 
     public static void playMP3(String source) {

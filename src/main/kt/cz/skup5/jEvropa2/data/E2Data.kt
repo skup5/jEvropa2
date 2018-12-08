@@ -1,16 +1,19 @@
 package cz.skup5.jEvropa2.data
 
+import java.net.URI
 
-import java.net.URL
-
+fun URI.isEmpty(): Boolean {
+    return this.path == ""
+}
 
 /**
- *
- * @author Roman Zelenik
+ * Abstract POJO E2 data object.
+ * @author Skup5
  */
-abstract class E2Data(val id: Int = 0, val name: String) {
+abstract class E2Data(val id: Int = 0, open val name: String) {
 
     companion object {
-        val EMPTY_URL: URL? = URL("")
+        @JvmStatic
+        val EMPTY_URI: URI = URI("")
     }
 }

@@ -1,23 +1,29 @@
 package cz.skup5.jEvropa2.data
 
-import java.net.URL
+import java.net.URI
 
 /**
  *
  * @author Skup5
  */
-class Item(name: String, var webSiteUrl: URL? = E2Data.EMPTY_URL, var imgUrl: URL? = EMPTY_URL, var mediaUrl: URL? = EMPTY_URL, val time: String) : E2Data(name = name) {
+class Item(
+        name: String,
+        var webSiteUrl: URI = EMPTY_URI,
+        var imgUrl: URI = EMPTY_URI,
+        var mediaUrl: URI = EMPTY_URI,
+        val time: String
+) : E2Data(name = name) {
 
     fun hasImgUrl(): Boolean {
-        return imgUrl !== E2Data.EMPTY_URL
+        return imgUrl !== EMPTY_URI
     }
 
     fun hasMediaUrl(): Boolean {
-        return mediaUrl !== E2Data.EMPTY_URL
+        return mediaUrl !== EMPTY_URI
     }
 
     fun hasWebSiteUrl(): Boolean {
-        return webSiteUrl !== E2Data.EMPTY_URL
+        return webSiteUrl !== EMPTY_URI
     }
 
     fun info(): String {
