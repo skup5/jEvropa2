@@ -5,17 +5,24 @@ import org.jsoup.nodes.Element
 import org.jsoup.select.Elements
 
 /**
- * Static class with functions for searching in html document.
+ * Static class with functions for searching in Evropa2 HTML Document.
  *
  * @author Skup5
  */
 object Extractor {
 
+    /**
+     * Returns title of the show list. The title is extracted from the [doc] Document.
+     * @since 2.0
+     */
     @JvmStatic
     fun getShowsLabel(doc: Document): String {
         return doc.select("footer a[href^='/porady'].title-link").text()
     }
 
+    /**
+     * Returns [Elements] that contains Evropa2 shows. The list is extracted from the [doc] Document.
+     */
     @JvmStatic
     fun getShowsList(doc: Document): Elements {
         return doc.select("footer a[href^='/porady'].link")

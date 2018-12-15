@@ -25,17 +25,12 @@ public class Main {
     public static void main(String[] args) throws IOException {
         final HtmlParser parser = new HtmlParser();
         Document site;
-        Elements elements;
 
         site = loadSite(OFFLINE_HTML_SITE, "utf-8");
         site.setBaseUri(BASE_URI);
 
-        System.out.println(Extractor.getShowsLabel(site) + ":");
         Elements shows = Extractor.getShowsList(site);
-//        printElements(shows);
-        for (Show show : parser.parseShows(shows)) {
-            System.out.println(show.info());
-        }
+//        printShows(parser, Extractor.getShowsLabel(site), shows);
 
 //        Elements showItems = Extractor.getAudioItems(site);
         //printElements(showItems);
@@ -61,31 +56,7 @@ public class Main {
 //        System.out.println(parser.parseNextPageUrl(nextShowItems));
     }
 
-    public static void playMP3(String source) {
-        File f = new File(source);
-        if (f.exists()) {
-            System.out.println("exists");
-        }
-        //new MP3Player(f).play();
-    }
-
-    public static String findMP3(String script) {
-        int end = script.indexOf(".mp3") + 4;
-        int start = script.lastIndexOf("http", end);
-        String url = script.substring(start, end);
-        url = url.replace("\\", "");
-        return url;
-    }
-
-    public static String findMP3_2(Document doc) {
-        String script = doc.select(".jPlayerGui").first().parent().select("script").html();
-        script = script.substring(script.indexOf("function setMediaFunc"));
-        String url = script.substring(script.indexOf("http"), script.indexOf(".mp3") + 4);
-        url = url.replace("\\", "");
-        return url;
-    }
-
-    public static Document loadSite(String fileName, String charsetName) throws IOException {
+    private static Document loadSite(String fileName, String charsetName) throws IOException {
         Document document;
         File htmlFile = new File(fileName);
         if (htmlFile.exists()) {
@@ -96,7 +67,15 @@ public class Main {
         }
     }
 
-    public static void printElements(Elements elements) {
+    private static void printShows(HtmlParser parser, String title, Elements shows) {
+        System.out.println(title + ":");
+//        printElements(shows);
+        for (Show show : parser.parseShows(shows)) {
+            System.out.println(show.info());
+        }
+    }
+
+    private static void printElements(Elements elements) {
         for (Element e : elements) {
             //if(link.attr("href", "/mp3-archiv/*"))
             //String s = e.attr("href");
