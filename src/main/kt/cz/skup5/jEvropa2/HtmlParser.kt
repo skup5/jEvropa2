@@ -25,12 +25,9 @@ class HtmlParser {
      */
     fun parseShows(elements: Elements): Set<Show> {
         val showsSet = LinkedHashSet<Show>()
+
         for (element in elements) {
-            try {
-                showsSet += showParser.parse(element)
-            } catch (ex: MalformedURLException) {
-                ex.printStackTrace()
-            }
+            showsSet += showParser.parse(element)
         }
         return showsSet
     }

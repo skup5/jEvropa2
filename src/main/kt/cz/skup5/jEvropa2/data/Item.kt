@@ -35,18 +35,18 @@ data class Item(
     }
 
     /**
-     * Returns text representation of current item. It is similar to a [toString] call.
+     * Returns text representation of current item.
      */
     fun info(): String {
-        val sb = StringBuilder("Item{")
+        val sb = StringBuilder(name)
         with(sb) {
-            append("name=").append(name)
-            append(", timestamp='").append(timestamp).append('\'')
-            append(", mediaType=").append(mediaType)
-            append(", webSiteUri=").append(webSiteUri)
-            append(", imgUri=").append(imgUri)
-            append(", mediaUri=").append(mediaUri)
-            append('}')
+            append(" (")
+            append(mediaType).append(" ")
+            append(timestamp)
+            append(", web=").append(webSiteUri)
+            append(", img=").append(imgUri)
+            append(", media=").append(mediaUri)
+            append(')')
         }
         return sb.toString()
     }
