@@ -16,22 +16,19 @@ object Extractor {
      * @since 2.0
      */
     @JvmStatic
-    fun getShowsLabel(doc: Document): String {
-        return doc.select("footer a[href^='/porady'].title-link").text()
-    }
+    fun getShowsLabel(doc: Document): String = doc.select("footer a[href^='/porady'].title-link").text()
 
     /**
-     * Returns [Elements] that contains Evropa2 shows. The list is extracted from the [doc] Document.
+     * Returns [Elements] that contains Evropa2 shows. The elements are extracted from the [doc] Document.
      */
     @JvmStatic
-    fun getShowsList(doc: Document): Elements {
-        return doc.select("footer a[href^='/porady'].link")
-    }
+    fun getShowsList(doc: Document): Elements = doc.select("footer a[href^='/porady'].link")
 
-    fun getAudioItems(doc: Document): Elements {
-        //return doc.select("#main .js-equalize .feed-player").select(".item ~ .audio").not(".item-active, .more");
-        return doc.select("#main .js-equalize .feed-player .paginableContainer .item").select(".audio")
-    }
+    /**
+     * Returns [Elements] that contains Evropa2 audio [Item]s. The elements are extracted from the [doc] Document.
+     */
+    @JvmStatic
+    fun getAudioItems(doc: Document): Elements = doc.select("article[role='article'].article-small").not(".active")
 
     fun getVideoItems(doc: Document): Elements {
         // return doc.select("#main .js-equalize .feed-player").select(".item ~ .video").not(".item-active, .more");

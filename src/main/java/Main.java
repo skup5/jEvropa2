@@ -1,5 +1,6 @@
 import cz.skup5.jEvropa2.Extractor;
 import cz.skup5.jEvropa2.HtmlParser;
+import cz.skup5.jEvropa2.data.Item;
 import cz.skup5.jEvropa2.data.Show;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -29,17 +30,12 @@ public class Main {
         site = loadSite(OFFLINE_HTML_SITE, "utf-8");
         site.setBaseUri(BASE_URI);
 
-        Elements shows = Extractor.getShowsList(site);
+//        Elements shows = Extractor.getShowsList(site);
 //        printShows(parser, Extractor.getShowsLabel(site), shows);
 
-//        Elements showItems = Extractor.getAudioItems(site);
-        //printElements(showItems);
-        /*Set<Item> items = parser.parseAudioShowItems(showItems);
-        for (Item item : items) {
-            System.out.println(item.info());
-            url = item.getWebSiteUrl().toExternalForm();
-        }
-*/
+        Elements showItems = Extractor.getAudioItems(site);
+        printItems(parser, showItems);
+
 //        System.out.println(parser.parseActiveAudioShowItem(Extractor.getActiveItem(site)).info());
 
 //        System.out.println("--------------------");
@@ -64,6 +60,14 @@ public class Main {
             return document;
         } else {
             throw new FileNotFoundException(fileName);
+        }
+    }
+
+    private static void printItems(HtmlParser parser, Elements showItems) {
+        System.out.println("Items:");
+//        printElements(showItems);
+        for (Item item : parser.parseAudioShowItems(showItems)) {
+            System.out.println(item);
         }
     }
 

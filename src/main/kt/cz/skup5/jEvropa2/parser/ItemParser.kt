@@ -3,36 +3,32 @@ package cz.skup5.jEvropa2.parser
 import cz.skup5.jEvropa2.Extractor
 import cz.skup5.jEvropa2.data.E2Data
 import cz.skup5.jEvropa2.data.Item
+import cz.skup5.jEvropa2.data.MultiMediaType
 import org.jsoup.nodes.Element
 import java.io.PrintWriter
 import java.io.StringWriter
 import java.net.URI
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * @author Roman
+ * This class converts extracted [Element]s to [Item]s.
+ * @see Extractor
+ * @author Skup5
  */
 class ItemParser {
 
     /**
-     *
-     * @param element
-     * @return
+     * Returns parsed audio [Item] from the specific [element].
      */
     fun parseAudio(element: Element): Item {
-        // System.out.println(element.outerHtml()+"=============================================================");
-        val time = element.select(".time").first().text()
-        val content = element.select(".content").first()
-        val header = content.select("h2 a").first()
-        val url = URI(header.attr("href"))
-        val name = header.text()
-        val imgUrl = URI(content.select("a.picture img").first().attr("src"))
-        return Item(name, url, imgUrl, time = time)
+        val imgUri = URI(element.selectFirst("img").attr("abs:src"))
+        val webSiteUri = URI(element.selectFirst("a").attr("abs:href"))
+        val name = element.selectFirst("h3").text()
+        var date = ""
+
+        if (webSiteUri.query != null)
+            date = Regex("(before=)(\\d+-\\d\\d?-\\d\\d?)").find(webSiteUri.query)?.groupValues?.get(2) ?: ""
+
+        return Item(name, date, webSiteUri = webSiteUri, imgUri = imgUri, mediaType = MultiMediaType.AUDIO)
     }
 
     fun parseActiveAudio(element: Element): Item? {
@@ -55,7 +51,7 @@ class ItemParser {
             if (!script.isEmpty())
                 mp3Url = parseMp3Url(script)
         }
-        return Item(title, mediaUrl = mp3Url, imgUrl = imgUrl, time = time)
+        return Item(title, imgUri = imgUrl, mediaUri = mp3Url, timestamp = time)
     }
 
     fun parseActiveImgUrl(div: String): URI {
@@ -83,7 +79,7 @@ class ItemParser {
         val script = element.select(".jPlayer script").first().html()
         imgUrl = parseActiveImgUrl(script)
         mp4Url = parseMp4Url(script)
-        return Item(title, imgUrl, mp4Url, time = time)
+        return Item(title, timestamp = time, imgUri = imgUrl, mediaUri = mp4Url)
     }
 
     fun parseMp3Url(script: String): URI {

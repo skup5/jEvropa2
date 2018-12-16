@@ -13,13 +13,16 @@ import java.util.*
 /**
  * Creates sets of [Show] and [Item] from html code.
  *
- * @author Roman Zelenik
+ * @author Skup5
  */
 class HtmlParser {
 
     private val showParser: ShowParser = ShowParser()
     private val itemParser: ItemParser = ItemParser()
 
+    /**
+     * Returns parsed set of [Show]s from the given [elements].
+     */
     fun parseShows(elements: Elements): Set<Show> {
         val showsSet = LinkedHashSet<Show>()
         for (element in elements) {
@@ -32,17 +35,14 @@ class HtmlParser {
         return showsSet
     }
 
+    /**
+     * Returns parsed set of audio [Item]s from the given [elements].
+     */
     fun parseAudioShowItems(elements: Elements): Set<Item> {
         val itemsSet = LinkedHashSet<Item>()
-        var newItem: Item
-        for (element in elements) {
-            try {
-                newItem = itemParser.parseAudio(element)
-                itemsSet.add(newItem)
-            } catch (ex: MalformedURLException) {
-                ex.printStackTrace()
-            }
 
+        for (element in elements) {
+            itemsSet += itemParser.parseAudio(element)
         }
         return itemsSet
     }
