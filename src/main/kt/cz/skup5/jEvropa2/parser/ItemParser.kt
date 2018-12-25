@@ -1,9 +1,11 @@
 package cz.skup5.jEvropa2.parser
 
 import cz.skup5.jEvropa2.Extractor
-import cz.skup5.jEvropa2.data.E2Data
+import cz.skup5.jEvropa2.data.E2Data.Companion.EMPTY_URI
 import cz.skup5.jEvropa2.data.Item
 import cz.skup5.jEvropa2.data.MultiMediaType
+import org.json.JSONException
+import org.json.JSONObject
 import org.jsoup.nodes.Element
 import java.io.PrintWriter
 import java.io.StringWriter
@@ -17,7 +19,7 @@ import java.net.URI
 class ItemParser {
 
     /**
-     * Returns parsed audio [Item] from the specific [element].
+     * Returns parsed audio [Item] from the specific [element]. This item doesn't contain [Item#mediaUri].
      */
     fun parseAudio(element: Element): Item {
         val imgUri = URI(element.selectFirst("img").attr("abs:src"))
@@ -31,27 +33,14 @@ class ItemParser {
         return Item(name, date, webSiteUri = webSiteUri, imgUri = imgUri, mediaType = MultiMediaType.AUDIO)
     }
 
-    fun parseActiveAudio(element: Element): Item? {
-        //        System.out.println(element);
-        val imgUrl: URI
-        var mp3Url = E2Data.EMPTY_URI
-        val elements = element.select(".feed-player .item-active").select(".audio")
-        val player: Element
-        if (elements.isEmpty()) {
-            return null
-        }
-        player = elements.first()
-        val time = player.select(".time").first().text()
-        val title = player.select(".content h2").first().text()
-        val cover = element.select(".jPlayer .jMotiveCover").first().outerHtml()
-        imgUrl = parseActiveImgUrl(cover)
-        val scriptElement = Extractor.getPlayerScript(element.ownerDocument())
-        if (scriptElement != null) {
-            val script = scriptElement.html()
-            if (!script.isEmpty())
-                mp3Url = parseMp3Url(script)
-        }
-        return Item(title, imgUri = imgUrl, mediaUri = mp3Url, timestamp = time)
+    /**
+     * Returns parsed audio [Item] from the specific [element] (including [Item.mediaUri]).
+     */
+    fun parseActiveAudio(element: Element): Item {
+        val audioItem = parseAudio(element.selectFirst(Extractor.ROOT_ELEMENT_ITEM))
+        val mp3Uri = parseMp3Url(element.selectFirst(Extractor.ROOT_ELEMENT_DATA_JSON))
+        audioItem.mediaUri = mp3Uri
+        return audioItem
     }
 
     fun parseActiveImgUrl(div: String): URI {
@@ -82,13 +71,24 @@ class ItemParser {
         return Item(title, timestamp = time, imgUri = imgUrl, mediaUri = mp4Url)
     }
 
-    fun parseMp3Url(script: String): URI {
-        val end = script.indexOf(".mp3") + 4
-        val start = script.lastIndexOf("http", end)
-        var url = script.substring(start, end)
-        //url = url.replace("\\", "");
-        url = unescapeJava(url)
-        return URI(url)
+    fun parseMp3Url(dataJSONElement: Element): URI {
+        val dataJSON = dataJSONElement.data().substringAfter('=', "")
+        if (dataJSON.isBlank()) return EMPTY_URI
+
+        val json = JSONObject(dataJSON)
+
+        return try {
+            URI(
+                    json.getJSONObject("props")
+                            .getJSONObject("pageProps")
+                            .getJSONObject("currentPost")
+                            .getJSONObject("meta_box")
+                            .getString("mb_clanek_multimedialni_soubor")
+            )
+        } catch (e: JSONException) {
+            e.printStackTrace()
+            EMPTY_URI
+        }
     }
 
     fun parseMp4Url(script: String): URI {

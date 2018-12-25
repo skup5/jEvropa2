@@ -16,27 +16,28 @@ import java.io.IOException;
  */
 public class Main {
 
-    public static final String OFFLINE_HTML_SITE = "evropa2-shows.html";
+    private static final String OFFLINE_HTML_SITE_SHOWS = "evropa2-shows.html";
+    private static final String OFFLINE_HTML_SITE_ITEM = "evropa2-zpatky-do-minulosti.html";
     private static final String BASE_URI = "https://evropa2.cz";
 
     /**
      * @param args the command line arguments
-     * @throws java.io.IOException
+     * @throws java.io.IOException if some error was occurred while file reading or parsing
      */
     public static void main(String[] args) throws IOException {
         final HtmlParser parser = new HtmlParser();
         Document site;
 
-        site = loadSite(OFFLINE_HTML_SITE, "utf-8");
+        site = loadSite(OFFLINE_HTML_SITE_ITEM, "utf-8");
         site.setBaseUri(BASE_URI);
 
 //        Elements shows = Extractor.getShowsList(site);
 //        printShows(parser, Extractor.getShowsLabel(site), shows);
 
-        Elements showItems = Extractor.getAudioItems(site);
-        printItems(parser, showItems);
+//        Elements showItems = Extractor.getAudioItems(site);
+//        printItems(parser, showItems);
 
-//        System.out.println(parser.parseActiveAudioShowItem(Extractor.getActiveItem(site)).info());
+        System.out.println(parser.parseActiveAudioShowItem(Extractor.getActiveItem(site)).info());
 
 //        System.out.println("--------------------");
 //        site = HttpRequests.httpGetSite(url);
@@ -52,7 +53,7 @@ public class Main {
 //        System.out.println(parser.parseNextPageUrl(nextShowItems));
     }
 
-    private static Document loadSite(String fileName, String charsetName) throws IOException {
+    private static Document loadSite(String fileName, String charsetName) throws FileNotFoundException, IOException {
         Document document;
         File htmlFile = new File(fileName);
         if (htmlFile.exists()) {
@@ -67,7 +68,7 @@ public class Main {
         System.out.println("Items:");
 //        printElements(showItems);
         for (Item item : parser.parseAudioShowItems(showItems)) {
-            System.out.println(item);
+            System.out.println(item.info());
         }
     }
 

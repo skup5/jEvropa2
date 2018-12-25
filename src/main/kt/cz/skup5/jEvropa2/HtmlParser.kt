@@ -60,20 +60,9 @@ class HtmlParser {
     }
 
     /**
-     *
-     * @param element
-     * @return Item without web site url
+     * Returns parsed active audio [Item] from the given [element].
      */
-    fun parseActiveAudioShowItem(element: Element): Item? {
-        var item: Item? = null
-        try {
-            item = itemParser.parseActiveAudio(element)
-        } catch (ex: MalformedURLException) {
-            ex.printStackTrace()
-        }
-
-        return item
-    }
+    fun parseActiveAudioShowItem(element: Element): Item = itemParser.parseActiveAudio(element)
 
     fun parseActiveVideoShowItem(element: Element): Item? {
         var item: Item? = null
@@ -87,7 +76,7 @@ class HtmlParser {
     }
 
     fun parseMp3Url(script: Element): URI {
-        return itemParser.parseMp3Url(script.html())
+        return itemParser.parseMp3Url(script)
     }
 
     fun parseMp4Url(script: Element): URI {
