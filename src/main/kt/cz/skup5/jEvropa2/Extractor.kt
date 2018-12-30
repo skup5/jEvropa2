@@ -57,24 +57,12 @@ object Extractor {
                 .appendChild(dataElement)
     }
 
+    @Deprecated("The next items aren't loaded and parsed from another document any more.",
+            ReplaceWith("ItemDao.get"),
+            DeprecationLevel.ERROR)
+    @JvmStatic
     fun getNextShowItems(doc: Document): Element {
-        return doc.select("#main .js-equalize .feed-player").select(".item.more").first()
-    }
-
-    /**
-     * Returns script element with javascript player source.
-     *
-     * @param doc
-     * @return element or null
-     */
-    fun getPlayerScript(doc: Document): Element? {
-        val scripts = doc.select("#main [id^='jPlayer'] script")
-        for (scriptElement in scripts) {
-            if (scriptElement.html().contains("jPlayer")) {
-                return scriptElement
-            }
-        }
-        return null
+        return Element("div")
     }
 
     /**

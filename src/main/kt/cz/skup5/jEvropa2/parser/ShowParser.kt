@@ -18,7 +18,7 @@ class ShowParser {
     fun parse(element: Element): Show {
         val uri = element.absUrl("href")
         val title = element.text()
-        return Show(title, URI(uri))
+        return Show(name = title, webSiteUri = URI(uri), slug = "")
     }
 
     fun parseNextPage(element: Element): URI {

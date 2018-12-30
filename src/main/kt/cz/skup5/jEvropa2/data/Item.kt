@@ -8,6 +8,8 @@ import java.net.URI
  * @author Skup5
  */
 data class Item(
+        /** The item unique id. */
+        override val id: Int = ID_NONE,
         /** The item title/label. */
         override val name: String,
         /** The date/time value parsed from web site. */
@@ -19,20 +21,16 @@ data class Item(
         /** The multimedia absolute url of item. */
         var mediaUri: URI = EMPTY_URI,
         /** The multimedia type of item. It is relative to [mediaUri].*/
-        var mediaType: MultiMediaType = MultiMediaType.UNKNOWN
-) : E2Data(name = name) {
+        var mediaType: MultiMediaType = MultiMediaType.UNKNOWN,
+        /** The show id which this item belongs to. */
+        var showId: Int = ID_NONE
+) : E2Data(id, name) {
 
-    fun hasImgUri(): Boolean {
-        return imgUri !== EMPTY_URI
-    }
+    fun hasImgUri(): Boolean = imgUri !== EMPTY_URI
 
-    fun hasMediaUri(): Boolean {
-        return mediaUri !== EMPTY_URI
-    }
+    fun hasMediaUri(): Boolean = mediaUri !== EMPTY_URI
 
-    fun hasWebSiteUri(): Boolean {
-        return webSiteUri !== EMPTY_URI
-    }
+    fun hasWebSiteUri(): Boolean = webSiteUri !== EMPTY_URI
 
     /**
      * Returns text representation of current item.

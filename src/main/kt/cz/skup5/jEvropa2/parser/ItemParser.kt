@@ -11,6 +11,8 @@ import java.io.PrintWriter
 import java.io.StringWriter
 import java.net.URI
 
+const val DATE_PATTERN = "(before=)(\\d+-\\d\\d?-\\d\\d?)"
+
 /**
  * This class converts extracted [Element]s to [Item]s.
  * @see Extractor
@@ -28,9 +30,9 @@ class ItemParser {
         var date = ""
 
         if (webSiteUri.query != null)
-            date = Regex("(before=)(\\d+-\\d\\d?-\\d\\d?)").find(webSiteUri.query)?.groupValues?.get(2) ?: ""
+            date = Regex(DATE_PATTERN).find(webSiteUri.query)?.groupValues?.get(2) ?: ""
 
-        return Item(name, date, webSiteUri = webSiteUri, imgUri = imgUri, mediaType = MultiMediaType.AUDIO)
+        return Item(name = name, timestamp = date, webSiteUri = webSiteUri, imgUri = imgUri, mediaType = MultiMediaType.AUDIO)
     }
 
     /**
@@ -38,7 +40,7 @@ class ItemParser {
      */
     fun parseActiveAudio(element: Element): Item {
         val audioItem = parseAudio(element.selectFirst(Extractor.ROOT_ELEMENT_ITEM))
-        val mp3Uri = parseMp3Url(element.selectFirst(Extractor.ROOT_ELEMENT_DATA_JSON))
+        val mp3Uri = parseMediaUrl(element.selectFirst(Extractor.ROOT_ELEMENT_DATA_JSON))
         audioItem.mediaUri = mp3Uri
         return audioItem
     }
@@ -68,10 +70,14 @@ class ItemParser {
         val script = element.select(".jPlayer script").first().html()
         imgUrl = parseActiveImgUrl(script)
         mp4Url = parseMp4Url(script)
-        return Item(title, timestamp = time, imgUri = imgUrl, mediaUri = mp4Url)
+        return Item(name = title, timestamp = time, imgUri = imgUrl, mediaUri = mp4Url)
     }
 
-    fun parseMp3Url(dataJSONElement: Element): URI {
+    /**
+     * Returns multimedia url of the active/current item or
+     * [EMPTY_URI] if some error was occurred while parsing.
+     */
+    fun parseMediaUrl(dataJSONElement: Element): URI {
         val dataJSON = dataJSONElement.data().substringAfter('=', "")
         if (dataJSON.isBlank()) return EMPTY_URI
 

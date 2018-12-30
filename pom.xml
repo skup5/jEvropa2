@@ -12,6 +12,7 @@
         <kotlin.version>RELEASE</kotlin.version>
         <kotlin.maven.version>1.3.11</kotlin.maven.version>
         <jsoup.version>RELEASE</jsoup.version>
+        <json.version>RELEASE</json.version>
     </properties>
 
     <dependencies>
@@ -34,7 +35,7 @@
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20180130</version>
+            <version>${json.version}</version>
         </dependency>
     </dependencies>
 

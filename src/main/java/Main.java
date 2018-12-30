@@ -1,5 +1,6 @@
-import cz.skup5.jEvropa2.Extractor;
 import cz.skup5.jEvropa2.HtmlParser;
+import cz.skup5.jEvropa2.dao.ItemDao;
+import cz.skup5.jEvropa2.data.E2Data;
 import cz.skup5.jEvropa2.data.Item;
 import cz.skup5.jEvropa2.data.Show;
 import org.jsoup.Jsoup;
@@ -19,6 +20,7 @@ public class Main {
     private static final String OFFLINE_HTML_SITE_SHOWS = "evropa2-shows.html";
     private static final String OFFLINE_HTML_SITE_ITEM = "evropa2-zpatky-do-minulosti.html";
     private static final String BASE_URI = "https://evropa2.cz";
+    private static final String DATA_QUERY_PATH = "graphql";
 
     /**
      * @param args the command line arguments
@@ -28,8 +30,8 @@ public class Main {
         final HtmlParser parser = new HtmlParser();
         Document site;
 
-        site = loadSite(OFFLINE_HTML_SITE_ITEM, "utf-8");
-        site.setBaseUri(BASE_URI);
+//        site = loadSite(OFFLINE_HTML_SITE_ITEM, "utf-8");
+//        site.setBaseUri(BASE_URI);
 
 //        Elements shows = Extractor.getShowsList(site);
 //        printShows(parser, Extractor.getShowsLabel(site), shows);
@@ -37,19 +39,12 @@ public class Main {
 //        Elements showItems = Extractor.getAudioItems(site);
 //        printItems(parser, showItems);
 
-        System.out.println(parser.parseActiveAudioShowItem(Extractor.getActiveItem(site)).info());
+//        System.out.println(parser.parseActiveAudioShowItem(Extractor.getActiveItem(site)).info());
 
-//        System.out.println("--------------------");
-//        site = HttpRequests.httpGetSite(url);
-//        System.out.println(parser.parseMp3Url(Extractor.getPlayerScript(site)));
-
-        /*elements = Extractor.getVideoItems(site);
-        for (Item item : parser.parseVideoShowItems(elements)) {
+        Show ranniShow = new Show(17, "Ranní show", E2Data.getEMPTY_URI(), "ranni-show");
+        for (Item item : ItemDao.INSTANCE.get(ranniShow, 1, 6))
             System.out.println(item.info());
-        }*/
-//        System.out.println(parser.parseActiveVideoShowItem(Extractor.getActiveItem(site)).info());
 
-//        Element nextShowItems = Extractor.INSTANCE.getNextShowItems(site);
 //        System.out.println(parser.parseNextPageUrl(nextShowItems));
     }
 
@@ -90,5 +85,6 @@ public class Main {
 
         }
     }
+
 
 }

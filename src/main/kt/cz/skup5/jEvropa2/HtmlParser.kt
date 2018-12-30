@@ -76,7 +76,7 @@ class HtmlParser {
     }
 
     fun parseMp3Url(script: Element): URI {
-        return itemParser.parseMp3Url(script)
+        return itemParser.parseMediaUrl(script)
     }
 
     fun parseMp4Url(script: Element): URI {

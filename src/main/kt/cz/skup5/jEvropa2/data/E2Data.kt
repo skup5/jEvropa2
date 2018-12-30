@@ -8,12 +8,22 @@ fun URI.isEmpty(): Boolean {
 
 /**
  * Abstract POJO E2 data object.
+ *
  * @author Skup5
  */
-abstract class E2Data(val id: Int = 0, open val name: String) {
+abstract class E2Data(
+        /** The unique id. */
+        open val id: Int = ID_NONE,
+        /** The item title/label. */
+        open val name: String
+) {
+
+    fun hasId() = id > ID_NONE
 
     companion object {
         @JvmStatic
         val EMPTY_URI: URI = URI("")
+
+        const val ID_NONE = -1
     }
 }

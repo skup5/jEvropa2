@@ -8,11 +8,14 @@ import java.net.URI
  * @author Skup5
  */
 data class Show(
+        /** The show unique id. */
+        override val id: Int = ID_NONE,
         /** The show title/label. */
         override val name: String,
         /** The absolute url of show web site. */
-        var webSiteUri: URI
-) : E2Data(name = name) {
+        var webSiteUri: URI,
+        var slug: String
+) : E2Data(id, name) {
 
     fun info(): String {
         return "$name ($webSiteUri)"
