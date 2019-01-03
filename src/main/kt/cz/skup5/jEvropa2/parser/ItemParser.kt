@@ -21,7 +21,8 @@ const val DATE_PATTERN = "(before=)(\\d+-\\d\\d?-\\d\\d?)"
 class ItemParser {
 
     /**
-     * Returns parsed audio [Item] from the specific [element]. This item doesn't contain [Item#mediaUri].
+     * Returns parsed audio [Item] from the specific [element].
+     * This item doesn't contain [Item#mediaUri].
      */
     fun parseAudio(element: Element): Item {
         val imgUri = URI(element.selectFirst("img").attr("abs:src"))

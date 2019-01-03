@@ -31,6 +31,8 @@ object Extractor {
     /**
      * Returns [Elements] that contains Evropa2 shows. The elements are extracted from the [doc] Document.
      */
+    @Deprecated("It works, but will be removed. The shows doesn't contain id.",
+            ReplaceWith("ShowDao.get(doc)", "cz.skup5.jEvropa2.dao.ShowDao"))
     @JvmStatic
     fun getShowsList(doc: Document): Elements = doc.select("footer a[href^='/porady'].link")
 
@@ -40,6 +42,8 @@ object Extractor {
     @JvmStatic
     fun getAudioItems(doc: Document): Elements = doc.select("$ROOT_ELEMENT_ITEM[role='article'].article-small").not(".active")
 
+    @Deprecated("It doesn't work. Will be repaired.", level = DeprecationLevel.ERROR)
+    @JvmStatic
     fun getVideoItems(doc: Document): Elements {
         // return doc.select("#main .js-equalize .feed-player").select(".item ~ .video").not(".item-active, .more");
         return doc.select("#main .js-equalize .feed-player .paginableContainer .item").select(".video")
@@ -48,6 +52,9 @@ object Extractor {
     /**
      * Returns [Element] that contains current active [Item]. The element is extracted from the [doc] Document.
      */
+    @Deprecated("It works, but will be removed.",
+            ReplaceWith("ItemDao.get(show, page, perPage)", "cz.skup5.jEvropa2.dao.ItemDao"),
+            DeprecationLevel.ERROR)
     @JvmStatic
     fun getActiveItem(doc: Document): Element {
         val activeItemElement = doc.selectFirst("$ROOT_ELEMENT_ITEM[role='article'].article-small.active")
@@ -58,7 +65,7 @@ object Extractor {
     }
 
     @Deprecated("The next items aren't loaded and parsed from another document any more.",
-            ReplaceWith("ItemDao.get"),
+            ReplaceWith("ItemDao.get(show, page, perPage)", "cz.skup5.jEvropa2.dao.ItemDao"),
             DeprecationLevel.ERROR)
     @JvmStatic
     fun getNextShowItems(doc: Document): Element {

@@ -23,6 +23,8 @@ class HtmlParser {
     /**
      * Returns parsed set of [Show]s from the given [elements].
      */
+    @Deprecated("It works, but will be removed.",
+            ReplaceWith("ShowDao.get()", "cz.skup5.jEvropa2.dao.ShowDao"))
     fun parseShows(elements: Elements): Set<Show> {
         val showsSet = LinkedHashSet<Show>()
 
@@ -35,6 +37,8 @@ class HtmlParser {
     /**
      * Returns parsed set of audio [Item]s from the given [elements].
      */
+    @Deprecated("It works, but will be removed.",
+            ReplaceWith("ItemDao.get(show, page, perPage)", "cz.skup5.jEvropa2.dao.ItemDao"))
     fun parseAudioShowItems(elements: Elements): Set<Item> {
         val itemsSet = LinkedHashSet<Item>()
 
@@ -62,8 +66,10 @@ class HtmlParser {
     /**
      * Returns parsed active audio [Item] from the given [element].
      */
+    @Deprecated("It works, but will be removed.", ReplaceWith("ItemDao.get(show, page, perPage)", "cz.skup5.jEvropa2.dao.ItemDao"))
     fun parseActiveAudioShowItem(element: Element): Item = itemParser.parseActiveAudio(element)
 
+    @Deprecated("It doesn't work. Will be repaired.", level = DeprecationLevel.ERROR)
     fun parseActiveVideoShowItem(element: Element): Item? {
         var item: Item? = null
         try {
@@ -75,14 +81,16 @@ class HtmlParser {
         return item
     }
 
-    fun parseMp3Url(script: Element): URI {
-        return itemParser.parseMediaUrl(script)
+    fun parseMp3Url(dataJSONElement: Element): URI {
+        return itemParser.parseMediaUrl(dataJSONElement)
     }
 
+    @Deprecated("It doesn't work. Will be repaired.", level = DeprecationLevel.ERROR)
     fun parseMp4Url(script: Element): URI {
         return itemParser.parseMp4Url(script.html())
     }
 
+    @Deprecated("It doesn't work. Will be repaired.", level = DeprecationLevel.ERROR)
     fun parseNextPageUrl(element: Element): URI {
         return showParser.parseNextPage(element)
     }

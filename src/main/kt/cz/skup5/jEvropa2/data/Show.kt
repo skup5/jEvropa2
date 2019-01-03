@@ -17,7 +17,9 @@ data class Show(
         var slug: String
 ) : E2Data(id, name) {
 
+    fun hasWebSiteUri(): Boolean = webSiteUri !== EMPTY_URI
+
     fun info(): String {
-        return "$name ($webSiteUri)"
+        return "$name ($id${if (hasWebSiteUri()) ", $webSiteUri" else ""}${if (slug.isNotEmpty()) ", $slug" else ""})"
     }
 }

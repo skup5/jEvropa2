@@ -12,6 +12,7 @@ private const val TAXONOMY = "rubrika-porady"
 private const val QUERY_URL = "https://www.evropa2.cz/graphql"
 
 /**
+ * This DAO provides interface to Evropa2 [Item] api.
  *
  * @author Skup5
  * @since 2.0
@@ -30,12 +31,13 @@ object ItemDao {
 //        System.out.println("data payload:\n"+data);
         val response = HttpRequest.httpPostJson(QUERY_URL, prepareQuery(useCategory, show, page, itemsPerPage))
 
-        return processResponse(response, useCategory)
+        return processResponse(response, useCategory, show)
     }
 
-    private fun processResponse(response: String, useCategory: Boolean): List<Item> {
+    private fun processResponse(response: String, useCategory: Boolean, show: Show?): List<Item> {
         val responseJson = JSONObject(response)
         var postsJson = responseJson.getJSONObject("data")
+
         if (useCategory) {
             postsJson = postsJson.getJSONArray("categories").getJSONObject(0)
         }
@@ -44,6 +46,12 @@ object ItemDao {
         val items = toListItem(postsJson.getJSONArray("items"))
         for (item in items) {
             item.mediaType = MultiMediaType.AUDIO
+        }
+
+        if (show != null) {
+            for (item in items) {
+                item.showId = show.id
+            }
         }
 
         return items
