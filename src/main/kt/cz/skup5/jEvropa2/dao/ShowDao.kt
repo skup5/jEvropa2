@@ -1,10 +1,13 @@
 package cz.skup5.jEvropa2.dao
 
+import com.google.gson.JsonArray
 import cz.skup5.jEvropa2.Extractor
 import cz.skup5.jEvropa2.HttpRequest
 import cz.skup5.jEvropa2.data.Show
+import cz.skup5.jEvropa2.extension.JsonUtil.toJsonObject
+import cz.skup5.jEvropa2.extension.getJsonArray
+import cz.skup5.jEvropa2.extension.getJsonObject
 import cz.skup5.jEvropa2.mapper.toListShow
-import org.json.JSONObject
 import org.jsoup.nodes.Document
 
 private const val DOCUMENT_URL = "https://www.evropa2.cz"
@@ -32,13 +35,13 @@ object ShowDao {
     }
 
     private fun processResponse(response: String): List<Show> {
-        val responseJson = JSONObject(response)
+        val responseJson = toJsonObject(response)
         val showsJsonArray = responseJson
-                .getJSONObject("props")
-                .getJSONObject("pageProps")
-                .getJSONObject("footerMenu")
-                .getJSONObject("taxonomies")
-                .getJSONArray("porady")
+                .getJsonObject("props")
+                ?.getJsonObject("pageProps")
+                ?.getJsonObject("footerMenu")
+                ?.getJsonObject("taxonomies")
+                ?.getJsonArray("porady") ?: JsonArray()
 
         return toListShow(showsJsonArray)
     }

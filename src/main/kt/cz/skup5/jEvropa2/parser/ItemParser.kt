@@ -4,8 +4,9 @@ import cz.skup5.jEvropa2.Extractor
 import cz.skup5.jEvropa2.data.E2Data.Companion.EMPTY_URI
 import cz.skup5.jEvropa2.data.Item
 import cz.skup5.jEvropa2.data.MultiMediaType
-import org.json.JSONException
-import org.json.JSONObject
+import cz.skup5.jEvropa2.extension.JsonUtil.toJsonObject
+import cz.skup5.jEvropa2.extension.getJsonObject
+import cz.skup5.jEvropa2.extension.getString
 import org.jsoup.nodes.Element
 import java.io.PrintWriter
 import java.io.StringWriter
@@ -82,20 +83,15 @@ class ItemParser {
         val dataJSON = dataJSONElement.data().substringAfter('=', "")
         if (dataJSON.isBlank()) return EMPTY_URI
 
-        val json = JSONObject(dataJSON)
+        val json = toJsonObject(dataJSON)
 
-        return try {
-            URI(
-                    json.getJSONObject("props")
-                            .getJSONObject("pageProps")
-                            .getJSONObject("currentPost")
-                            .getJSONObject("meta_box")
-                            .getString("mb_clanek_multimedialni_soubor")
-            )
-        } catch (e: JSONException) {
-            e.printStackTrace()
-            EMPTY_URI
-        }
+        return URI(
+                json.getJsonObject("props")
+                        ?.getJsonObject("pageProps")
+                        ?.getJsonObject("currentPost")
+                        ?.getJsonObject("meta_box")
+                        ?.getString("mb_clanek_multimedialni_soubor") ?: EMPTY_URI.toString()
+        )
     }
 
     fun parseMp4Url(script: String): URI {

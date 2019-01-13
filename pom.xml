@@ -13,7 +13,7 @@
         <kotlin.maven.version>1.3.11</kotlin.maven.version>
         <dokka.version>0.9.17</dokka.version>
         <jsoup.version>RELEASE</jsoup.version>
-        <json.version>RELEASE</json.version>
+        <gson.version>RELEASE</gson.version>
     </properties>
 
     <dependencies>
@@ -34,9 +34,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>${json.version}</version>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
         </dependency>
     </dependencies>
 

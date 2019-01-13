@@ -1,11 +1,14 @@
 package cz.skup5.jEvropa2.dao
 
+import com.google.gson.JsonObject
 import cz.skup5.jEvropa2.HttpRequest
 import cz.skup5.jEvropa2.data.Item
 import cz.skup5.jEvropa2.data.MultiMediaType
 import cz.skup5.jEvropa2.data.Show
+import cz.skup5.jEvropa2.extension.JsonUtil.toJsonObject
+import cz.skup5.jEvropa2.extension.getJsonArray
+import cz.skup5.jEvropa2.extension.getJsonObject
 import cz.skup5.jEvropa2.mapper.toListItem
-import org.json.JSONObject
 
 const val POST_TYPE_SLUG = "porady-zaznamy"
 private const val TAXONOMY = "rubrika-porady"
@@ -35,15 +38,15 @@ object ItemDao {
     }
 
     private fun processResponse(response: String, useCategory: Boolean, show: Show?): List<Item> {
-        val responseJson = JSONObject(response)
-        var postsJson = responseJson.getJSONObject("data")
+        val responseJson = toJsonObject(response)
+        var postsJson: JsonObject? = responseJson.getJsonObject("data") ?: return emptyList()
 
         if (useCategory) {
-            postsJson = postsJson.getJSONArray("categories").getJSONObject(0)
+            postsJson = postsJson?.getJsonArray("categories")?.getJsonObject(0)
         }
-        postsJson = postsJson.getJSONObject("posts")
+        postsJson = postsJson?.getJsonObject("posts") ?: return emptyList()
 
-        val items = toListItem(postsJson.getJSONArray("items"))
+        val items = postsJson.getJsonArray("items")?.let { toListItem(it) } ?: return emptyList()
         for (item in items) {
             item.mediaType = MultiMediaType.AUDIO
         }
@@ -58,31 +61,28 @@ object ItemDao {
     }
 
     private fun prepareQuery(useCategory: Boolean, show: Show?, page: Int, itemsPerPage: Int): String {
-        val dataJson = JSONObject()
-        val variables = JSONObject()
+        val dataJson = JsonObject()
+        val variables = JsonObject()
         val query: String
         val operationName: String
 
         if (useCategory) {
             query = videoCategoryMoreQuery()
             operationName = "VideoCategoryMoreQuery"
-            variables
-                    .put("categorySlug", show!!.slug)
-                    .put("taxonomy", TAXONOMY)
+            variables.addProperty("categorySlug", show!!.slug)
+            variables.addProperty("taxonomy", TAXONOMY)
         } else {
             query = videoMoreQuery()
             operationName = "VideoMoreQuery"
         }
 
-        variables
-                .put("postTypeSlug", POST_TYPE_SLUG)
-                .put("page", page)
-                .put("per_page", itemsPerPage)
+        variables.addProperty("postTypeSlug", POST_TYPE_SLUG)
+        variables.addProperty("page", page)
+        variables.addProperty("per_page", itemsPerPage)
 
-        dataJson
-                .put("operationName", operationName)
-                .put("query", query)
-                .put("variables", variables)
+        dataJson.addProperty("operationName", operationName)
+        dataJson.addProperty("query", query)
+        dataJson.add("variables", variables)
 
         return dataJson.toString()
     }

@@ -1,8 +1,6 @@
 import cz.skup5.jEvropa2.Extractor;
 import cz.skup5.jEvropa2.HtmlParser;
-import cz.skup5.jEvropa2.dao.ItemDao;
 import cz.skup5.jEvropa2.dao.ShowDao;
-import cz.skup5.jEvropa2.data.E2Data;
 import cz.skup5.jEvropa2.data.Item;
 import cz.skup5.jEvropa2.data.Show;
 import org.jsoup.Jsoup;
@@ -41,9 +39,10 @@ public class Main {
 
 //        System.out.println(parser.parseActiveAudioShowItem(Extractor.getActiveItem(site)).info());
 
-        Show ranniShow = new Show(17, "Ranní show", E2Data.getEMPTY_URI(), "ranni-show");
-        for (Item item : ItemDao.INSTANCE.get(ranniShow, 1, 6))
-            System.out.println(item.info());
+//        Show ranniShow = new Show(17, "Ranní show", E2Data.getEMPTY_URI(), "ranni-show");
+//        for (Item item : ItemDao.INSTANCE.get(ranniShow, 1, 6)) {
+//            System.out.println(item.info());
+//        }
 
 //        System.out.println(parser.parseNextPageUrl(nextShowItems));
     }
