@@ -1,6 +1,7 @@
 package cz.skup5.jEvropa2.data
 
 import java.net.URI
+import java.util.*
 
 /**
  * Represents an multimedia (audio or video) record.
@@ -12,8 +13,8 @@ data class Item(
         override val id: Int = ID_NONE,
         /** The item title/label. */
         override val name: String,
-        /** The date/time value parsed from web site. */
-        var timestamp: String,
+        /** The datetime in milliseconds parsed from web site. */
+        var timestamp: Long,
         /** The absolute url of item web site. */
         var webSiteUri: URI = EMPTY_URI,
         /** The img absolute url of item. */
@@ -40,7 +41,7 @@ data class Item(
         with(sb) {
             append(" (")
             append(mediaType).append(" ")
-            append(timestamp)
+            append(Date(timestamp))
             append(", web=").append(webSiteUri)
             append(", img=").append(imgUri)
             append(", media=").append(mediaUri)

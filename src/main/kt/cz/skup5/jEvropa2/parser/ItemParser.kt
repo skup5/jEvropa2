@@ -7,6 +7,7 @@ import cz.skup5.jEvropa2.data.MultiMediaType
 import cz.skup5.jEvropa2.extension.JsonUtil.toJsonObject
 import cz.skup5.jEvropa2.extension.getJsonObject
 import cz.skup5.jEvropa2.extension.getString
+import cz.skup5.jEvropa2.mapper.toTimestamp
 import org.jsoup.nodes.Element
 import java.io.PrintWriter
 import java.io.StringWriter
@@ -34,7 +35,7 @@ class ItemParser {
         if (webSiteUri.query != null)
             date = Regex(DATE_PATTERN).find(webSiteUri.query)?.groupValues?.get(2) ?: ""
 
-        return Item(name = name, timestamp = date, webSiteUri = webSiteUri, imgUri = imgUri, mediaType = MultiMediaType.AUDIO)
+        return Item(name = name, timestamp = toTimestamp(date), webSiteUri = webSiteUri, imgUri = imgUri, mediaType = MultiMediaType.AUDIO)
     }
 
     /**
@@ -58,22 +59,7 @@ class ItemParser {
         return URI(img)
     }
 
-    fun parseActiveVideo(element: Element): Item? {
-        val imgUrl: URI
-        val mp4Url: URI
-        val elements = element.select(".feed-player .item-active").select(".video")
-        val player: Element
-        if (elements.isEmpty()) {
-            return null
-        }
-        player = elements.first()
-        val time = player.select(".time").first().text()
-        val title = player.select(".content h2").first().text()
-        val script = element.select(".jPlayer script").first().html()
-        imgUrl = parseActiveImgUrl(script)
-        mp4Url = parseMp4Url(script)
-        return Item(name = title, timestamp = time, imgUri = imgUrl, mediaUri = mp4Url)
-    }
+    fun parseActiveVideo(element: Element): Item? = null
 
     /**
      * Returns multimedia url of the active/current item or
