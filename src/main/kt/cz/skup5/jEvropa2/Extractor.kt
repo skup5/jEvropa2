@@ -19,7 +19,7 @@ object Extractor {
     const val ROOT_ELEMENT_DATA_JSON = "script"
 
     /** The property name of data json in script element. */
-    const val DATA_JSON_PREFIX = "__NEXT_DATA__"
+    const val DATA_JSON_ID = "__NEXT_DATA__"
 
     /**
      * Returns title of the show list. The title is extracted from the [doc] Document.
@@ -77,13 +77,5 @@ object Extractor {
      * @since 2.0
      */
     @JvmStatic
-    fun getDataJSON(doc: Document): Element {
-        var dataJSONElement = Element(ROOT_ELEMENT_DATA_JSON)
-        for (scriptElement in doc.body().getElementsByTag(ROOT_ELEMENT_DATA_JSON)) {
-            if (scriptElement.data().trimStart().startsWith(DATA_JSON_PREFIX)) {
-                dataJSONElement = scriptElement
-            }
-        }
-        return dataJSONElement
-    }
+    fun getDataJSON(doc: Document): Element = doc.getElementById(DATA_JSON_ID)
 }

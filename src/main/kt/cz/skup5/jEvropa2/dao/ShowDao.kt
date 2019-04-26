@@ -30,7 +30,7 @@ object ShowDao {
      */
     fun get(document: Document): List<Show> {
         val response = Extractor.getDataJSON(document)
-        val dataJSON = response.data().substringAfter('=', "")
+        val dataJSON = response.data()
         return processResponse(dataJSON)
     }
 
