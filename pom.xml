@@ -12,7 +12,7 @@
         <kotlin.version>1.4.31</kotlin.version>
         <kotlin.maven.version>1.4.31</kotlin.maven.version>
         <dokka.version>0.9.17</dokka.version>
-        <jsoup.version>RELEASE</jsoup.version>
+        <jsoup.version>1.14.2</jsoup.version>
         <gson.version>RELEASE</gson.version>
     </properties>
 
