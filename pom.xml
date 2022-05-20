@@ -13,7 +13,7 @@
         <kotlin.maven.version>1.4.31</kotlin.maven.version>
         <dokka.version>0.9.17</dokka.version>
         <jsoup.version>RELEASE</jsoup.version>
-        <gson.version>RELEASE</gson.version>
+        <gson.version>2.8.9</gson.version>
     </properties>
 
     <dependencies>
